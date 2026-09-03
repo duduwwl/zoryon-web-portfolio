@@ -113,7 +113,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Zoryon Web — início" onClick={closeMenu}>
-          <span className="brand-mark">Z/</span><span>ZORYON <b>WEB</b></span>
+          <span className="brand-mark">Z</span><span>ZORYON <b>WEB</b></span>
         </a>
         <nav className={menuOpen ? 'nav-open' : ''} aria-label="Navegação principal">
           <a href="#projetos" onClick={closeMenu}>Projetos</a>
@@ -250,7 +250,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="brand footer-brand" href="#inicio"><span className="brand-mark">Z/</span><span>ZORYON <b>WEB</b></span></a>
+        <a className="brand footer-brand" href="#inicio"><span className="brand-mark">Z</span><span>ZORYON <b>WEB</b></span></a>
         <p>Sites profissionais com estratégia, personalidade e propósito.</p>
         <div><span>Lavras · MG</span><span>© 2026 Zoryon Web</span></div>
       </footer>

@@ -1,5 +1,13 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="64" height="64" rx="32" fill="#0C0F0E"/>
-  <path d="M16 19H39L18 43H42" stroke="#C9FF2F" stroke-width="6" stroke-linecap="square" stroke-linejoin="bevel"/>
+  <defs>
+    <linearGradient id="zoryon" x1="14" y1="16" x2="49" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20D8FF"/>
+      <stop offset="0.45" stop-color="#1268FF"/>
+      <stop offset="0.72" stop-color="#7132FF"/>
+      <stop offset="1" stop-color="#D12EFF"/>
+    </linearGradient>
+  </defs>
+  <path d="M16 19H39L18 43H42" stroke="url(#zoryon)" stroke-width="6" stroke-linecap="square" stroke-linejoin="bevel"/>
   <path d="M47 17L36 47" stroke="#F3F1E9" stroke-width="4" stroke-linecap="square"/>
 </svg>
