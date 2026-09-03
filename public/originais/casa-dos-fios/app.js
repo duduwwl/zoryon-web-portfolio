@@ -33,7 +33,7 @@
       <header class="site-header is-sticky">
         <div class="container nav-row">
           <a class="brand" href="index.html" aria-label="Mundix Aviamentos — início">
-            <img class="brand-logo" src="assets/mundix-logo.png" alt="Logo Mundix Aviamentos">
+            <img class="brand-logo" src="assets/mundix-logo.webp" alt="Logo Mundix Aviamentos">
             <span class="brand-wordmark"><strong>Mundix</strong><small>aviamentos</small></span>
           </a>
           <nav class="nav-links" aria-label="Navegação principal">
@@ -99,7 +99,7 @@
       <footer class="site-footer" id="atendimento">
         <div class="container footer-main">
           <div class="footer-brand">
-            <a class="brand" href="index.html"><img class="brand-logo" src="assets/mundix-logo.png" alt="Logo Mundix"><span class="brand-wordmark"><strong>Mundix</strong><small>aviamentos</small></span></a>
+            <a class="brand" href="index.html"><img class="brand-logo" src="assets/mundix-logo.webp" alt="Logo Mundix"><span class="brand-wordmark"><strong>Mundix</strong><small>aviamentos</small></span></a>
             <p>Tudo para o seu artesanato: cores, texturas e qualidade para transformar cada ideia em uma peça única.</p>
           </div>
           <div><div class="footer-title">Navegue</div><div class="footer-links"><a href="index.html">Início</a><a href="produtos.html">Produtos</a><a href="checkout.html">Finalizar compra</a></div></div>

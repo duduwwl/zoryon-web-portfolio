@@ -190,9 +190,9 @@ if(menuGrid){
     banana:{src:'./assets/pizza-banana-caramelada-artesanal.jpg',alt:'Pizza doce artesanal de banana caramelada e canela'}
   };
   const pizzaImageFallbacks={
-    tradicionais:{src:'./assets/pizza-calabresa-real.png',alt:'Pizza artesanal com queijo derretido'},
-    especiais:{src:'./assets/pizza-especial-real.png',alt:'Pizza especial artesanal'},
-    doces:{src:'./assets/pizza-doce-real.png',alt:'Pizza doce artesanal'}
+    tradicionais:{src:'./assets/pizza-calabresa-real.webp',alt:'Pizza artesanal com queijo derretido'},
+    especiais:{src:'./assets/pizza-especial-real.webp',alt:'Pizza especial artesanal'},
+    doces:{src:'./assets/pizza-doce-real.webp',alt:'Pizza doce artesanal'}
   };
   const pizzaVisual=pizza=>{
     const fallback=pizzaImageFallbacks[pizza.category];

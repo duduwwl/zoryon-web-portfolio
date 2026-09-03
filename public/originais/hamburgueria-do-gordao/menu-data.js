@@ -18,10 +18,10 @@ window.naBrasaProducts = [
   { id: 'fries-family', category: 'batatas', categoryLabel: 'Batata', name: 'Batata Família', description: '350 g de batata frita para dividir com a mesa toda.', price: 24.90, image: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=700&q=82' },
 
   { id: 'coke-original', category: 'refrigerantes', categoryLabel: 'Refrigerante • 350 ml', brand: 'Coca-Cola', name: 'Coca-Cola Original', description: 'Lata 350 ml, sabor original.', price: 7.50, image: 'assets/coca-cola-original.jpg' },
-  { id: 'coke-zero', category: 'refrigerantes', categoryLabel: 'Refrigerante • 350 ml', brand: 'Coca-Cola', name: 'Coca-Cola Sem Açúcar', description: 'Lata 350 ml, zero açúcar.', price: 7.50, image: 'assets/coca-cola-sem-acucar.png' },
+  { id: 'coke-zero', category: 'refrigerantes', categoryLabel: 'Refrigerante • 350 ml', brand: 'Coca-Cola', name: 'Coca-Cola Sem Açúcar', description: 'Lata 350 ml, zero açúcar.', price: 7.50, image: 'assets/coca-cola-sem-acucar.webp' },
   { id: 'guarana', category: 'refrigerantes', categoryLabel: 'Refrigerante • 350 ml', brand: 'Guaraná Antarctica', name: 'Guaraná Antarctica', description: 'Lata 350 ml, original.', price: 7.00, image: 'assets/guarana-antarctica.jpg' },
-  { id: 'sprite', category: 'refrigerantes', categoryLabel: 'Refrigerante • 350 ml', brand: 'Sprite', name: 'Sprite', description: 'Lata 350 ml, refrescante sabor limão.', price: 7.00, image: 'assets/sprite-lata.png' },
-  { id: 'pepsi-black', category: 'refrigerantes', categoryLabel: 'Refrigerante • 350 ml', brand: 'Pepsi', name: 'Pepsi Black', description: 'Lata 350 ml, zero açúcar.', price: 7.00, image: 'assets/pepsi-black.png' },
+  { id: 'sprite', category: 'refrigerantes', categoryLabel: 'Refrigerante • 350 ml', brand: 'Sprite', name: 'Sprite', description: 'Lata 350 ml, refrescante sabor limão.', price: 7.00, image: 'assets/sprite-lata.webp' },
+  { id: 'pepsi-black', category: 'refrigerantes', categoryLabel: 'Refrigerante • 350 ml', brand: 'Pepsi', name: 'Pepsi Black', description: 'Lata 350 ml, zero açúcar.', price: 7.00, image: 'assets/pepsi-black.webp' },
 
   { id: 'heineken', category: 'cervejas', categoryLabel: 'Cerveja • Long neck', brand: 'Heineken', name: 'Heineken Long Neck', description: 'Cerveja lager, garrafa long neck 330 ml. Venda somente para maiores de 18 anos.', price: 12.90, alcohol: true, image: 'assets/heineken-long-neck.jpg' },
   { id: 'budweiser', category: 'cervejas', categoryLabel: 'Cerveja • Long neck', brand: 'Budweiser', name: 'Budweiser Long Neck', description: 'American lager, garrafa long neck 330 ml. Venda somente para maiores de 18 anos.', price: 10.90, alcohol: true, image: 'assets/budweiser-long-neck.jpg' },
@@ -32,9 +32,9 @@ window.naBrasaProducts = [
 ];
 
 window.naBrasaPromotions = [
-  { id: 'combo-classic', category: 'combos', categoryLabel: 'Combo tradicional', name: 'Combo Clássico da Brasa', description: 'Clássico da Brasa + Batata Frita Crocante + Coca-Cola Original.', price: 39.90, image: 'assets/burger-tradicional-classic.png' },
-  { id: 'combo-mineirinho', category: 'combos', categoryLabel: 'Combo especial', name: 'Combo Mineirinho', description: 'Mineirinho Especial + Batata Frita Crocante + Guaraná Antarctica.', price: 46.90, image: 'assets/burger-especial-dark.png' },
-  { id: 'combo-trufado', category: 'combos', categoryLabel: 'Combo artesanal', name: 'Combo Trufado do Chef', description: 'Trufado do Chef + Batata Cheddar & Bacon + Coca-Cola Sem Açúcar.', price: 57.90, image: 'assets/burger-artesanal-dark.png' },
+  { id: 'combo-classic', category: 'combos', categoryLabel: 'Combo tradicional', name: 'Combo Clássico da Brasa', description: 'Clássico da Brasa + Batata Frita Crocante + Coca-Cola Original.', price: 39.90, image: 'assets/burger-tradicional-classic.webp' },
+  { id: 'combo-mineirinho', category: 'combos', categoryLabel: 'Combo especial', name: 'Combo Mineirinho', description: 'Mineirinho Especial + Batata Frita Crocante + Guaraná Antarctica.', price: 46.90, image: 'assets/burger-especial-dark.webp' },
+  { id: 'combo-trufado', category: 'combos', categoryLabel: 'Combo artesanal', name: 'Combo Trufado do Chef', description: 'Trufado do Chef + Batata Cheddar & Bacon + Coca-Cola Sem Açúcar.', price: 57.90, image: 'assets/burger-artesanal-dark.webp' },
   { id: 'combo-marmitex', category: 'combos', categoryLabel: 'Combo executivo', name: 'Combo Marmitex Completo', description: 'Marmitex Completo Na Brasa + Coca-Cola Original 350 ml.', price: 37.90, image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=86' }
 ];
 

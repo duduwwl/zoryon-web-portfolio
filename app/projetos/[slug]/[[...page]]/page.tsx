@@ -22,49 +22,49 @@ const whatsapp = 'https://wa.me/5535984259797';
 
 const profiles: Record<string, Profile> = {
   'daniels-barber': {
-    hero: '/demos/daniels-barber-real.png', original: 'https://daniels-barber-lavras.duduwwl.chatgpt.site', layout: 'bold',
+    hero: '/demos/daniels-barber-real.webp', original: 'https://daniels-barber-lavras.duduwwl.chatgpt.site', layout: 'bold',
     promise: 'Atendimento com hora marcada, dois profissionais e escolha completa do serviço.', address: 'Av. Álvaro A. Leite, 657 · Lavras', hours: 'Seg–sex 08:30–18:30 · Sáb 08:30–14:00',
     steps: ['Escolha o serviço', 'Selecione Daniel ou Vinícius', 'Confirme dia e horário'],
     faqs: [['Preciso chegar antes?', 'Cinco minutos são suficientes para preparar o atendimento.'], ['Posso remarcar?', 'Sim. Fale pelo WhatsApp com pelo menos duas horas de antecedência.'], ['Atendem crianças?', 'Sim, mediante escolha do serviço infantil no agendamento.']],
   },
   'casa-dos-fios': {
-    hero: '/demos/casa-dos-fios.png', layout: 'clean',
+    hero: '/demos/casa-dos-fios.webp', layout: 'clean',
     promise: 'Catálogo da Mundix com fios reais, variações de cor e carrinho organizado.', address: 'Loja online · envio para todo o Brasil', hours: 'Atendimento seg–sex · 09:00–18:00',
     steps: ['Encontre seu fio', 'Escolha a cor e quantidade', 'Revise no carrinho'],
     faqs: [['As cores são fiéis?', 'As fotos são preparadas para representar cada variante; telas podem apresentar pequenas diferenças.'], ['Como conferir o lote?', 'O lote aparece na etiqueta e pode ser confirmado com o atendimento antes do envio.'], ['Enviam para todo o Brasil?', 'Sim, com cálculo de prazo e frete no fechamento do pedido.']],
   },
   'pizza-lavras': {
-    hero: '/demos/pizza-lavras.png', original: 'https://duduwwl.github.io/pizzarialavras/', layout: 'bold',
+    hero: '/demos/pizza-lavras.webp', original: 'https://duduwwl.github.io/pizzarialavras/', layout: 'bold',
     promise: 'Tradicionais, especiais e doces em um cardápio direto para pedir.', address: 'Lavras · MG · delivery local', hours: 'Ter–dom · 18:00–23:30',
     steps: ['Escolha tamanho e sabor', 'Adicione borda e bebida', 'Acompanhe a entrega'],
     faqs: [['Posso pedir meio a meio?', 'Sim, nas pizzas médias e grandes; o valor acompanha o sabor de maior preço.'], ['Qual o tempo de entrega?', 'A estimativa aparece no pedido e varia conforme o bairro e o movimento.'], ['Tem retirada?', 'Sim, basta selecionar retirada antes de confirmar.']],
   },
   aurele: {
-    hero: '/demos/aurele-real.png', original: 'https://aurelle-atelier-lavras.zoryonlabs.chatgpt.site', layout: 'editorial',
+    hero: '/demos/aurele-real.webp', original: 'https://aurelle-atelier-lavras.zoryonlabs.chatgpt.site', layout: 'editorial',
     promise: 'Coleção completa, filtros, favoritos, carrinho, conta e checkout demonstrativo.', address: 'Rua das Acácias, 248 · Centro · Lavras', hours: 'Seg–sáb · 10:00–19:00',
     steps: ['Explore a coleção', 'Escolha tamanho e cor', 'Receba ou retire em Lavras'],
     faqs: [['Como funcionam as trocas?', 'A solicitação pode ser feita em até sete dias após o recebimento.'], ['Há retirada em Lavras?', 'Sim, sem custo, após a confirmação de disponibilidade.'], ['Quais formas de pagamento?', 'Pix e cartões, com parcelamento informado no checkout.']],
   },
   'hamburgueria-do-gordao': {
-    hero: '/demos/hamburgueria-real.png', original: 'https://hamburgueria-ee939.web.app', layout: 'bold',
+    hero: '/demos/hamburgueria-real.webp', original: 'https://hamburgueria-ee939.web.app', layout: 'bold',
     promise: 'Cardápio real com tradicionais, artesanais, especiais, bebidas e pedido online.', address: 'Lavras · MG · entrega por bairros', hours: 'Todos os dias · 18:00–00:00',
     steps: ['Monte seu pedido', 'Informe entrega ou retirada', 'Acompanhe o preparo'],
     faqs: [['Dá para retirar ingredientes?', 'Sim, personalize o item antes de adicionar ao carrinho.'], ['Tem ponto da carne?', 'Nos artesanais você escolhe o ponto durante o pedido.'], ['Como acompanho?', 'Use o código recebido na confirmação para consultar o status.']],
   },
   'serra-alta-imoveis': {
-    hero: '/demos/serra-alta-imoveis.png', layout: 'clean',
+    hero: '/demos/serra-alta-imoveis.webp', layout: 'clean',
     promise: 'Busca por perfil, imóveis selecionados, visita agendada e atendimento consultivo.', address: 'Lavras e região · atendimento com hora marcada', hours: 'Seg–sex · 09:00–18:00',
     steps: ['Defina o seu perfil', 'Compare imóveis', 'Agende uma visita'],
     faqs: [['Os imóveis são verificados?', 'A documentação é conferida antes do início da negociação.'], ['Atendem financiamento?', 'Sim, com orientação sobre as etapas e instituições disponíveis.'], ['Posso anunciar meu imóvel?', 'Sim, após avaliação comercial e fotográfica.']],
   },
   'orale-odontologia': {
-    hero: '/demos/orale-odontologia.png', layout: 'clean',
+    hero: '/demos/orale-odontologia.webp', layout: 'clean',
     promise: 'Tratamentos explicados com clareza, equipe apresentada e avaliação simplificada.', address: 'Centro · Lavras · MG', hours: 'Seg–sex · 08:00–19:00',
     steps: ['Conte o que precisa', 'Faça a avaliação', 'Receba seu plano de cuidado'],
     faqs: [['A avaliação é completa?', 'Sim, inclui conversa, exame clínico e indicação dos próximos passos.'], ['Atendem urgência?', 'Os encaixes são avaliados pelo WhatsApp durante o horário de atendimento.'], ['Há opções de pagamento?', 'O plano financeiro é apresentado junto ao plano de tratamento.']],
   },
   'raiz-cafe': {
-    hero: '/demos/raiz-cafe.png', layout: 'editorial',
+    hero: '/demos/raiz-cafe.webp', layout: 'editorial',
     promise: 'Menu, origem dos grãos, métodos de preparo e informações para visitar.', address: 'Lavras · MG · espaço fictício editável', hours: 'Seg–sáb · 08:00–19:00',
     steps: ['Escolha o método', 'Conheça a safra', 'Aproveite sem pressa'],
     faqs: [['Os grãos mudam?', 'Sim, o menu acompanha as melhores safras das fazendas parceiras.'], ['Tem opções sem lactose?', 'Sim, com bebidas vegetais disponíveis.'], ['Aceitam encomendas?', 'Bolos e kits de café podem ser encomendados com antecedência.']],

@@ -2,9 +2,9 @@
 (function () {
   const exactVariantFolders = {
     anne: ['anne', 'webp'], 'barroco-maxcolor': ['barroco-maxcolor', 'webp'],
-    encanto: ['encanto', 'png'], 'meliah-premium-35': ['meliah-premium-35', 'webp'],
-    'meliah-lux': ['meliah-lux', 'png'], 'unique-3': ['unique-3', 'png'],
-    'unique-5': ['unique-5', 'png'], 'unique-8': ['unique-8', 'png']
+    encanto: ['encanto', 'webp'], 'meliah-premium-35': ['meliah-premium-35', 'webp'],
+    'meliah-lux': ['meliah-lux', 'webp'], 'unique-3': ['unique-3', 'webp'],
+    'unique-5': ['unique-5', 'webp'], 'unique-8': ['unique-8', 'webp']
   };
   const unavailableVariants = new Set(['unique-3|unique3-outono', 'unique-8|unique8-cookie']);
   const cleanPremium = new Set([
@@ -18,14 +18,14 @@
     'fio-malha','amigurumi','amigurumi-chenille','anne','barroco-maxcolor','charme','clea-duplo',
     'duna','clea-1000','encanto','meliah-premium-35','meliah-lux','nautico-polipropileno',
     'unique-3','unique-5','unique-8','fischer-glow','meliah-pop','policromia'
-  ].map(id => [id, `assets/catalog-transparent/${id}.png`]));
+  ].map(id => [id, `assets/catalog-transparent/${id}.webp`]));
   Object.assign(catalogPhotos, {
     'barroco-maxcolor':'assets/barroco-maxcolor.webp',
     'meliah-premium-35':'assets/variants/meliah-premium-35/premium35-preto.webp',
-    'meliah-lux':'assets/variants/meliah-lux/lux-preto-metalico.png',
-    'unique-3':'assets/variants/unique-3/unique3-canela.png',
-    'unique-5':'assets/variants/unique-5/unique5-rosa-gloss.png',
-    'unique-8':'assets/variants/unique-8/unique8-preto.png',
+    'meliah-lux':'assets/variants/meliah-lux/lux-preto-metalico.webp',
+    'unique-3':'assets/variants/unique-3/unique3-canela.webp',
+    'unique-5':'assets/variants/unique-5/unique5-rosa-gloss.webp',
+    'unique-8':'assets/variants/unique-8/unique8-preto.webp',
     policromia:'assets/fischer-policromia.jpg'
   });
 
@@ -74,8 +74,8 @@
       const name = officialNames[color.id] || String(color.name).replace(/^\d+\s*-\s*/, '');
       const key = normalize(name);
       const code = codes[product.id]?.[key] || color.code || null;
-      const image = product.id === 'anne' ? `assets/variants-clean/anne/${color.id}.png`
-        : product.id === 'meliah-premium-35' && cleanPremium.has(color.id) ? `assets/variants-clean/meliah-premium-35/${color.id}.png`
+      const image = product.id === 'anne' ? `assets/variants-clean/anne/${color.id}.webp`
+        : product.id === 'meliah-premium-35' && cleanPremium.has(color.id) ? `assets/variants-clean/meliah-premium-35/${color.id}.webp`
         : `assets/variants/${variantFolder}/${color.id}.${extension}`;
       return {...color,name,code,hex:colorHex[key] || color.hex,image};
     });
