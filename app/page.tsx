@@ -86,18 +86,19 @@ const filters = ['Todos', 'Serviços', 'E-commerce', 'Gastronomia'];
 
 function ProjectVisual({ project }: { project: Project }) {
   return (
-    <div className={`browser-mockup theme-${project.theme}`} aria-label={`Prévia visual do projeto ${project.title}`}>
-      <div className="browser-bar"><i /><i /><i /><span>{project.url}</span></div>
-      <div className="mini-site">
-        <div className="mini-nav"><b>{project.title}</b><span>MENU&nbsp;&nbsp; CONTATO</span></div>
-        <div className="mini-visual">
-          <small>{project.miniSubtitle}</small>
-          <strong>{project.miniTitle.split('\n').map((line) => <span key={line}>{line}</span>)}</strong>
-          <button>{project.button} <ArrowRight size={11} /></button>
-        </div>
-        <div className="mini-decoration"><span /><span /><span /></div>
-      </div>
-    </div>
+    <a className="browser-mockup project-preview" href={`/projetos/${project.slug}`} aria-label={`Abrir site completo de ${project.title}`}>
+      <div className="browser-bar" aria-hidden="true"><i /><i /><i /><span>{project.title} · prévia do site</span><ArrowUpRight size={13} /></div>
+      <img
+        className="project-preview-image"
+        src={`/project-previews/${project.slug}.webp`}
+        alt={`Página inicial atual de ${project.title}`}
+        width={1279}
+        height={920}
+        loading="lazy"
+        decoding="async"
+      />
+      <span className="project-preview-caption">Explorar site completo <ArrowUpRight size={14} /></span>
+    </a>
   );
 }
 
