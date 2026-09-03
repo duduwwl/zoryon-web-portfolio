@@ -18,7 +18,7 @@ export type DemoProject = {
     accent2: string;
   };
   navigation: { slug: string; label: string }[];
-  offers: { title: string; description: string; price: string }[];
+  offers: { title: string; description: string; price: string; image?: string }[];
   storyTitle: string;
   story: string;
   highlights: string[];
@@ -48,8 +48,8 @@ export const demoProjects: DemoProject[] = [
     },
     navigation: [
       { slug: 'inicio', label: 'Início' },
-      { slug: 'servicos', label: 'Serviços' },
-      { slug: 'galeria', label: 'Galeria' },
+      { slug: 'agendamento', label: 'Agendamento' },
+      { slug: 'barbearia', label: 'A barbearia' },
       { slug: 'contato', label: 'Contato' },
     ],
     offers: [
@@ -70,8 +70,8 @@ export const demoProjects: DemoProject[] = [
   },
   {
     slug: 'casa-dos-fios',
-    title: 'Casa dos Fios',
-    mark: 'CF',
+    title: 'Mundix Aviamentos',
+    mark: 'M',
     location: 'Brasil · envio nacional',
     category: 'Fios, linhas & criatividade',
     tagline: 'Cores que inspiram novas histórias.',
@@ -89,15 +89,15 @@ export const demoProjects: DemoProject[] = [
     },
     navigation: [
       { slug: 'inicio', label: 'Início' },
-      { slug: 'catalogo', label: 'Catálogo' },
-      { slug: 'cores', label: 'Cores' },
-      { slug: 'contato', label: 'Contato' },
+      { slug: 'produtos', label: 'Produtos' },
+      { slug: 'categorias', label: 'Categorias' },
+      { slug: 'carrinho', label: 'Carrinho' },
     ],
     offers: [
-      { title: 'Algodão Natural', description: 'Toque macio e caimento leve para peças delicadas.', price: 'A partir de R$ 18,90' },
-      { title: 'Merino Essencial', description: 'Conforto térmico, definição e uma paleta sofisticada.', price: 'A partir de R$ 32,90' },
-      { title: 'Linha Amigurumi', description: 'Cores vivas, estrutura firme e acabamento uniforme.', price: 'A partir de R$ 14,50' },
-      { title: 'Kit Primeiros Pontos', description: 'Fios, agulhas e guia para começar sua primeira peça.', price: 'R$ 79,90' },
+      { title: 'Anne 500m', description: '100% algodão mercerizado, brilho e excelente rendimento.', price: 'A partir de R$ 18,90', image: '/demos/products/anne.webp' },
+      { title: 'Barroco Maxcolor', description: 'Cores intensas e toque macio para decoração.', price: 'A partir de R$ 24,90', image: '/demos/products/barroco.webp' },
+      { title: 'Amigurumi Chenille', description: 'Volume aveludado para peças macias e expressivas.', price: 'A partir de R$ 21,50', image: '/demos/products/amigurumi.webp' },
+      { title: 'Fio Náutico 3mm', description: 'Estrutura firme para bolsas, cestos e acessórios.', price: 'A partir de R$ 29,90', image: '/demos/products/nautico.webp' },
     ],
     storyTitle: 'Cada cor abre uma possibilidade.',
     story: 'A Casa dos Fios nasceu do encontro entre técnica e afeto. Nossa curadoria aproxima artesãs, criadores e marcas de matérias-primas bonitas, consistentes e agradáveis de trabalhar.',
@@ -135,10 +135,10 @@ export const demoProjects: DemoProject[] = [
       { slug: 'contato', label: 'Contato' },
     ],
     offers: [
-      { title: 'Mineirinha', description: 'Muçarela, calabresa artesanal, cebola roxa e toque de pimenta.', price: 'A partir de R$ 48' },
-      { title: 'Quatro Queijos', description: 'Muçarela, gorgonzola, parmesão e requeijão cremoso.', price: 'A partir de R$ 52' },
-      { title: 'Caprese do Forno', description: 'Tomate, muçarela de búfala, pesto fresco e manjericão.', price: 'A partir de R$ 54' },
-      { title: 'Chocolate & Morango', description: 'Chocolate ao leite, morangos e finalização crocante.', price: 'A partir de R$ 44' },
+      { title: 'Calabresa', description: 'Muçarela, calabresa fatiada, cebola e orégano.', price: 'A partir de R$ 48', image: '/demos/products/pizza-calabresa.jpg' },
+      { title: 'Frango com Catupiry', description: 'Frango temperado, catupiry, milho e orégano.', price: 'A partir de R$ 52', image: '/demos/products/pizza-frango.jpg' },
+      { title: 'Quatro Queijos', description: 'Muçarela, gorgonzola, parmesão e requeijão cremoso.', price: 'A partir de R$ 54', image: '/demos/products/pizza-queijos.jpg' },
+      { title: 'Chocolate Crocante', description: 'Chocolate ao leite e finalização crocante.', price: 'A partir de R$ 44', image: '/demos/products/pizza-chocolate.jpg' },
     ],
     storyTitle: 'Tempo, fogo e ingredientes honestos.',
     story: 'Nossa massa descansa por 48 horas antes de entrar no forno. É essa espera, somada a produtores locais e receitas equilibradas, que cria uma pizza leve, crocante e cheia de sabor.',
@@ -151,9 +151,9 @@ export const demoProjects: DemoProject[] = [
     contactPrompt: 'Escolha o sabor. A gente cuida para chegar perfeito.',
   },
   {
-    slug: 'maison-aurea',
-    title: 'Maison Aurea',
-    mark: 'MA',
+    slug: 'aurele',
+    title: 'Auréle',
+    mark: 'A',
     location: 'Curadoria · Brasil',
     category: 'Moda feminina contemporânea',
     tagline: 'Vista o que fica na memória.',
@@ -176,10 +176,10 @@ export const demoProjects: DemoProject[] = [
       { slug: 'contato', label: 'Contato' },
     ],
     offers: [
-      { title: 'Blazer Lumière', description: 'Alfaiataria fluida, ombro preciso e caimento alongado.', price: 'R$ 489' },
-      { title: 'Vestido Élan', description: 'Silhueta limpa em tecido acetinado de movimento leve.', price: 'R$ 429' },
-      { title: 'Chemise Sable', description: 'Algodão premium, comprimento midi e botões naturais.', price: 'R$ 319' },
-      { title: 'Bolsa Arc', description: 'Couro estruturado, ferragens foscas e alça removível.', price: 'R$ 579' },
+      { title: 'Vestido Lumière', description: 'Silhueta limpa em tecido acetinado de movimento leve.', price: 'R$ 429', image: '/demos/products/aurele-dress.png' },
+      { title: 'Blusa Camille', description: 'Textura delicada e acabamento de alta costura.', price: 'R$ 289', image: '/demos/products/aurele-blouse.png' },
+      { title: 'Calça Vienne', description: 'Alfaiataria fluida, cintura alta e caimento preciso.', price: 'R$ 349', image: '/demos/products/aurele-pants.png' },
+      { title: 'Bolsa Madeleine', description: 'Estrutura elegante, ferragens foscas e alça removível.', price: 'R$ 579', image: '/demos/products/aurele-bag.png' },
     ],
     storyTitle: 'Menos ruído. Mais intenção.',
     story: 'A Aurea nasce de uma ideia simples: vestir pode ser um gesto de clareza. Escolhemos tecidos, cortes e acabamentos que valorizam a mulher e continuam relevantes muito além de uma temporada.',
@@ -217,10 +217,10 @@ export const demoProjects: DemoProject[] = [
       { slug: 'contato', label: 'Contato' },
     ],
     offers: [
-      { title: 'Gordão Smash', description: 'Dois smash de 90g, cheddar, cebola e molho da casa.', price: 'R$ 32' },
-      { title: 'Brasa Bacon', description: 'Burger de 160g, queijo prato, bacon e barbecue de café.', price: 'R$ 39' },
-      { title: 'Monstro Triplo', description: 'Três carnes, cheddar cremoso, picles e cebola crispy.', price: 'R$ 47' },
-      { title: 'Veggie Crocante', description: 'Burger de grão-de-bico, salada fresca e maionese verde.', price: 'R$ 29' },
+      { title: 'Clássico do Gordão', description: 'Carne, queijo, salada fresca e molho da casa.', price: 'R$ 29', image: '/demos/products/burger-classic.png' },
+      { title: 'Bacon Supremo', description: 'Burger, cheddar, bacon crocante e barbecue.', price: 'R$ 37', image: '/demos/products/burger-bacon.png' },
+      { title: 'Defumado Artesanal', description: 'Blend de 160g, queijo prato e maionese defumada.', price: 'R$ 42', image: '/demos/products/burger-defumado.png' },
+      { title: 'Costela Especial', description: 'Burger de costela, cebola caramelizada e cheddar.', price: 'R$ 45', image: '/demos/products/burger-costela.png' },
     ],
     storyTitle: 'A chapa é o nosso palco.',
     story: 'A gente acredita em hambúrguer bem executado: blend fresco, pão macio, ponto certo e equilíbrio em cada camada. Sem atalhos, com muita personalidade e aquele exagero que vale a pena.',
