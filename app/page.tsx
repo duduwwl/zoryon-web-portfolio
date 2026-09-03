@@ -17,6 +17,7 @@ import {
 
 type Project = {
   number: string;
+  slug: string;
   title: string;
   eyebrow: string;
   description: string;
@@ -32,49 +33,49 @@ type Project = {
 
 const projects: Project[] = [
   {
-    number: '01', title: 'Daniel’s Barber', eyebrow: 'Identidade & presença local',
+    number: '01', slug: 'daniels-barber', title: 'Daniel’s Barber', eyebrow: 'Identidade & presença local',
     description: 'Uma experiência digital precisa e elegante para uma barbearia de Lavras, com serviços, personalidade e agendamento em primeiro plano.',
     categories: ['Serviços'], tags: ['Barbearia', 'Agendamento', 'Lavras'], theme: 'barber', status: 'Projeto real',
     url: 'danielsbarber.com.br', miniTitle: 'SEU ESTILO.\nNOSSA ASSINATURA.', miniSubtitle: 'BARBEARIA · LAVRAS MG', button: 'Agendar horário',
   },
   {
-    number: '02', title: 'Casa dos Fios', eyebrow: 'Catálogo & e-commerce',
+    number: '02', slug: 'casa-dos-fios', title: 'Casa dos Fios', eyebrow: 'Catálogo & e-commerce',
     description: 'Loja digital completa para linhas e fios, com catálogo organizado por cores, variações visuais e uma jornada de compra simples.',
     categories: ['E-commerce'], tags: ['Catálogo', 'Variações', 'Loja online'], theme: 'yarn', status: 'Projeto real',
     url: 'casadosfios.com.br', miniTitle: 'CORES QUE\nINSPIRAM.', miniSubtitle: 'FIOS · LINHAS · CRIATIVIDADE', button: 'Ver coleção',
   },
   {
-    number: '03', title: 'Pizza Lavras', eyebrow: 'Cardápio & pedidos',
+    number: '03', slug: 'pizza-lavras', title: 'Pizza Lavras', eyebrow: 'Cardápio & pedidos',
     description: 'Um site vibrante para transformar fome em pedido, separando sabores tradicionais, especiais e doces com navegação direta.',
     categories: ['Gastronomia'], tags: ['Pizzaria', 'Cardápio', 'Delivery'], theme: 'pizza', status: 'Projeto real',
     url: 'pizzalavras.com.br', miniTitle: 'A NOITE PEDE\nPIZZA.', miniSubtitle: 'FORNO QUENTE · ENTREGA RÁPIDA', button: 'Pedir agora',
   },
   {
-    number: '04', title: 'Maison Aurea', eyebrow: 'Moda & experiência premium',
+    number: '04', slug: 'maison-aurea', title: 'Maison Aurea', eyebrow: 'Moda & experiência premium',
     description: 'Uma loja feminina editorial, inspirada no universo das grandes maisons, com foco em produto, desejo e movimento.',
     categories: ['E-commerce'], tags: ['Moda feminina', 'Editorial', 'E-commerce'], theme: 'fashion', status: 'Projeto real',
     url: 'maisonaurea.com.br', miniTitle: 'NOVA\nCOLEÇÃO.', miniSubtitle: 'AUTUMN / WINTER 2026', button: 'Descobrir',
   },
   {
-    number: '05', title: 'Hamburgueria do Gordão', eyebrow: 'Marca & cardápio digital',
+    number: '05', slug: 'hamburgueria-do-gordao', title: 'Hamburgueria do Gordão', eyebrow: 'Marca & cardápio digital',
     description: 'Personalidade forte, categorias bem definidas e uma vitrine irresistível para hambúrgueres tradicionais, artesanais e especiais.',
     categories: ['Gastronomia'], tags: ['Hamburgueria', 'Delivery', 'Cardápio'], theme: 'burger', status: 'Projeto real',
     url: 'dogordao.com.br', miniTitle: 'FOME DE\nVERDADE.', miniSubtitle: 'SMASH · ARTESANAL · MONSTRO', button: 'Ver cardápio',
   },
   {
-    number: '06', title: 'Serra Alta Imóveis', eyebrow: 'Imóveis & geração de leads',
+    number: '06', slug: 'serra-alta-imoveis', title: 'Serra Alta Imóveis', eyebrow: 'Imóveis & geração de leads',
     description: 'Conceito de portal imobiliário sofisticado, com busca rápida, destaques e conversão direta para o atendimento comercial.',
     categories: ['Serviços'], tags: ['Imobiliária', 'Busca', 'Leads'], theme: 'estate', status: 'Conceito editável',
     url: 'serraaltaimoveis.com.br', miniTitle: 'ENCONTRE O SEU\nNOVO LUGAR.', miniSubtitle: 'IMÓVEIS SELECIONADOS EM LAVRAS', button: 'Explorar imóveis',
   },
   {
-    number: '07', title: 'Oralé Odontologia', eyebrow: 'Saúde & credibilidade',
+    number: '07', slug: 'orale-odontologia', title: 'Oralé Odontologia', eyebrow: 'Saúde & credibilidade',
     description: 'Conceito para clínica odontológica contemporânea, equilibrando acolhimento, autoridade e agendamento sem atrito.',
     categories: ['Serviços'], tags: ['Odontologia', 'Institucional', 'Agenda'], theme: 'dental', status: 'Conceito editável',
     url: 'oraleodontologia.com.br', miniTitle: 'SORRIR MUDA\nTUDO.', miniSubtitle: 'CUIDADO HUMANO · TECNOLOGIA', button: 'Agendar avaliação',
   },
   {
-    number: '08', title: 'Raiz Café', eyebrow: 'Hospitalidade & produto',
+    number: '08', slug: 'raiz-cafe', title: 'Raiz Café', eyebrow: 'Hospitalidade & produto',
     description: 'Conceito para cafeteria autoral, com narrativa de origem, menu enxuto e uma atmosfera digital tão marcante quanto o espaço.',
     categories: ['Gastronomia'], tags: ['Cafeteria', 'Menu', 'Storytelling'], theme: 'coffee', status: 'Conceito editável',
     url: 'raizcafe.com.br', miniTitle: 'CAFÉ COM\nORIGEM.', miniSubtitle: 'DO GRÃO À XÍCARA · LAVRAS', button: 'Conhecer o menu',
@@ -179,9 +180,14 @@ export default function Home() {
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                  <a className="choose-link" href={`https://wa.me/5535984259797?text=${encodeURIComponent(`Olá, Zoryon Web! Gostei do estilo do projeto ${project.title} e quero conversar sobre algo nessa direção.`)}`} target="_blank" rel="noreferrer">
-                    Quero um site nessa direção <ArrowUpRight size={15} />
-                  </a>
+                  <div className="project-actions">
+                    <a className="view-site-link" href={`/projetos/${project.slug}`}>
+                      Ver site completo <ArrowRight size={15} />
+                    </a>
+                    <a className="choose-link" href={`https://wa.me/5535984259797?text=${encodeURIComponent(`Olá, Zoryon Web! Gostei do estilo do projeto ${project.title} e quero conversar sobre algo nessa direção.`)}`} target="_blank" rel="noreferrer">
+                      Quero este estilo <ArrowUpRight size={15} />
+                    </a>
+                  </div>
                 </div>
               </div>
               <ProjectVisual project={project} />
