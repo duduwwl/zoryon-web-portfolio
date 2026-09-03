@@ -212,7 +212,9 @@ if(menuGrid){
   let isSavingOrder=false;
   const modeNeeded=()=>state.mode==='duo'?2:1;
   const priceOf=pizza=>pizza[state.size];
-  const itemPrice=item=>item.kind==='extra'?item.price:priceOf(item);
+  // Each cart item already stores its chosen size and final price.
+  // Changing the builder size must not change previously added pizzas.
+  const itemPrice=item=>item.price;
 
   function renderMenu(){
     const catalog=[...pizzas.map(pizza=>({...pizza,kind:'pizza'})),...menuExtras.map(extra=>({...extra,kind:'extra'}))];
