@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { ArrowLeft, ArrowRight, ArrowUpRight, AtSign, CalendarDays, Check, Clock3, ExternalLink, MapPin, MessageCircle, ShieldCheck, ShoppingBag, Sparkles, Star } from 'lucide-react';
 import { demoProjects, getDemoProject, type DemoProject } from '@/lib/demo-projects';
 import DemoContactForm from './DemoContactForm';
+import OriginalSiteViewer from './OriginalSiteViewer';
+import ConceptCatalog from './ConceptCatalog';
 
 type DemoPageProps = { params: Promise<{ slug: string; page?: string[] }> };
 type Profile = {
@@ -106,6 +108,7 @@ function HomePage({ project, profile }: { project: DemoProject; profile: Profile
 
 function OffersPage({ project, profile }: { project: DemoProject; profile: Profile }) {
   const isBooking = project.slug === 'daniels-barber';
+  if (!isBooking) return <><section className="showcase-page-hero"><img src={profile.hero} alt=""/><div><span>Projeto conceito · seleção completa</span><h1>{project.navigation[1].label}</h1><p>{profile.promise}</p></div></section><ConceptCatalog project={project} hero={profile.hero}/><Faq project={project} profile={profile}/><ClosingCta project={project}/></>;
   return <><section className="showcase-page-hero"><img src={profile.hero} alt="" /><div><span>{isBooking ? 'Agenda online' : 'Seleção completa'}</span><h1>{project.navigation[1].label}</h1><p>{profile.promise}</p></div></section><section className="showcase-catalog"><div className="showcase-filter"><button className="active">Todos</button>{project.highlights.slice(0, 3).map((item) => <button key={item}>{item}</button>)}</div><div className="showcase-catalog-grid">{project.offers.map((offer, index) => <article key={offer.title}>{offer.image ? <img src={offer.image} alt={offer.title} /> : <div className="showcase-card-image" style={{ backgroundImage: `url(${profile.hero})`, backgroundPosition: `${15 + index * 25}% center` }} />}<div><small>{project.category}</small><h2>{offer.title}</h2><p>{offer.description}</p><footer><strong>{offer.price}</strong><button aria-label={`Selecionar ${offer.title}`}>{isBooking ? <CalendarDays /> : <ShoppingBag />}</button></footer></div></article>)}</div></section>{isBooking && <section className="showcase-booking"><div><span>02 / Profissional</span><h2>Com quem você quer cuidar do seu estilo?</h2></div><div className="showcase-barbers"><article><b>D</b><h3>Daniel</h3><p>Degradê, cortes clássicos e barba.</p><span>Selecionar</span></article><article><b>V</b><h3>Vinícius</h3><p>Navalhado, freestyle e acabamento.</p><span>Selecionar</span></article></div><div className="showcase-slots"><span>Próximos horários</span>{['08:30', '09:30', '10:30', '14:00', '16:30', '18:00'].map((time) => <button key={time}>{time}</button>)}</div></section>}<section className="showcase-how"><div><span>Como funciona</span><h2>Simples do começo ao fim.</h2></div><ol>{profile.steps.map((step, index) => <li key={step}><b>0{index + 1}</b><span>{step}</span></li>)}</ol></section><Faq project={project} profile={profile} /><ClosingCta project={project} /></>;
 }
 
@@ -132,6 +135,9 @@ export default async function DemoProjectPage({ params }: DemoPageProps) {
   const project = getDemoProject(slug);
   if (!project || !profiles[slug]) return <main className="demo-not-found"><h1>Projeto não encontrado.</h1><a href="/#projetos">Voltar ao portfólio</a></main>;
   const profile = profiles[slug];
+  if (['daniels-barber', 'casa-dos-fios', 'pizza-lavras', 'aurele', 'hamburgueria-do-gordao'].includes(slug)) {
+    return <OriginalSiteViewer slug={slug} title={slug === 'hamburgueria-do-gordao' ? 'Hamburgueria Na Brasa' : project.title} initialPage={page?.[0]} />;
+  }
   const requested = page?.[0] ?? 'inicio';
   const active = project.navigation.some((item) => item.slug === requested) ? requested : 'inicio';
   const vars = { '--demo-canvas': project.theme.canvas, '--demo-surface': project.theme.surface, '--demo-text': project.theme.text, '--demo-muted': project.theme.muted, '--demo-accent': project.theme.accent, '--demo-accent-2': project.theme.accent2 } as CSSProperties;

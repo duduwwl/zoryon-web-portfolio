@@ -193,7 +193,7 @@ export const demoProjects: DemoProject[] = [
   },
   {
     slug: 'hamburgueria-do-gordao',
-    title: 'Hamburgueria do Gordão',
+    title: 'Hamburgueria Na Brasa',
     mark: 'HG',
     location: 'Lavras · MG',
     category: 'Smash, artesanal & delivery',
