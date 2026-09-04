@@ -1,0 +1,114 @@
+[
+  {
+    "file": "food/v60.jpg",
+    "author": "User_Pascal",
+    "source": "https://unsplash.com/photos/coffee-brewing-equipment-arranged-on-a-wooden-surface-LK6aUe8wC_Y",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license"
+  },
+  {
+    "file": "food/latte.jpg",
+    "author": "Jonathan Cooper",
+    "source": "https://www.pexels.com/photo/cup-of-coffee-on-a-wooden-table-11703459/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "food/pao-de-queijo.jpg",
+    "author": "Jonathan Wilkins",
+    "source": "https://commons.wikimedia.org/wiki/File:P%C3%A3o_de_Queijo_-_cheese_bread.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  {
+    "file": "food/brunch.jpg",
+    "author": "hello aesthe",
+    "source": "https://www.pexels.com/photo/breakfast-and-flowers-on-a-table-12164511/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/house-1.jpg",
+    "author": "Max Vakhtbovych",
+    "source": "https://www.pexels.com/photo/green-grass-lawn-near-swimming-pool-8134751/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/house-2.jpg",
+    "author": "Jonathan Borba",
+    "source": "https://www.pexels.com/photo/spacious-living-room-with-modern-design-5570230/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/house-3.jpg",
+    "author": "Jonathan Borba",
+    "source": "https://www.pexels.com/photo/modern-luxury-home-with-glass-facade-and-pool-28586202/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/apartment-1.jpg",
+    "author": "Max Vakhtbovych",
+    "source": "https://www.pexels.com/photo/modern-apartment-with-living-room-with-kitchen-zone-and-bedroom-7031715/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/apartment-2.jpg",
+    "author": "Max Vakhtbovych",
+    "source": "https://www.pexels.com/photo/interior-of-bedroom-in-modern-apartment-6903156/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/apartment-3.jpg",
+    "author": "Max Vakhtbovych",
+    "source": "https://www.pexels.com/photo/interior-of-modern-kitchen-zone-7045917/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/country-1.jpg",
+    "author": "Cristiana de Carvalho",
+    "source": "https://www.pexels.com/photo/charming-country-house-with-lush-garden-30243474/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/country-2.jpg",
+    "author": "Felipe Vieira",
+    "source": "https://www.pexels.com/photo/a-gazebo-by-the-swimming-pool-10672001/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/country-3.jpg",
+    "author": "Freek Wolsink",
+    "source": "https://www.pexels.com/photo/charming-country-house-in-lush-nature-29251938/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/land-1.jpg",
+    "author": "Mehmet Turgut Kirkgoz",
+    "source": "https://www.pexels.com/photo/empty-urban-lot-with-buildings-and-trees-37738120/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/land-2.jpg",
+    "author": "Haley Cao",
+    "source": "https://www.pexels.com/photo/concrete-buildings-beside-a-vacant-lot-with-chain-link-fence-9666115/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  },
+  {
+    "file": "properties/land-3.jpg",
+    "author": "Stan Krotov",
+    "source": "https://www.pexels.com/photo/aerial-view-of-people-standing-in-middle-of-vacant-lot-12737419/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/"
+  }
+]

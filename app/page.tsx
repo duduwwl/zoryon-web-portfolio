@@ -115,12 +115,10 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Zoryon Web — início" onClick={closeMenu}>
-          <span className="brand-mark">Z</span><span>ZORYON <b>WEB</b></span>
+          <img className="brand-logo" src="/brand/zoryon.png" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span>
         </a>
         <nav className={menuOpen ? 'nav-open' : ''} aria-label="Navegação principal">
           <a href="#projetos" onClick={closeMenu}>Projetos</a>
-          <a href="#solucoes" onClick={closeMenu}>Soluções</a>
-          <a href="#processo" onClick={closeMenu}>Processo</a>
           <a href="#contato" onClick={closeMenu}>Contato</a>
         </nav>
         <a className="header-cta" href="https://wa.me/5535984259797?text=Olá%2C%20Zoryon%20Web!%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noreferrer">
@@ -136,7 +134,7 @@ export default function Home() {
         <h1>Sites que fazem<br />sua marca <em>avançar.</em></h1>
         <div className="hero-footer">
           <p>Design, estratégia e desenvolvimento reunidos para transformar a sua presença digital em uma experiência que gera confiança — e resultado.</p>
-          <a href="#projetos" className="scroll-link">Ver projetos <ArrowDownRight size={18} /></a>
+          <nav className="hero-project-choices" aria-label="Escolher um projeto"><span>Explore os projetos</span><div>{projects.map(project => <a key={project.slug} href={`/projetos/${project.slug}`}>{project.title}<ArrowUpRight size={14} /></a>)}</div></nav>
           <span className="edition">PORTFÓLIO · 2026</span>
         </div>
       </section>
@@ -257,7 +255,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="brand footer-brand" href="#inicio"><span className="brand-mark">Z</span><span>ZORYON <b>WEB</b></span></a>
+        <a className="brand footer-brand" href="#inicio"><img className="brand-logo" src="/brand/zoryon.png" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span></a>
         <p>Sites profissionais com estratégia, personalidade e propósito.</p>
         <div><span>Lavras · MG</span><span>© 2026 Zoryon Web</span></div>
       </footer>

@@ -18,7 +18,7 @@ export type DemoProject = {
     accent2: string;
   };
   navigation: { slug: string; label: string }[];
-  offers: { title: string; description: string; price: string; image?: string }[];
+  offers: { title: string; description: string; price: string; image?: string; gallery?: {src:string;alt:string}[] }[];
   storyTitle: string;
   story: string;
   highlights: string[];
@@ -258,10 +258,10 @@ export const demoProjects: DemoProject[] = [
       { slug: 'contato', label: 'Contato' },
     ],
     offers: [
-      { title: 'Casa · Jardim Europa', description: '3 suítes, área gourmet e arquitetura contemporânea.', price: 'R$ 1.280.000' },
-      { title: 'Apartamento · Centro', description: '2 quartos, vista aberta e 2 vagas de garagem.', price: 'R$ 480.000' },
-      { title: 'Chácara · Zona Norte', description: 'Área verde, piscina e acesso asfaltado.', price: 'R$ 760.000' },
-      { title: 'Lote · Condomínio Alto', description: '420 m², topografia suave e vista permanente.', price: 'R$ 295.000' },
+      { title: 'Casa · Jardim Europa', description: '3 suítes, área gourmet e arquitetura contemporânea.', price: 'R$ 1.280.000', image:'/photos/properties/house-1.jpg', gallery:[{src:'/photos/properties/house-1.jpg',alt:'Casa contemporânea com piscina e gramado'},{src:'/photos/properties/house-2.jpg',alt:'Referência de sala de estar contemporânea'},{src:'/photos/properties/house-3.jpg',alt:'Referência de fachada de vidro e área externa'}] },
+      { title: 'Apartamento · Centro', description: '2 quartos, vista aberta e 2 vagas de garagem.', price: 'R$ 480.000', image:'/photos/properties/apartment-1.jpg', gallery:[{src:'/photos/properties/apartment-1.jpg',alt:'Sala integrada de apartamento'},{src:'/photos/properties/apartment-2.jpg',alt:'Referência de quarto de apartamento'},{src:'/photos/properties/apartment-3.jpg',alt:'Referência de cozinha contemporânea'}] },
+      { title: 'Chácara · Zona Norte', description: 'Área verde, piscina e acesso asfaltado.', price: 'R$ 760.000', image:'/photos/properties/country-1.jpg', gallery:[{src:'/photos/properties/country-1.jpg',alt:'Casa de campo e jardim'},{src:'/photos/properties/country-2.jpg',alt:'Referência de piscina e gazebo em jardim tropical'},{src:'/photos/properties/country-3.jpg',alt:'Referência de jardim arborizado de casa de campo'}] },
+      { title: 'Lote · Condomínio Alto', description: '420 m², topografia suave e vista permanente.', price: 'R$ 295.000', image:'/photos/properties/land-1.jpg', gallery:[{src:'/photos/properties/land-1.jpg',alt:'Terreno urbano vazio — imagem ilustrativa'},{src:'/photos/properties/land-2.jpg',alt:'Referência de lote urbano vazio cercado'},{src:'/photos/properties/land-3.jpg',alt:'Referência de vista aérea de terreno sem construções'}] },
     ],
     storyTitle: 'Escuta antes da visita. Critério antes da escolha.',
     story: 'A Serra Alta combina conhecimento local com uma seleção rigorosa de imóveis. Nosso trabalho começa entendendo o momento de cada cliente e só termina quando a decisão realmente faz sentido.',
@@ -340,10 +340,10 @@ export const demoProjects: DemoProject[] = [
       { slug: 'contato', label: 'Contato' },
     ],
     offers: [
-      { title: 'V60 da Safra', description: 'Extração filtrada com notas da semana.', price: 'R$ 16' },
-      { title: 'Latte Raiz', description: 'Espresso duplo, leite vaporizado e rapadura.', price: 'R$ 18' },
-      { title: 'Pão de Queijo Canastra', description: 'Receita da casa com queijo curado mineiro.', price: 'R$ 12' },
-      { title: 'Brunch do Campo', description: 'Ovos, pão artesanal, frutas e café filtrado.', price: 'R$ 38' },
+      { title: 'V60 da Safra', description: 'Extração filtrada com notas da semana.', price: 'R$ 16', image:'/photos/food/v60.jpg' },
+      { title: 'Latte Raiz', description: 'Espresso duplo, leite vaporizado e rapadura.', price: 'R$ 18', image:'/photos/food/latte.jpg' },
+      { title: 'Pão de Queijo Canastra', description: 'Receita da casa com queijo curado mineiro.', price: 'R$ 12', image:'/photos/food/pao-de-queijo.jpg' },
+      { title: 'Brunch do Campo', description: 'Ovos, pão artesanal, frutas e café filtrado.', price: 'R$ 38', image:'/photos/food/brunch.jpg' },
     ],
     storyTitle: 'Do produtor à xícara, sem esconder o caminho.',
     story: 'O Raiz aproxima quem cultiva de quem aprecia. Trabalhamos com cafés rastreáveis da região, torra em pequenos lotes e preparos que respeitam as características de cada safra.',

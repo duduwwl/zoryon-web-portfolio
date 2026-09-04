@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './brand-refinements.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://zoryon-web.duduwwl.chatgpt.site'),
