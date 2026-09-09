@@ -130,6 +130,7 @@ export default function Home() {
 
       <section className="hero" id="inicio">
         <div className="hero-kicker"><span className="status-dot" /> Estúdio digital em Lavras — MG</div>
+        <span className="hero-z-emblem" aria-hidden="true"><img src="/brand/zoryon.png" alt="" /></span>
         <h1>Sites que fazem<br />sua marca <em>avançar.</em></h1>
         <div className="hero-footer">
           <p>Sites planejados para posicionar sua marca, facilitar decisões e transformar visitas em oportunidades comerciais.</p>

@@ -141,3 +141,30 @@ main>footer>p{font-family:var(--font-brand);font-size:1rem;font-weight:500;line-
   border-color:#a9e8ff;
   box-shadow:0 6px 18px rgba(49,123,255,.42);
 }
+
+.hero .hero-z-emblem{
+  position:absolute;
+  z-index:0;
+  top:92px;
+  right:2vw;
+  width:min(58vw,760px);
+  height:min(44vw,570px);
+  overflow:hidden;
+  pointer-events:none;
+  opacity:.2;
+  filter:saturate(1.18) contrast(1.08) drop-shadow(0 0 30px rgba(62,74,255,.3));
+  mix-blend-mode:screen;
+}
+.hero-z-emblem img{
+  position:absolute;
+  width:175%;
+  max-width:none;
+  height:auto;
+  left:-39%;
+  top:-42%;
+}
+.hero h1,.hero .hero-kicker,.hero .hero-footer{z-index:2}
+@media(max-width:760px){
+  .hero .hero-z-emblem{top:150px;right:-18vw;width:96vw;height:74vw;opacity:.15}
+  .hero-z-emblem img{width:178%;left:-40%;top:-42%}
+}
