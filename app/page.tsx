@@ -7,7 +7,6 @@ import {
   ArrowUpRight,
   AtSign,
   Check,
-  MapPin,
   Menu,
   MessageCircle,
   Phone,
@@ -47,19 +46,19 @@ const projects: Project[] = [
   {
     number: '03', slug: 'pizza-lavras', title: 'Pizza Lavras', eyebrow: 'Cardápio & pedidos',
     description: 'Um site vibrante para transformar fome em pedido, separando sabores tradicionais, especiais e doces com navegação direta.',
-    categories: ['Gastronomia'], tags: ['Pizzaria', 'Cardápio', 'Delivery'], theme: 'pizza', status: 'Projeto real',
+    categories: ['Gastronomia'], tags: ['Pizzaria', 'Cardápio', 'Delivery'], theme: 'pizza', status: 'Projeto fictício',
     url: 'pizzalavras.com.br', miniTitle: 'A NOITE PEDE\nPIZZA.', miniSubtitle: 'FORNO QUENTE · ENTREGA RÁPIDA', button: 'Pedir agora',
   },
   {
     number: '04', slug: 'aurele', title: 'Auréle', eyebrow: 'Moda & experiência premium',
     description: 'Uma loja feminina editorial, inspirada no universo das grandes maisons, com foco em produto, desejo e movimento.',
-    categories: ['E-commerce'], tags: ['Moda feminina', 'Editorial', 'E-commerce'], theme: 'fashion', status: 'Projeto real',
+    categories: ['E-commerce'], tags: ['Moda feminina', 'Editorial', 'E-commerce'], theme: 'fashion', status: 'Projeto fictício',
     url: 'aurele.com.br', miniTitle: 'NOVA\nCOLEÇÃO.', miniSubtitle: 'AUTUMN / WINTER 2026', button: 'Descobrir',
   },
   {
     number: '05', slug: 'hamburgueria-do-gordao', title: 'Hamburgueria Na Brasa', eyebrow: 'Marca & cardápio digital',
     description: 'Personalidade forte, categorias bem definidas e uma vitrine irresistível para hambúrgueres tradicionais, artesanais e especiais.',
-    categories: ['Gastronomia'], tags: ['Hamburgueria', 'Delivery', 'Cardápio'], theme: 'burger', status: 'Projeto real',
+    categories: ['Gastronomia'], tags: ['Hamburgueria', 'Delivery', 'Cardápio'], theme: 'burger', status: 'Projeto fictício',
     url: 'hamburgueria-ee939.web.app', miniTitle: 'FOME DE\nVERDADE.', miniSubtitle: 'SMASH · ARTESANAL · MONSTRO', button: 'Ver cardápio',
   },
   {
@@ -133,20 +132,20 @@ export default function Home() {
         <div className="hero-kicker"><span className="status-dot" /> Estúdio digital em Lavras — MG</div>
         <h1>Sites que fazem<br />sua marca <em>avançar.</em></h1>
         <div className="hero-footer">
-          <p>Design, estratégia e desenvolvimento reunidos para transformar a sua presença digital em uma experiência que gera confiança — e resultado.</p>
+          <p>Sites planejados para posicionar sua marca, facilitar decisões e transformar visitas em oportunidades comerciais.</p>
           <nav className="hero-project-choices" aria-label="Escolher um projeto"><span>Explore os projetos</span><div>{projects.map(project => <a key={project.slug} href={`/projetos/${project.slug}`}>{project.title}<ArrowUpRight size={14} /></a>)}</div></nav>
           <span className="edition">PORTFÓLIO · 2026</span>
         </div>
       </section>
 
       <section className="signal-strip" aria-label="Diferenciais da Zoryon Web">
-        <div><strong>Estratégia</strong><span>antes da estética</span></div>
+        <div><strong>Diagnóstico comercial</strong><span>objetivos e público definidos</span></div>
         <i />
-        <div><strong>Design autoral</strong><span>sem cara de template</span></div>
+        <div><strong>UX orientada à conversão</strong><span>jornadas e CTAs claros</span></div>
         <i />
-        <div><strong>Responsivo</strong><span>em cada tela</span></div>
+        <div><strong>Performance & SEO técnico</strong><span>estrutura preparada para crescer</span></div>
         <i />
-        <div><strong>Lavras · MG</strong><span>atendimento próximo</span></div>
+        <div><strong>Entrega acompanhada</strong><span>suporte direto em Lavras</span></div>
       </section>
 
       <section className="projects-section" id="projetos">
@@ -233,13 +232,8 @@ export default function Home() {
         </ol>
       </section>
 
-      <section className="local-section">
-        <img className="studio-card" src="/og.png" alt="Zoryon Web — Sites que fazem marcas avançarem." />
-        <div>
-          <span className="small-label"><MapPin size={14} /> Feito em Lavras, Minas Gerais</span>
-          <h2>Próximos o bastante para entender. Digitais o bastante para ir além.</h2>
-          <p>A Zoryon Web cria sites para negócios locais e marcas que querem crescer com uma presença profissional, singular e preparada para o futuro.</p>
-        </div>
+      <section className="local-section" aria-label="Identidade visual da Zoryon Web">
+        <img className="studio-card" src="/og.png" alt="Zoryon Web — Sites que impulsionam negócios." />
       </section>
 
       <section className="contact-section" id="contato">
