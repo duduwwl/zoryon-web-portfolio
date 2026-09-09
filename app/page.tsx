@@ -24,7 +24,7 @@ type Project = {
   categories: string[];
   tags: string[];
   theme: string;
-  status: 'Projeto real' | 'Conceito editável';
+  status: 'Projeto real' | 'Projeto fictício';
   url: string;
   miniTitle: string;
   miniSubtitle: string;
@@ -65,19 +65,19 @@ const projects: Project[] = [
   {
     number: '06', slug: 'serra-alta-imoveis', title: 'Serra Alta Imóveis', eyebrow: 'Imóveis & geração de leads',
     description: 'Conceito de portal imobiliário sofisticado, com busca rápida, destaques e conversão direta para o atendimento comercial.',
-    categories: ['Serviços'], tags: ['Imobiliária', 'Busca', 'Leads'], theme: 'estate', status: 'Conceito editável',
+    categories: ['Serviços'], tags: ['Imobiliária', 'Busca', 'Leads'], theme: 'estate', status: 'Projeto fictício',
     url: 'serraaltaimoveis.com.br', miniTitle: 'ENCONTRE O SEU\nNOVO LUGAR.', miniSubtitle: 'IMÓVEIS SELECIONADOS EM LAVRAS', button: 'Explorar imóveis',
   },
   {
     number: '07', slug: 'orale-odontologia', title: 'Oralé Odontologia', eyebrow: 'Saúde & credibilidade',
     description: 'Conceito para clínica odontológica contemporânea, equilibrando acolhimento, autoridade e agendamento sem atrito.',
-    categories: ['Serviços'], tags: ['Odontologia', 'Institucional', 'Agenda'], theme: 'dental', status: 'Conceito editável',
+    categories: ['Serviços'], tags: ['Odontologia', 'Institucional', 'Agenda'], theme: 'dental', status: 'Projeto fictício',
     url: 'oraleodontologia.com.br', miniTitle: 'SORRIR MUDA\nTUDO.', miniSubtitle: 'CUIDADO HUMANO · TECNOLOGIA', button: 'Agendar avaliação',
   },
   {
     number: '08', slug: 'raiz-cafe', title: 'Raiz Café', eyebrow: 'Hospitalidade & produto',
     description: 'Conceito para cafeteria autoral, com narrativa de origem, menu enxuto e uma atmosfera digital tão marcante quanto o espaço.',
-    categories: ['Gastronomia'], tags: ['Cafeteria', 'Menu', 'Storytelling'], theme: 'coffee', status: 'Conceito editável',
+    categories: ['Gastronomia'], tags: ['Cafeteria', 'Menu', 'Storytelling'], theme: 'coffee', status: 'Projeto fictício',
     url: 'raizcafe.com.br', miniTitle: 'CAFÉ COM\nORIGEM.', miniSubtitle: 'DO GRÃO À XÍCARA · LAVRAS', button: 'Conhecer o menu',
   },
 ];
@@ -173,7 +173,7 @@ export default function Home() {
           {visibleProjects.map((project) => (
             <article className="project-card" key={project.title}>
               <div className="project-copy">
-                <div className="project-meta"><span className="project-number">{project.number}</span><span className={`status-badge ${project.status === 'Conceito editável' ? 'concept' : ''}`}>{project.status}</span></div>
+                <div className="project-meta"><span className="project-number">{project.number}</span><span className={`status-badge ${project.status === 'Projeto fictício' ? 'concept' : ''}`}>{project.status}</span></div>
                 <div>
                   <p className="eyebrow">{project.eyebrow}</p>
                   <h3>{project.title}</h3>
