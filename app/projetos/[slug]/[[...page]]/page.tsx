@@ -7,8 +7,6 @@ import OriginalSiteViewer from './OriginalSiteViewer';
 import ConceptCatalog from './ConceptCatalog';
 import ConceptHeader from './ConceptHeader';
 import CoffeeHero from './CoffeeHero';
-import ProductDemo from './ProductDemo';
-import { getProductDemo, productDemos } from '@/lib/product-demos';
 
 type DemoPageProps = { params: Promise<{ slug: string; page?: string[] }> };
 type Profile = {
@@ -81,12 +79,6 @@ function demoHref(projectSlug: string, pageSlug: string) {
 
 export async function generateMetadata({ params }: DemoPageProps): Promise<Metadata> {
   const { slug, page } = await params;
-  const productDemo = getProductDemo(slug);
-  if (productDemo) {
-    const title = `${productDemo.title} — ${productDemo.category}`;
-    const description = `${productDemo.description} Projeto demonstrativo da Zoryon Web.`;
-    return { title, description, openGraph: { title, description, images: [] }, twitter: { title, description, images: [] } };
-  }
   const project = getDemoProject(slug);
   if (!project) return { title: 'Projeto não encontrado' };
   const current = project.navigation.find((item) => item.slug === (page?.[0] ?? 'inicio'));
@@ -96,7 +88,7 @@ export async function generateMetadata({ params }: DemoPageProps): Promise<Metad
 }
 
 export function generateStaticParams() {
-  return [...demoProjects.flatMap((project) => [{ slug: project.slug, page: undefined }, ...project.navigation.slice(1).map((item) => ({ slug: project.slug, page: [item.slug] }))]), ...productDemos.map((demo) => ({ slug: demo.slug, page: undefined }))];
+  return demoProjects.flatMap((project) => [{ slug: project.slug, page: undefined }, ...project.navigation.slice(1).map((item) => ({ slug: project.slug, page: [item.slug] }))]);
 }
 
 function ProjectHeader({ project, active }: { project: DemoProject; active: string }) {
@@ -147,8 +139,6 @@ function CartPage({ project, profile }: { project: DemoProject; profile: Profile
 
 export default async function DemoProjectPage({ params }: DemoPageProps) {
   const { slug, page } = await params;
-  const productDemo = getProductDemo(slug);
-  if (productDemo) return <ProductDemo demo={productDemo} />;
   const project = getDemoProject(slug);
   if (!project || !profiles[slug]) return <main className="demo-not-found"><h1>Projeto não encontrado.</h1><a href="/#projetos">Voltar ao portfólio</a></main>;
   const profile = profiles[slug];

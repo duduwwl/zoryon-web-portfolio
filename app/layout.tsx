@@ -1,17 +1,15 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './brand-refinements.css';
-import './product-demos.css';
-import './portfolio-products.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://zoryon-web.duduwwl.chatgpt.site'),
-  title: 'Zoryon Web — Sites, aplicativos e SaaS sob medida',
+  title: 'Zoryon Web — Sites profissionais sob medida',
   description:
-    'Criação de sites, aplicativos e plataformas SaaS profissionais. Conheça os projetos da Zoryon Web e escolha a solução ideal para o seu negócio.',
+    'Criação de sites profissionais em Lavras, MG. Conheça os projetos da Zoryon Web e escolha a direção ideal para a sua marca.',
   openGraph: {
-    title: 'Zoryon Web — Sites, aplicativos e SaaS sob medida',
-    description: 'Portfólio de produtos digitais profissionais criados pela Zoryon Web.',
+    title: 'Zoryon Web — Sites profissionais sob medida',
+    description: 'Portfólio de sites profissionais criados pela Zoryon Web.',
     url: 'https://zoryon-web.duduwwl.chatgpt.site',
     siteName: 'Zoryon Web',
     locale: 'pt_BR',
@@ -20,13 +18,13 @@ export const metadata: Metadata = {
       url: '/og.png',
       width: 1672,
       height: 941,
-      alt: 'Zoryon Web — sites, aplicativos e SaaS sob medida.',
+      alt: 'Zoryon Web — sites profissionais sob medida.',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zoryon Web — Sites, aplicativos e SaaS sob medida',
-    description: 'Portfólio de produtos digitais profissionais criados pela Zoryon Web.',
+    title: 'Zoryon Web — Sites profissionais sob medida',
+    description: 'Portfólio de sites profissionais criados pela Zoryon Web.',
     images: ['/og.png'],
   },
 };
