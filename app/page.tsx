@@ -134,7 +134,7 @@ export default function Home() {
         <h1>Sites que fazem<br />sua marca <em>avançar.</em></h1>
         <div className="hero-footer">
           <p>Sites planejados para posicionar sua marca, facilitar decisões e transformar visitas em oportunidades comerciais.</p>
-          <nav className="hero-project-choices" aria-label="Escolher um projeto"><span>Explore os projetos</span><div>{projects.map(project => <a key={project.slug} href={`/projetos/${project.slug}`}>{project.title}<ArrowUpRight size={16} strokeWidth={1.8} /></a>)}</div></nav>
+          <nav className="hero-project-choices" aria-label="Escolher um projeto"><span>Explore os projetos</span><div>{projects.map(project => <a key={project.slug} href={`/projetos/${project.slug}`}>{project.title}<ArrowUpRight size={17} strokeWidth={3} /></a>)}</div></nav>
           <span className="edition">PORTFÓLIO · 2026</span>
         </div>
       </section>
