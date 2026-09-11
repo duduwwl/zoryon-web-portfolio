@@ -6,13 +6,18 @@ import {
   ArrowRight,
   ArrowUpRight,
   AtSign,
+  Bot,
+  Car,
   Check,
+  Cloud,
   Menu,
   MessageCircle,
   Phone,
   Sparkles,
+  UtensilsCrossed,
   X,
 } from 'lucide-react';
+import { productDemos } from '@/lib/product-demos';
 
 type Project = {
   number: string;
@@ -28,9 +33,10 @@ type Project = {
   miniTitle: string;
   miniSubtitle: string;
   button: string;
+  productType?: 'Sites' | 'Apps' | 'SaaS';
 };
 
-const projects: Project[] = [
+const siteProjects: Project[] = [
   {
     number: '01', slug: 'daniels-barber', title: 'Daniel’s Barber', eyebrow: 'Identidade & presença local',
     description: 'Uma experiência digital precisa e elegante para uma barbearia de Lavras, com serviços, personalidade e agendamento em primeiro plano.',
@@ -81,9 +87,46 @@ const projects: Project[] = [
   },
 ];
 
-const filters = ['Todos', 'Serviços', 'E-commerce', 'Gastronomia'];
+const projects: Project[] = [
+  ...siteProjects,
+  ...productDemos.map((demo, index) => ({
+    number: String(siteProjects.length + index + 1).padStart(2, '0'),
+    slug: demo.slug,
+    title: demo.title,
+    eyebrow: demo.eyebrow,
+    description: demo.description,
+    categories: [demo.kind],
+    tags: demo.tags,
+    theme: demo.theme,
+    status: 'Projeto fictício' as const,
+    url: `${demo.slug}.app`,
+    miniTitle: demo.previewTitle,
+    miniSubtitle: demo.previewLabel,
+    button: demo.kind === 'Apps' ? 'Abrir aplicativo' : 'Abrir plataforma',
+    productType: demo.kind,
+  })),
+];
+
+const filters = ['Todos', 'Sites', 'Apps', 'SaaS'];
 
 function ProjectVisual({ project }: { project: Project }) {
+  if (project.productType && project.productType !== 'Sites') {
+    const isApp = project.productType === 'Apps';
+    const PreviewIcon = project.slug === 'veloz-mobilidade' ? Car : project.slug === 'mesa-go' ? UtensilsCrossed : project.slug === 'orbit-ai' ? Bot : Cloud;
+    return (
+      <a className={`browser-mockup project-preview product-portfolio-preview preview-${isApp ? 'app' : 'saas'} preview-theme-${project.theme}`} href={`/projetos/${project.slug}`} aria-label={`Abrir projeto completo de ${project.title}`}>
+        <div className="browser-bar" aria-hidden="true"><i /><i /><i /><span>{project.title} · produto navegável</span><ArrowUpRight size={13} /></div>
+        <div className="portfolio-ui" aria-hidden="true">
+          <div className="portfolio-ui-nav"><b><PreviewIcon /> {project.title}</b><span>Visão geral</span><span>Atividade</span><em>•••</em></div>
+          <div className="portfolio-ui-body">
+            <div className="portfolio-ui-copy"><small>{project.productType}</small><h4>{project.miniTitle}</h4><p>{project.description}</p><strong>{project.miniSubtitle}</strong></div>
+            <div className="portfolio-ui-panel"><div><span /><span /><span /></div><article><small>DESTAQUE</small><b>{project.title}</b><em>{project.button}</em></article><div className="portfolio-ui-bars"><i /><i /><i /><i /></div></div>
+          </div>
+        </div>
+        <span className="project-preview-caption">Explorar produto completo <ArrowUpRight size={14} /></span>
+      </a>
+    );
+  }
   return (
     <a className="browser-mockup project-preview" href={`/projetos/${project.slug}`} aria-label={`Abrir site completo de ${project.title}`}>
       <div className="browser-bar" aria-hidden="true"><i /><i /><i /><span>{project.title} · prévia do site</span><ArrowUpRight size={13} /></div>
@@ -102,11 +145,12 @@ function ProjectVisual({ project }: { project: Project }) {
 }
 
 export default function Home() {
-  const [activeFilter, setActiveFilter] = useState('Todos');
+  const [activeFilter, setActiveFilter] = useState('Sites');
+  const [heroType, setHeroType] = useState<'Sites' | 'Apps' | 'SaaS'>('Sites');
   const [menuOpen, setMenuOpen] = useState(false);
   const visibleProjects = activeFilter === 'Todos'
     ? projects
-    : projects.filter((project) => project.categories.includes(activeFilter));
+    : projects.filter((project) => (project.productType ?? 'Sites') === activeFilter);
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -120,7 +164,7 @@ export default function Home() {
           <a href="#projetos" onClick={closeMenu}>Projetos</a>
           <a href="#contato" onClick={closeMenu}>Contato</a>
         </nav>
-        <a className="header-cta" href="https://wa.me/5535984259797?text=Olá%2C%20Zoryon%20Web!%20Quero%20conversar%20sobre%20um%20site." target="_blank" rel="noreferrer">
+        <a className="header-cta" href="https://wa.me/5535984259797?text=Olá%2C%20Zoryon%20Web!%20Quero%20conversar%20sobre%20um%20produto%20digital." target="_blank" rel="noreferrer">
           Iniciar projeto <ArrowUpRight size={16} />
         </a>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}>
@@ -129,12 +173,15 @@ export default function Home() {
       </header>
 
       <section className="hero" id="inicio">
-        <div className="hero-kicker"><span className="status-dot" /> Estúdio digital em Lavras — MG</div>
         <span className="hero-z-emblem" aria-hidden="true"><img src="/brand/zoryon.png" alt="" /></span>
-        <h1>Sites que fazem<br />sua marca <em>avançar.</em></h1>
+        <h1>Sites, apps e SaaS.<br /><em>Feitos para vender.</em></h1>
         <div className="hero-footer">
-          <p>Sites planejados para posicionar sua marca, facilitar decisões e transformar visitas em oportunidades comerciais.</p>
-          <nav className="hero-project-choices" aria-label="Escolher um projeto"><span>Explore os projetos</span><div>{projects.map(project => <a key={project.slug} href={`/projetos/${project.slug}`}>{project.title}<ArrowUpRight size={17} strokeWidth={3} /></a>)}</div></nav>
+          <p>Produtos digitais claros, rápidos e preparados para transformar uso em resultado comercial.</p>
+          <nav className="hero-project-choices" aria-label="Escolher um projeto">
+            <span>Explore por categoria</span>
+            <div className="hero-category-tabs" role="group" aria-label="Categoria dos projetos">{(['Sites', 'Apps', 'SaaS'] as const).map((type) => <button key={type} className={heroType === type ? 'active' : ''} onClick={() => setHeroType(type)}>{type}<sup>{projects.filter((project) => (project.productType ?? 'Sites') === type).length}</sup></button>)}</div>
+            <div>{projects.filter((project) => (project.productType ?? 'Sites') === heroType).map(project => <a key={project.slug} href={`/projetos/${project.slug}`}>{project.title}<ArrowUpRight size={17} strokeWidth={3} /></a>)}</div>
+          </nav>
           <span className="edition">PORTFÓLIO · 2026</span>
         </div>
       </section>
@@ -153,8 +200,8 @@ export default function Home() {
         <div className="section-heading light-heading">
           <span>01 / Portfólio selecionado</span>
           <div>
-            <h2>Encontre a direção certa para a sua marca.</h2>
-            <p>Projetos que já desenvolvemos e conceitos prontos para você imaginar possibilidades. Os modelos fictícios estão identificados e podem ser substituídos quando quiser.</p>
+            <h2>Escolha o produto certo para o seu negócio.</h2>
+            <p>Sites, aplicativos e plataformas SaaS com jornadas completas. Os conceitos fictícios estão identificados e mostram como cada produto pode funcionar na prática.</p>
           </div>
         </div>
 
@@ -162,7 +209,7 @@ export default function Home() {
           <div className="filter-row" role="group" aria-label="Filtrar projetos">
             {filters.map((filter) => (
               <button key={filter} className={activeFilter === filter ? 'active' : ''} onClick={() => setActiveFilter(filter)}>
-                {filter}<sup>{filter === 'Todos' ? projects.length : projects.filter((p) => p.categories.includes(filter)).length}</sup>
+                {filter}<sup>{filter === 'Todos' ? projects.length : projects.filter((p) => (p.productType ?? 'Sites') === filter).length}</sup>
               </button>
             ))}
           </div>
@@ -181,7 +228,7 @@ export default function Home() {
                   <div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
                   <div className="project-actions">
                     <a className="view-site-link" href={`/projetos/${project.slug}`}>
-                      Ver site completo <ArrowRight size={15} />
+                      Ver {project.productType === 'Apps' ? 'app' : project.productType === 'SaaS' ? 'SaaS' : 'site'} completo <ArrowRight size={15} />
                     </a>
                     <a className="choose-link" href={`https://wa.me/5535984259797?text=${encodeURIComponent(`Olá, Zoryon Web! Gostei do estilo do projeto ${project.title} e quero conversar sobre algo nessa direção.`)}`} target="_blank" rel="noreferrer">
                       Quero este estilo <ArrowUpRight size={15} />
@@ -202,19 +249,19 @@ export default function Home() {
         </div>
         <div className="solution-grid">
           <article>
-            <span>01</span><h3>Site institucional</h3>
-            <p>Para apresentar sua empresa com autoridade, organizar seus serviços e transformar visitantes em contatos.</p>
-            <ul><li><Check size={14} /> Design exclusivo</li><li><Check size={14} /> WhatsApp integrado</li><li><Check size={14} /> Otimizado para celular</li></ul>
+            <span>01</span><h3>Sites</h3>
+            <p>Presença digital com identidade, conteúdo objetivo e estrutura preparada para gerar contatos e vendas.</p>
+            <ul><li><Check size={14} /> Design exclusivo</li><li><Check size={14} /> Jornada de conversão</li><li><Check size={14} /> Performance e SEO</li></ul>
           </article>
           <article className="featured-solution">
-            <span>02</span><h3>Loja virtual</h3>
-            <p>Uma vitrine preparada para vender, com categorias claras, produtos valorizados e jornada de compra simples.</p>
-            <ul><li><Check size={14} /> Catálogo completo</li><li><Check size={14} /> Variações e filtros</li><li><Check size={14} /> Estrutura para pagamentos</li></ul>
+            <span>02</span><h3>Aplicativos</h3>
+            <p>Experiências móveis rápidas e intuitivas para conectar pessoas, serviços, pedidos e pagamentos.</p>
+            <ul><li><Check size={14} /> Fluxos sob medida</li><li><Check size={14} /> Interface responsiva</li><li><Check size={14} /> Integrações essenciais</li></ul>
           </article>
           <article>
-            <span>03</span><h3>Cardápio & catálogo</h3>
-            <p>Para quem precisa mostrar opções com clareza e receber pedidos ou orçamentos diretamente pelo WhatsApp.</p>
-            <ul><li><Check size={14} /> Navegação rápida</li><li><Check size={14} /> Categorias inteligentes</li><li><Check size={14} /> Pedido direcionado</li></ul>
+            <span>03</span><h3>Plataformas SaaS</h3>
+            <p>Sistemas online para operar, automatizar e acompanhar negócios com dados claros e processos escaláveis.</p>
+            <ul><li><Check size={14} /> Painéis e permissões</li><li><Check size={14} /> Automação de processos</li><li><Check size={14} /> Métricas em tempo real</li></ul>
           </article>
         </div>
       </section>
@@ -238,7 +285,7 @@ export default function Home() {
       </section>
 
       <section className="contact-section" id="contato">
-        <div className="contact-label"><Sparkles size={15} /> Seu próximo site começa aqui</div>
+        <div className="contact-label"><Sparkles size={15} /> Seu próximo produto digital começa aqui</div>
         <h2>Vamos colocar sua marca<br /><em>em outro nível?</em></h2>
         <div className="contact-actions">
           <a className="contact-primary" href="https://wa.me/5535984259797?text=Olá%2C%20Zoryon%20Web!%20Quero%20criar%20um%20site%20profissional." target="_blank" rel="noreferrer">
@@ -251,7 +298,7 @@ export default function Home() {
 
       <footer>
         <a className="brand footer-brand" href="#inicio"><img className="brand-logo" src="/brand/zoryon.png" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span></a>
-        <p>Sites profissionais com estratégia, personalidade e propósito.</p>
+        <p>Sites, aplicativos e SaaS desenvolvidos para gerar resultado.</p>
         <div><span>Lavras · MG</span><span>© 2026 Zoryon Web</span></div>
       </footer>
 

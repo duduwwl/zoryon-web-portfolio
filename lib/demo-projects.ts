@@ -238,7 +238,7 @@ export const demoProjects: DemoProject[] = [
     mark: 'SA',
     location: 'Lavras & região',
     category: 'Imóveis selecionados',
-    tagline: 'O próximo capítulo começa em um novo lugar.',
+    tagline: 'Imóveis selecionados em Lavras.',
     description: 'Imóveis escolhidos com critério, leitura de mercado e acompanhamento próximo para você decidir com segurança.',
     heroKicker: 'Comprar · vender · investir',
     primaryAction: 'Explorar imóveis',
