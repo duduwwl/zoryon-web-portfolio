@@ -815,7 +815,7 @@ body {
 .browser-mockup.project-preview { display: flex; flex-direction: column; justify-content: center; min-height: 0; padding: 0; align-self: center; overflow: hidden; background: #0b1020; border-radius: 8px; transition: border-color .2s, box-shadow .2s; }
 .project-preview .browser-bar { padding: 0 16px; height: 40px; flex: 0 0 40px; color: #a2aec6; }
 .project-preview .browser-bar i { background: #46516a; }
-.project-preview-image { display: block; width: 100%; height: auto; }
+.project-preview-image { display: block; width: 100%; aspect-ratio: 1279 / 920; height: auto; object-fit: cover; object-position: center; }
 .project-preview-caption { display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; color: #a9dfff; font-size: 11px; border-top: 1px solid var(--line); }
 .project-preview:hover, .project-preview:focus-visible { border-color: var(--cyan); box-shadow: 0 0 32px rgba(20, 80, 255, .22); }
 .project-preview:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }

@@ -3,9 +3,17 @@
 import { useState } from 'react';
 import { ArrowLeft, ArrowUpRight, Monitor, Smartphone, Tablet } from 'lucide-react';
 
-type Page = { label: string; path: string };
+type Page = { label: string; path: string; slug?: string };
 const originals: Record<string, Page[]> = {
   'daniels-barber': [{label:'Início',path:'index.html'},{label:'Agendamento',path:'agendar/index.html'},{label:'Gerência (demo)',path:'gerencia/index.html'}],
+  'wl-streetwear': [
+    {label:'Início',path:'index.html',slug:'inicio'},
+    {label:'Coleção completa',path:'colecao.html',slug:'colecao'},
+    {label:'Página de produto',path:'produtos/basic-black.html',slug:'produtos'},
+    {label:'Checkout',path:'pagamento.html',slug:'checkout'},
+    {label:'Gerência (demo)',path:'gerencia.html',slug:'gerencia'},
+    {label:'Administração (demo)',path:'admin.html',slug:'admin'},
+  ],
   'casa-dos-fios': [{label:'Início',path:'index.html'},{label:'Catálogo completo',path:'produtos.html'},{label:'Carrinho e checkout',path:'checkout.html'}],
   'pizza-lavras': [{label:'Início',path:'index.html'},{label:'Cardápio completo',path:'pizzas.html'},{label:'Gerência (demo)',path:'admin.html?demo=1'}],
   aurele: [{label:'Loja completa',path:'index.html'}],
@@ -16,7 +24,8 @@ export default function OriginalSiteViewer({slug,title,initialPage}:{slug:string
   const pages=originals[slug];
   const inner=initialPage && initialPage!=='inicio';
   const isCheckout=['carrinho','checkout','contato'].includes(initialPage || '');
-  const initial=slug==='casa-dos-fios' && isCheckout ? pages[2].path : initialPage==='contato' ? 'index.html#contato' : inner && pages[1] ? pages[1].path : pages[0].path;
+  const requested=initialPage ? pages.find(item=>item.slug===initialPage) : undefined;
+  const initial=requested?.path ?? (slug==='casa-dos-fios' && isCheckout ? pages[2].path : initialPage==='contato' ? 'index.html#contato' : inner && pages[1] ? pages[1].path : pages[0].path);
   const [page,setPage]=useState(initial);
   const [device,setDevice]=useState<'desktop'|'tablet'|'mobile'>('desktop');
   const src=`/originais/${slug}/${page}`;

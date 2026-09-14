@@ -29,6 +29,12 @@ const profiles: Record<string, Profile> = {
     steps: ['Escolha o serviço', 'Selecione Daniel ou Vinícius', 'Confirme dia e horário'],
     faqs: [['Preciso chegar antes?', 'Cinco minutos são suficientes para preparar o atendimento.'], ['Posso remarcar?', 'Sim. Fale pelo WhatsApp com pelo menos duas horas de antecedência.'], ['Atendem crianças?', 'Sim, mediante escolha do serviço infantil no agendamento.']],
   },
+  'wl-streetwear': {
+    hero: '/originais/wl-streetwear/assets/images/hero-graphic-tee.png', original: 'https://github.com/duduwwl/wl-streetwear', layout: 'bold',
+    promise: 'Coleção, produto, sacola, checkout, conta e gestão em uma experiência completa de e-commerce.', address: 'Lavras · MG · entrega nacional', hours: 'Loja online · atendimento digital',
+    steps: ['Explore o drop', 'Escolha peça e tamanho', 'Finalize no checkout'],
+    faqs: [['O projeto possui catálogo completo?', 'Sim, com categorias, páginas individuais e filtros.'], ['O checkout funciona?', 'O fluxo demonstrativo inclui sacola, entrega e pagamento.'], ['Existe área de gestão?', 'Sim, com acesso às rotinas de catálogo e pedidos da demonstração.']],
+  },
   'casa-dos-fios': {
     hero: '/demos/casa-dos-fios.webp', layout: 'clean',
     promise: 'Catálogo da Mundix com fios reais, variações de cor e carrinho organizado.', address: 'Loja online · envio para todo o Brasil', hours: 'Atendimento seg–sex · 09:00–18:00',
@@ -142,7 +148,7 @@ export default async function DemoProjectPage({ params }: DemoPageProps) {
   const project = getDemoProject(slug);
   if (!project || !profiles[slug]) return <main className="demo-not-found"><h1>Projeto não encontrado.</h1><a href="/#projetos">Voltar ao portfólio</a></main>;
   const profile = profiles[slug];
-  if (['daniels-barber', 'casa-dos-fios', 'pizza-lavras', 'aurele', 'hamburgueria-do-gordao'].includes(slug)) {
+  if (['daniels-barber', 'wl-streetwear', 'casa-dos-fios', 'pizza-lavras', 'aurele', 'hamburgueria-do-gordao'].includes(slug)) {
     return <OriginalSiteViewer slug={slug} title={slug === 'hamburgueria-do-gordao' ? 'Hamburgueria Na Brasa' : project.title} initialPage={page?.[0]} />;
   }
   const requested = page?.[0] ?? 'inicio';

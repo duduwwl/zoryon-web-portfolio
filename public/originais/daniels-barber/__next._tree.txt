@@ -1,4 +1,4 @@
-:HL["/originais/daniels-barber/_next/static/chunks/0ln_h6z5gblw6.css","style"]
-:HL["/originais/daniels-barber/hero-barber.webp","image"]
-:HL["/originais/daniels-barber/logo-crisp.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"XUxlKygxYCZO-P0dIXJ74"}
+:HL["/originais/daniels-barber/_next/static/chunks/0yzmc3bb0aqsr.css","style"]
+:HL["/hero-barber.png","image"]
+:HL["/logo-transparent-v2.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"WyLVty_wWX-RzehCKtcl0"}

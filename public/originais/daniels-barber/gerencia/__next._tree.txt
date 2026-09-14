@@ -1,2 +1,2 @@
-:HL["/originais/daniels-barber/_next/static/chunks/0ln_h6z5gblw6.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"gerencia","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"XUxlKygxYCZO-P0dIXJ74"}
+:HL["/originais/daniels-barber/_next/static/chunks/0yzmc3bb0aqsr.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"gerencia","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"WyLVty_wWX-RzehCKtcl0"}
