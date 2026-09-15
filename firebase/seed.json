@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "siteSettings": [
     {
       "id": "general",
@@ -31,6 +31,6 @@
     { "slug": "aurele", "number": "05", "title": "Auréle", "category": "E-commerce", "projectType": "concept", "status": "published", "order": 5, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "colecao", "label": "Coleção" }, { "slug": "editorial", "label": "Editorial" }, { "slug": "contato", "label": "Contato" }] },
     { "slug": "hamburgueria-do-gordao", "number": "06", "title": "Hamburgueria Na Brasa", "category": "Gastronomia", "projectType": "concept", "status": "published", "order": 6, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "cardapio", "label": "Cardápio" }, { "slug": "combos", "label": "Combos" }, { "slug": "contato", "label": "Contato" }] },
     { "slug": "serra-alta-imoveis", "number": "07", "title": "Serra Alta Imóveis", "category": "Serviços", "projectType": "concept", "status": "published", "order": 7, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "imoveis", "label": "Imóveis" }, { "slug": "sobre", "label": "Sobre" }, { "slug": "contato", "label": "Contato" }] },
-    { "slug": "orale-odontologia", "number": "08", "title": "Oracle Odontologia", "category": "Serviços", "projectType": "concept", "status": "published", "order": 8, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "tratamentos", "label": "Tratamentos" }, { "slug": "equipe", "label": "Equipe" }, { "slug": "contato", "label": "Contato" }] }
+    { "slug": "orale-odontologia", "number": "08", "title": "Oralé Odontologia", "category": "Serviços", "projectType": "concept", "status": "published", "order": 8, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "tratamentos", "label": "Tratamentos" }, { "slug": "equipe", "label": "Equipe" }, { "slug": "contato", "label": "Contato" }] }
   ]
 }

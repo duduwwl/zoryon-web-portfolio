@@ -25,7 +25,10 @@ function document(path, data) {
   return {
     update: {
       name: `projects/${projectId}/databases/(default)/documents/${path}`,
-      fields: fields({ ...data, updatedAt: timestamp }),
+      fields: {
+        ...fields(data),
+        updatedAt: { timestampValue: timestamp },
+      },
     },
   };
 }
