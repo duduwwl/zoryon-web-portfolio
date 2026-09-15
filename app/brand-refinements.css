@@ -151,6 +151,7 @@ main>footer>p{font-family:var(--font-brand);font-size:1rem;font-weight:500;line-
   opacity:.2;
   filter:saturate(1.18) contrast(1.08) drop-shadow(0 0 30px rgba(62,74,255,.3));
   mix-blend-mode:screen;
+  animation:z-emblem-enter 1.35s cubic-bezier(.16,1,.3,1) both;
 }
 .hero-z-emblem img{
   position:absolute;
@@ -159,9 +160,39 @@ main>footer>p{font-family:var(--font-brand);font-size:1rem;font-weight:500;line-
   height:auto;
   left:-39%;
   top:-42%;
+  animation:z-emblem-drift 8s ease-in-out 1.35s infinite alternate;
 }
 .hero h1,.hero .hero-kicker,.hero .hero-footer{z-index:2}
 @media(max-width:760px){
   .hero .hero-z-emblem{top:150px;right:-18vw;width:96vw;height:74vw;opacity:.15}
   .hero-z-emblem img{width:178%;left:-40%;top:-42%}
+}
+
+@keyframes z-emblem-enter{
+  0%{opacity:0;transform:translate3d(9vw,-5vh,0) scale(.82) rotate(4deg);filter:saturate(1.5) contrast(1.15) blur(10px) drop-shadow(0 0 55px rgba(62,74,255,.6))}
+  62%{opacity:.27}
+  100%{opacity:.2;transform:translate3d(0,0,0) scale(1) rotate(0);filter:saturate(1.18) contrast(1.08) blur(0) drop-shadow(0 0 30px rgba(62,74,255,.3))}
+}
+@keyframes z-emblem-drift{
+  from{transform:translate3d(0,0,0) scale(1)}
+  to{transform:translate3d(-2.2%,2.5%,0) scale(1.035)}
+}
+@media(prefers-reduced-motion:reduce){.hero .hero-z-emblem,.hero-z-emblem img{animation:none}}
+
+.header-actions{justify-self:end;display:flex;align-items:center;gap:10px}
+.header-actions .header-cta{justify-self:auto}
+.header-instagram{display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(103,145,255,.48);border-radius:50%;color:#e9f2ff;background:rgba(46,83,183,.17);transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}
+.header-instagram:hover,.header-instagram:focus-visible{transform:translateY(-2px);border-color:#54ccff;background:rgba(46,83,183,.34);box-shadow:0 9px 22px rgba(48,92,255,.3);outline:none}
+.header-cta svg{transition:transform .2s ease}
+.header-cta:hover svg,.header-cta:focus-visible svg{transform:translateX(3px)}
+
+.projects-section .section-heading h2{max-width:1040px;font-size:clamp(3.2rem,6.6vw,6.8rem);font-weight:800;line-height:.93;letter-spacing:-.065em}
+.projects-section .section-heading h2 em{font-style:normal;color:transparent;background:linear-gradient(100deg,#1675ff,#7347ff 54%,#d32dff);background-clip:text;-webkit-background-clip:text}
+
+@media(max-width:760px){
+  .site-header{grid-template-columns:1fr auto auto;column-gap:8px}
+  .header-actions{display:flex}
+  .header-actions .header-cta{display:none}
+  .header-instagram{width:40px;height:40px}
+  .projects-section .section-heading h2{font-size:clamp(2.75rem,13vw,4.8rem);line-height:.95}
 }

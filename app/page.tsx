@@ -7,6 +7,7 @@ import {
   ArrowUpRight,
   AtSign,
   Check,
+  Camera,
   Menu,
   MessageCircle,
   Phone,
@@ -128,9 +129,12 @@ export default function Home() {
           <a href="#projetos" onClick={closeMenu}>Projetos</a>
           <a href="#contato" onClick={closeMenu}>Contato</a>
         </nav>
-        <a className="header-cta" href="https://wa.me/5535984259797?text=Olá%2C%20Zoryon%20Web!%20Quero%20conversar%20sobre%20um%20site%20profissional." target="_blank" rel="noreferrer">
-          Iniciar projeto <ArrowUpRight size={16} />
-        </a>
+        <div className="header-actions">
+          <a className="header-instagram" href="https://instagram.com/zoryonweb" target="_blank" rel="noreferrer" aria-label="Acompanhar a Zoryon Web no Instagram"><Camera size={18} /></a>
+          <a className="header-cta" href="https://wa.me/5535984259797?text=Olá%2C%20Zoryon%20Web!%20Quero%20conversar%20sobre%20um%20site%20profissional." target="_blank" rel="noreferrer">
+            Iniciar projeto <ArrowRight size={16} />
+          </a>
+        </div>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}>
           {menuOpen ? <X /> : <Menu />}
         </button>
@@ -140,7 +144,7 @@ export default function Home() {
         <span className="hero-z-emblem" aria-hidden="true"><img src="/brand/zoryon.png" alt="" /></span>
         <h1>Sites profissionais.<br /><em>Feitos para vender.</em></h1>
         <div className="hero-footer">
-          <p>Sites claros, rápidos e planejados para transformar visitas em oportunidades comerciais.</p>
+          <p>Transforme visitas em contatos, pedidos e vendas com um site rápido, estratégico e feito sob medida para o seu negócio.</p>
           <nav className="hero-project-choices" aria-label="Escolher um projeto">
             <span>Explore os projetos</span>
             <div>{projects.map(project => <a key={project.slug} href={`/projetos/${project.slug}`}>{project.title}<ArrowRight size={17} strokeWidth={3} /></a>)}</div>
@@ -152,19 +156,18 @@ export default function Home() {
       <section className="signal-strip" aria-label="Diferenciais da Zoryon Web">
         <div><strong>Diagnóstico comercial</strong><span>objetivos e público definidos</span></div>
         <i />
-        <div><strong>UX orientada à conversão</strong><span>jornadas e CTAs claros</span></div>
+        <div><strong>Jornada que converte</strong><span>cada clique conduz ao próximo passo</span></div>
         <i />
-        <div><strong>Performance & SEO técnico</strong><span>estrutura preparada para crescer</span></div>
+        <div><strong>Rápido e fácil de encontrar</strong><span>velocidade, busca e estrutura sólida</span></div>
         <i />
-        <div><strong>Entrega acompanhada</strong><span>suporte direto em Lavras</span></div>
+        <div><strong>Entrega acompanhada</strong><span>suporte dedicado</span></div>
       </section>
 
       <section className="projects-section" id="projetos">
         <div className="section-heading light-heading">
           <span>01 / Portfólio selecionado</span>
           <div>
-            <h2>Escolha a direção certa para o seu site.</h2>
-            <p>Projetos reais e conceitos completos para visualizar possibilidades de estrutura, linguagem e conversão.</p>
+            <h2>Escolha <em>a direção certa</em><br />para o seu site.</h2>
           </div>
         </div>
 
@@ -241,10 +244,6 @@ export default function Home() {
           <li><span>03</span><div><h3>Criação</h3><p>Design e desenvolvimento caminham juntos, com atenção a cada detalhe.</p></div></li>
           <li><span>04</span><div><h3>Publicação</h3><p>Revisamos, ajustamos e colocamos sua nova presença digital no ar.</p></div></li>
         </ol>
-      </section>
-
-      <section className="local-section" aria-label="Identidade visual da Zoryon Web">
-        <img className="studio-card" src="/og.png" alt="Zoryon Web — Sites que impulsionam negócios." />
       </section>
 
       <section className="contact-section" id="contato">
