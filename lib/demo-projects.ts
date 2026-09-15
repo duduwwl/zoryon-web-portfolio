@@ -355,47 +355,6 @@ export const demoProjects: DemoProject[] = [
     ],
     contactPrompt: 'Agende sua avaliação e receba um plano de cuidado feito para você.',
   },
-  {
-    slug: 'raiz-cafe',
-    title: 'Raiz Café',
-    mark: 'RC',
-    location: 'Lavras · MG',
-    category: 'Cafés especiais & cozinha',
-    tagline: 'Café com origem. Pausa com significado.',
-    description: 'Grãos de pequenos produtores, torra cuidadosa e uma mesa feita para encontros — da primeira extração ao último gole.',
-    heroKicker: 'Aberto hoje · 08h às 19h',
-    primaryAction: 'Conhecer o menu',
-    visualWord: 'ORIGEM',
-    theme: {
-      canvas: '#21150f',
-      surface: '#34231a',
-      text: '#f4e7d2',
-      muted: '#b7a28f',
-      accent: '#d59a54',
-      accent2: '#70452a',
-    },
-    navigation: [
-      { slug: 'inicio', label: 'Início' },
-      { slug: 'menu', label: 'Menu' },
-      { slug: 'historia', label: 'História' },
-      { slug: 'contato', label: 'Contato' },
-    ],
-    offers: [
-      { title: 'V60 da Safra', description: 'Extração filtrada com notas da semana.', price: 'R$ 16', image:'/photos/food/v60.jpg' },
-      { title: 'Latte Raiz', description: 'Espresso duplo, leite vaporizado e rapadura.', price: 'R$ 18', image:'/photos/food/latte.jpg' },
-      { title: 'Pão de Queijo Canastra', description: 'Receita da casa com queijo curado mineiro.', price: 'R$ 12', image:'/photos/food/pao-de-queijo.jpg' },
-      { title: 'Brunch do Campo', description: 'Ovos, pão artesanal, frutas e café filtrado.', price: 'R$ 38', image:'/photos/food/brunch.jpg' },
-    ],
-    storyTitle: 'Do produtor à xícara, sem esconder o caminho.',
-    story: 'O Raiz aproxima quem cultiva de quem aprecia. Trabalhamos com cafés rastreáveis da região, torra em pequenos lotes e preparos que respeitam as características de cada safra.',
-    highlights: ['Cafés rastreáveis', 'Torra em pequenos lotes', 'Produtores da região', 'Cozinha feita na casa'],
-    stats: [
-      { value: '6', label: 'fazendas parceiras' },
-      { value: '86+', label: 'pontos de qualidade' },
-      { value: '100%', label: 'origem rastreada' },
-    ],
-    contactPrompt: 'Passe para um café, fique pelo tempo que precisar.',
-  },
 ];
 
 export function getDemoProject(slug: string) {

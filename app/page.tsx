@@ -80,12 +80,6 @@ const projects: Project[] = [
     categories: ['Serviços'], tags: ['Odontologia', 'Institucional', 'Agenda'], theme: 'dental', status: 'Projeto fictício',
     url: 'oracleodontologia.com.br', miniTitle: 'SAÚDE BUCAL\nCOMPLETA.', miniSubtitle: 'ATENDIMENTO · PLANEJAMENTO · CUIDADO', button: 'Agendar avaliação',
   },
-  {
-    number: '09', slug: 'raiz-cafe', title: 'Raiz Café', eyebrow: 'Hospitalidade & produto',
-    description: 'Conceito para cafeteria autoral, com narrativa de origem, menu enxuto e uma atmosfera digital tão marcante quanto o espaço.',
-    categories: ['Gastronomia'], tags: ['Cafeteria', 'Menu', 'Storytelling'], theme: 'coffee', status: 'Projeto fictício',
-    url: 'raizcafe.com.br', miniTitle: 'CAFÉ COM\nORIGEM.', miniSubtitle: 'DO GRÃO À XÍCARA · LAVRAS', button: 'Conhecer o menu',
-  },
 ];
 
 const filters = ['Todos', 'Serviços', 'E-commerce', 'Gastronomia'];

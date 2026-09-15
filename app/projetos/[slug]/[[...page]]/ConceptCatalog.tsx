@@ -22,7 +22,6 @@ export default function ConceptCatalog({project,hero}:{project:DemoProject;hero:
    <div><small>{project.category}</small><h2>{offer.title}</h2><p>{offer.description}</p><strong>{offer.price}</strong>{offer.gallery&&<button className="concept-gallery-link" onClick={()=>openGallery(offer)}>Explorar fotos <ArrowRight size={16}/></button>}<a className="concept-card-link" href={`/projetos/${project.slug}/contato`}>Saber mais sobre esta opção ↗</a></div>
   </article>)}</div>
   {!matches.length&&<p>Nenhuma opção corresponde à busca. Experimente outro termo.</p>}
-  {project.slug==='raiz-cafe'&&<p className="photo-disclaimer">Fotografias ilustrativas das opções do menu. <a href="/photo-credits.html" target="_blank" rel="noreferrer">Créditos e licenças das imagens</a></p>}
   <Dialog open={!!selected} onOpenChange={open=>{if(!open)setSelected(null);}}>
    <DialogContent className="property-gallery" showCloseButton={false} onKeyDown={event=>{if(event.key==='ArrowRight')move(1);if(event.key==='ArrowLeft')move(-1);}}>
     <div className="gallery-heading"><div><DialogTitle>{selected?.title}</DialogTitle><DialogDescription>Anúncio demonstrativo · fotos ilustrativas de diferentes locais.</DialogDescription></div><DialogClose className="gallery-close" aria-label="Fechar galeria"><X/></DialogClose></div>
