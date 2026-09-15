@@ -1,14 +1,15 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
-import { ArrowLeft, ArrowRight, ArrowUpRight, AtSign, CalendarDays, Check, Clock3, ExternalLink, MapPin, MessageCircle, ShieldCheck, ShoppingBag, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, AtSign, CalendarDays, Check, Clock3, MapPin, ShieldCheck, ShoppingBag, Sparkles, Star } from 'lucide-react';
 import { demoProjects, getDemoProject, type DemoProject } from '@/lib/demo-projects';
 import DemoContactForm from './DemoContactForm';
 import OriginalSiteViewer from './OriginalSiteViewer';
 import ConceptCatalog from './ConceptCatalog';
 import ConceptHeader from './ConceptHeader';
 import CoffeeHero from './CoffeeHero';
+import EmbeddedProjectLinks from './EmbeddedProjectLinks';
 
-type DemoPageProps = { params: Promise<{ slug: string; page?: string[] }> };
+type DemoPageProps = { params: Promise<{ slug: string; page?: string[] }>; searchParams?: Promise<{ embed?: string }> };
 type Profile = {
   hero: string;
   original?: string;
@@ -145,7 +146,7 @@ function CartPage({ project, profile }: { project: DemoProject; profile: Profile
   return <><section className="showcase-cart"><div><span>Seu carrinho</span><h1>Revise antes de finalizar.</h1><article>{item.image && <img src={item.image} alt={item.title} />}<div><small>Cor: natural · Quantidade: 2</small><h2>{item.title}</h2><p>{item.description}</p><strong>2 × {item.price.replace('A partir de ', '')}</strong></div><button>×</button></article></div><aside><span>Resumo do pedido</span><p>Subtotal <b>R$ 37,80</b></p><p>Frete <b>Calculado no checkout</b></p><hr /><p>Total <strong>R$ 37,80</strong></p><a href={`${whatsapp}?text=${encodeURIComponent('Olá, Zoryon Web! Gostei da loja Mundix e quero um e-commerce nessa direção.')}`} target="_blank" rel="noreferrer">Continuar para o checkout <ArrowRight /></a><small><ShieldCheck /> Ambiente demonstrativo seguro</small></aside></section><section className="showcase-how"><div><span>Compra completa</span><h2>Do produto à confirmação.</h2></div><ol>{profile.steps.map((step, index) => <li key={step}><b>0{index + 1}</b><span>{step}</span></li>)}</ol></section></>;
 }
 
-export default async function DemoProjectPage({ params }: DemoPageProps) {
+export default async function DemoProjectPage({ params, searchParams }: DemoPageProps) {
   const { slug, page } = await params;
   const project = getDemoProject(slug);
   if (!project || !profiles[slug]) return <main className="demo-not-found"><h1>Projeto não encontrado.</h1><a href="/#projetos">Voltar ao portfólio</a></main>;
@@ -156,5 +157,9 @@ export default async function DemoProjectPage({ params }: DemoPageProps) {
   const requested = page?.[0] ?? 'inicio';
   const active = project.navigation.some((item) => item.slug === requested) ? requested : 'inicio';
   const vars = { '--demo-canvas': project.theme.canvas, '--demo-surface': project.theme.surface, '--demo-text': project.theme.text, '--demo-muted': project.theme.muted, '--demo-accent': project.theme.accent, '--demo-accent-2': project.theme.accent2 } as CSSProperties;
-  return <main className={`showcase-shell showcase-theme-${profile.layout}`} data-demo={project.slug} style={vars}><aside className="showcase-toolbar"><a href="/#projetos"><ArrowLeft /> Voltar à Zoryon Web</a><span>Você está navegando em um projeto completo</span>{profile.original ? <a href={profile.original} target="_blank" rel="noreferrer">Abrir versão original <ExternalLink /></a> : <a href={`${whatsapp}?text=${encodeURIComponent(`Olá, Zoryon Web! Quero saber mais sobre o projeto ${project.title}.`)}`} target="_blank" rel="noreferrer">Falar sobre este projeto <MessageCircle /></a>}</aside><ProjectHeader project={project} active={active} />{active === 'inicio' && <HomePage project={project} profile={profile} />}{active === project.navigation[1].slug && <OffersPage project={project} profile={profile} />}{active === project.navigation[2].slug && <DetailPage project={project} profile={profile} />}{active === project.navigation[3].slug && <ContactPage project={project} profile={profile} />}<ProjectFooter project={project} profile={profile} /></main>;
+  const content = <main className={`showcase-shell showcase-theme-${profile.layout}`} data-demo={project.slug} style={vars}><EmbeddedProjectLinks /><ProjectHeader project={project} active={active} />{active === 'inicio' && <HomePage project={project} profile={profile} />}{active === project.navigation[1].slug && <OffersPage project={project} profile={profile} />}{active === project.navigation[2].slug && <DetailPage project={project} profile={profile} />}{active === project.navigation[3].slug && <ContactPage project={project} profile={profile} />}<ProjectFooter project={project} profile={profile} /></main>;
+  const embedded = (await searchParams)?.embed === '1';
+  if (embedded) return content;
+  const pageOptions = project.navigation.map((item) => ({ label: item.label, path: item.slug, slug: item.slug }));
+  return <OriginalSiteViewer slug={slug} title={project.title} initialPage={active} pageOptions={pageOptions} native />;
 }

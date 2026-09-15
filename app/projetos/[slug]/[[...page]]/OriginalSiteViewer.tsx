@@ -16,24 +16,31 @@ const originals: Record<string, Page[]> = {
   ],
   'casa-dos-fios': [{label:'Início',path:'index.html'},{label:'Catálogo completo',path:'produtos.html'},{label:'Carrinho e checkout',path:'checkout.html'}],
   'pizza-lavras': [{label:'Início',path:'index.html'},{label:'Cardápio completo',path:'pizzas.html'},{label:'Gerência (demo)',path:'admin.html?demo=1'}],
-  aurele: [{label:'Loja completa',path:'index.html'}],
+  aurele: [
+    {label:'Início',path:'index.html'},
+    {label:'Coleção completa',path:'index.html#colecao'},
+    {label:'Sacola',path:'index.html#sacola'},
+    {label:'Checkout',path:'index.html#checkout'},
+    {label:'Minha conta',path:'index.html#conta'},
+    {label:'Gerência (demo)',path:'index.html#admin'},
+  ],
   'hamburgueria-do-gordao': [{label:'Início',path:'index.html'},{label:'Cardápio completo',path:'cardapio.html'}],
 };
 
-export default function OriginalSiteViewer({slug,title,initialPage}:{slug:string;title:string;initialPage?:string}) {
-  const pages=originals[slug];
+export default function OriginalSiteViewer({slug,title,initialPage,pageOptions,native=false}:{slug:string;title:string;initialPage?:string;pageOptions?:Page[];native?:boolean}) {
+  const pages=pageOptions ?? originals[slug];
   const inner=initialPage && initialPage!=='inicio';
   const isCheckout=['carrinho','checkout','contato'].includes(initialPage || '');
   const requested=initialPage ? pages.find(item=>item.slug===initialPage) : undefined;
-  const initial=requested?.path ?? (slug==='casa-dos-fios' && isCheckout ? pages[2].path : initialPage==='contato' ? 'index.html#contato' : inner && pages[1] ? pages[1].path : pages[0].path);
+  const initial=requested?.path ?? (native ? pages[0].path : slug==='casa-dos-fios' && isCheckout ? pages[2].path : initialPage==='contato' ? 'index.html#contato' : inner && pages[1] ? pages[1].path : pages[0].path);
   const [page,setPage]=useState(initial);
   const [device,setDevice]=useState<'desktop'|'tablet'|'mobile'>('desktop');
-  const src=`/originais/${slug}/${page}`;
+  const src=native ? (page==='inicio' ? `/projetos/${slug}?embed=1` : `/projetos/${slug}/${page}?embed=1`) : `/originais/${slug}/${page}`;
   const [currentUrl,setCurrentUrl]=useState(src);
   return <main className="original-viewer">
     <header className="original-viewer-toolbar">
       <a className="original-viewer-back" href="/#projetos"><ArrowLeft size={16}/><span>Portfólio</span></a>
-      <div className="original-viewer-title"><strong>{title}</strong><small>Versão original · demonstração</small></div>
+      <div className="original-viewer-title"><strong>{title}</strong><small>{native ? 'Projeto completo · demonstração' : 'Versão original · demonstração'}</small></div>
       <label className="original-viewer-pages"><span className="sr-only">Página do projeto</span><select value={page} onChange={event=>setPage(event.target.value)}>{pages.map(item=><option value={item.path} key={item.path}>{item.label}</option>)}</select></label>
       <div className="original-viewer-devices" role="group" aria-label="Visualizar em outro dispositivo">
         <button className={device==='desktop'?'active':''} onClick={()=>setDevice('desktop')} aria-label="Ver em tela de computador" title="Computador"><Monitor size={18}/></button>

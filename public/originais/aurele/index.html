@@ -15,5 +15,42 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (() => {
+        const destination = window.location.hash.slice(1);
+        if (!destination) return;
+        let attempts = 0;
+        const openView = () => {
+          attempts += 1;
+          if (destination === 'colecao') {
+            const section = document.getElementById('colecao');
+            if (section) { section.scrollIntoView({ block: 'start' }); return; }
+          }
+          if (destination === 'sacola') {
+            const button = document.querySelector('.bag-button');
+            if (button) { button.click(); return; }
+          }
+          if (destination === 'conta') {
+            const button = document.querySelector('.login-link');
+            if (button) { button.click(); return; }
+          }
+          if (destination === 'admin') {
+            const button = document.querySelector('.admin-footer');
+            if (button) { button.click(); return; }
+          }
+          if (destination === 'checkout') {
+            const add = document.querySelector('.quick-add');
+            if (add) {
+              add.click();
+              window.setTimeout(() => document.querySelector('.bag-button')?.click(), 80);
+              window.setTimeout(() => document.querySelector('.cart-drawer .checkout-btn')?.click(), 180);
+              return;
+            }
+          }
+          if (attempts < 50) window.setTimeout(openView, 100);
+        };
+        window.setTimeout(openView, 50);
+      })();
+    </script>
   </body>
 </html>
