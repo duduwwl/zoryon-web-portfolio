@@ -134,7 +134,7 @@ main>footer>p{font-family:var(--font-brand);font-size:1rem;font-weight:500;line-
   box-shadow:0 12px 28px rgba(19,68,180,.25);
 }
 .hero-project-choices a:hover svg,.hero-project-choices a:focus-visible svg{
-  transform:translate(2px,-2px);
+  transform:translateX(2px);
   border-color:#a9e8ff;
   box-shadow:0 6px 18px rgba(49,123,255,.42);
 }
