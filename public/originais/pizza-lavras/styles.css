@@ -81,7 +81,8 @@ h1,h2,h3{font-family:"Fraunces",Georgia,"Times New Roman",serif;letter-spacing:-
 @media(max-width:720px){.nav-login{display:none}.account-summary{align-items:flex-start;flex-direction:column}.small-button{width:100%}.auth-dialog{padding:27px 21px}.auth-dialog h2{font-size:2rem}}
 
 /* Professional storefront direction: photography-led hero and compact order summary. */
-.brand-icon{display:grid;place-items:center;border:1px solid rgba(255,198,64,.75);background:transparent;color:var(--yellow);box-shadow:none;font-family:"DM Sans",sans-serif;font-size:.72rem;font-weight:900;letter-spacing:-.04em}
+.brand-icon{display:grid;place-items:center;border:1px solid rgba(255,198,64,.75);background:#7d111b;color:var(--yellow);box-shadow:none;font-family:"DM Sans",sans-serif;font-size:.72rem;font-weight:900;letter-spacing:-.04em}
+.brand-icon img{width:64px;height:64px;max-width:none;object-fit:contain;transform:none}
 .hero{min-height:650px;isolation:isolate;background:#321012}
 .hero-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;filter:saturate(.82) contrast(1.04)}
 .hero::before{z-index:0;inset:0;width:auto;height:auto;border:0;border-radius:0;background:linear-gradient(90deg,rgba(31,8,10,.96) 0%,rgba(45,10,13,.82) 42%,rgba(45,10,13,.28) 72%,rgba(25,7,8,.46) 100%)}
