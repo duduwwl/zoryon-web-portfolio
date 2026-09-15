@@ -35,7 +35,7 @@ export default function OriginalSiteViewer({slug,title,initialPage,pageOptions,n
   const initial=requested?.path ?? (native ? pages[0].path : slug==='casa-dos-fios' && isCheckout ? pages[2].path : initialPage==='contato' ? 'index.html#contato' : inner && pages[1] ? pages[1].path : pages[0].path);
   const [page,setPage]=useState(initial);
   const [device,setDevice]=useState<'desktop'|'tablet'|'mobile'>('desktop');
-  const src=native ? (page==='inicio' ? `/projetos/${slug}?embed=1` : `/projetos/${slug}/${page}?embed=1`) : `/originais/${slug}/${page}`;
+  const src=native ? `/projetos/${slug}/_embed/${page}` : `/originais/${slug}/${page}`;
   const [currentUrl,setCurrentUrl]=useState(src);
   return <main className="original-viewer">
     <header className="original-viewer-toolbar">

@@ -8,7 +8,7 @@ import ConceptCatalog from './ConceptCatalog';
 import ConceptHeader from './ConceptHeader';
 import EmbeddedProjectLinks from './EmbeddedProjectLinks';
 
-type DemoPageProps = { params: Promise<{ slug: string; page?: string[] }>; searchParams?: Promise<{ embed?: string }> };
+type DemoPageProps = { params: Promise<{ slug: string; page?: string[] }> };
 type Profile = {
   hero: string;
   original?: string;
@@ -81,14 +81,20 @@ export async function generateMetadata({ params }: DemoPageProps): Promise<Metad
   const { slug, page } = await params;
   const project = getDemoProject(slug);
   if (!project) return { title: 'Projeto não encontrado' };
-  const current = project.navigation.find((item) => item.slug === (page?.[0] ?? 'inicio'));
+  const requestedPage = page?.[0] === '_embed' ? page?.[1] : page?.[0];
+  const current = project.navigation.find((item) => item.slug === (requestedPage ?? 'inicio'));
   const title = `${current?.label ?? 'Início'} — ${project.title}`;
   const description = `${project.description} Projeto apresentado pela Zoryon Web.`;
   return { title, description, openGraph: { title, description, images: [] }, twitter: { title, description, images: [] } };
 }
 
 export function generateStaticParams() {
-  return demoProjects.flatMap((project) => [{ slug: project.slug, page: undefined }, ...project.navigation.slice(1).map((item) => ({ slug: project.slug, page: [item.slug] }))]);
+  return demoProjects.flatMap((project) => {
+    const publicPages = [{ slug: project.slug, page: undefined }, ...project.navigation.slice(1).map((item) => ({ slug: project.slug, page: [item.slug] }))];
+    if (!['serra-alta-imoveis', 'orale-odontologia'].includes(project.slug)) return publicPages;
+    const embeddedPages = project.navigation.map((item) => ({ slug: project.slug, page: ['_embed', item.slug] }));
+    return [...publicPages, ...embeddedPages];
+  });
 }
 
 function ProjectHeader({ project, active }: { project: DemoProject; active: string }) {
@@ -138,7 +144,7 @@ function CartPage({ project, profile }: { project: DemoProject; profile: Profile
   return <><section className="showcase-cart"><div><span>Seu carrinho</span><h1>Revise antes de finalizar.</h1><article>{item.image && <img src={item.image} alt={item.title} />}<div><small>Cor: natural · Quantidade: 2</small><h2>{item.title}</h2><p>{item.description}</p><strong>2 × {item.price.replace('A partir de ', '')}</strong></div><button>×</button></article></div><aside><span>Resumo do pedido</span><p>Subtotal <b>R$ 37,80</b></p><p>Frete <b>Calculado no checkout</b></p><hr /><p>Total <strong>R$ 37,80</strong></p><a href={`${whatsapp}?text=${encodeURIComponent('Olá, Zoryon Web! Gostei da loja Mundix e quero um e-commerce nessa direção.')}`} target="_blank" rel="noreferrer">Continuar para o checkout <ArrowRight /></a><small><ShieldCheck /> Ambiente demonstrativo seguro</small></aside></section><section className="showcase-how"><div><span>Compra completa</span><h2>Do produto à confirmação.</h2></div><ol>{profile.steps.map((step, index) => <li key={step}><b>0{index + 1}</b><span>{step}</span></li>)}</ol></section></>;
 }
 
-export default async function DemoProjectPage({ params, searchParams }: DemoPageProps) {
+export default async function DemoProjectPage({ params }: DemoPageProps) {
   const { slug, page } = await params;
   const project = getDemoProject(slug);
   if (!project || !profiles[slug]) return <main className="demo-not-found"><h1>Projeto não encontrado.</h1><a href="/#projetos">Voltar ao portfólio</a></main>;
@@ -146,11 +152,11 @@ export default async function DemoProjectPage({ params, searchParams }: DemoPage
   if (['daniels-barber', 'wl-streetwear', 'casa-dos-fios', 'pizza-lavras', 'aurele', 'hamburgueria-do-gordao'].includes(slug)) {
     return <OriginalSiteViewer slug={slug} title={slug === 'hamburgueria-do-gordao' ? 'Hamburgueria Na Brasa' : project.title} initialPage={page?.[0]} />;
   }
-  const requested = page?.[0] ?? 'inicio';
+  const embedded = page?.[0] === '_embed';
+  const requested = (embedded ? page?.[1] : page?.[0]) ?? 'inicio';
   const active = project.navigation.some((item) => item.slug === requested) ? requested : 'inicio';
   const vars = { '--demo-canvas': project.theme.canvas, '--demo-surface': project.theme.surface, '--demo-text': project.theme.text, '--demo-muted': project.theme.muted, '--demo-accent': project.theme.accent, '--demo-accent-2': project.theme.accent2 } as CSSProperties;
   const content = <main className={`showcase-shell showcase-theme-${profile.layout}`} data-demo={project.slug} style={vars}><EmbeddedProjectLinks /><ProjectHeader project={project} active={active} />{active === 'inicio' && <HomePage project={project} profile={profile} />}{active === project.navigation[1].slug && <OffersPage project={project} profile={profile} />}{active === project.navigation[2].slug && <DetailPage project={project} profile={profile} />}{active === project.navigation[3].slug && <ContactPage project={project} profile={profile} />}<ProjectFooter project={project} profile={profile} /></main>;
-  const embedded = (await searchParams)?.embed === '1';
   if (embedded) return content;
   const pageOptions = project.navigation.map((item) => ({ label: item.label, path: item.slug, slug: item.slug }));
   return <OriginalSiteViewer slug={slug} title={project.title} initialPage={active} pageOptions={pageOptions} native />;

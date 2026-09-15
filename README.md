@@ -12,7 +12,6 @@ Portfólio profissional da Zoryon Web com projetos completos de sites, lojas vir
 - Hamburgueria Na Brasa
 - Serra Alta Imóveis
 - Oralé Odontologia
-- Raiz Café
 
 Cada projeto pode ser explorado dentro do portfólio em visualização para computador, tablet e celular. As demonstrações incluem suas páginas e interações próprias.
 
@@ -29,6 +28,16 @@ Para gerar a versão de produção:
 pnpm build
 ```
 
+Para gerar e validar o pacote estático usado pelo GitHub Pages:
+
+```bash
+pnpm build:pages
+pnpm verify:pages
+```
+
 ## Publicação
 
-[Acessar o portfólio publicado](https://zoryon-web.duduwwl.chatgpt.site)
+- [GitHub Pages](https://duduwwl.github.io/zoryon-web-portfolio/)
+- [Publicação principal](https://zoryon-web.duduwwl.chatgpt.site)
+
+O workflow em `.github/workflows/pages.yml` recompila, verifica todas as rotas e publica automaticamente cada alteração enviada para `main`.
