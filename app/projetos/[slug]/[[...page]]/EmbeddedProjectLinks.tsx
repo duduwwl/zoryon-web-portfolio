@@ -10,9 +10,13 @@ export default function EmbeddedProjectLinks() {
       const link = target?.closest('a');
       if (!link || link.target === '_blank') return;
       const url = new URL(link.href, window.location.href);
-      if (url.origin !== window.location.origin || !url.pathname.startsWith('/projetos/')) return;
+      const routeMarker = '/projetos/';
+      const routeStart = url.pathname.indexOf(routeMarker);
+      if (url.origin !== window.location.origin || routeStart < 0) return;
+      const [projectSlug, requestedPage = 'inicio'] = url.pathname.slice(routeStart + routeMarker.length).split('/').filter(Boolean);
+      if (!projectSlug || requestedPage === '_embed') return;
       event.preventDefault();
-      url.searchParams.set('embed', '1');
+      url.pathname = `${url.pathname.slice(0, routeStart)}${routeMarker}${projectSlug}/_embed/${requestedPage}`;
       window.location.assign(url.toString());
     };
     document.addEventListener('click', preserveFrame);

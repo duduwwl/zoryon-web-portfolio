@@ -41,3 +41,7 @@ pnpm verify:pages
 - [Publicação principal](https://zoryon-web.duduwwl.chatgpt.site)
 
 O workflow em `.github/workflows/pages.yml` recompila, verifica todas as rotas e publica automaticamente cada alteração enviada para `main`.
+
+## Banco de dados
+
+O Firestore do portfólio usa o projeto `zoryon-web-portfolio`, na região de São Paulo. Regras, índices, documentação e carga inicial versionada ficam em `firestore.rules`, `firestore.indexes.json` e `firebase/`.

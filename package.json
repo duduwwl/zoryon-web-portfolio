@@ -10,6 +10,7 @@
     "build": "vinext build",
     "build:pages": "pnpm build && node scripts/export-github-pages.mjs",
     "verify:pages": "node scripts/verify-github-pages.mjs",
+    "firebase:seed": "node scripts/seed-firestore.mjs",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt"

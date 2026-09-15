@@ -1,0 +1,81 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null && request.auth.token.admin == true;
+    }
+
+    function isPublished() {
+      return resource.data.status == 'published';
+    }
+
+    function isValidLead() {
+      return request.resource.data.keys().hasOnly([
+        'name', 'business', 'need', 'message', 'projectTitle',
+        'source', 'status', 'consent', 'createdAt'
+      ])
+      && request.resource.data.name is string
+      && request.resource.data.name.size() >= 2
+      && request.resource.data.name.size() <= 80
+      && request.resource.data.business is string
+      && request.resource.data.business.size() >= 2
+      && request.resource.data.business.size() <= 120
+      && request.resource.data.need in [
+        'Site institucional', 'Loja virtual', 'Cardápio ou catálogo', 'Quero orientação'
+      ]
+      && request.resource.data.message is string
+      && request.resource.data.message.size() <= 1200
+      && request.resource.data.projectTitle is string
+      && request.resource.data.projectTitle.size() <= 120
+      && request.resource.data.source in ['portfolio', 'github-pages']
+      && request.resource.data.status == 'new'
+      && request.resource.data.consent == true
+      && request.resource.data.createdAt is timestamp;
+    }
+
+    match /_meta/{document=**} {
+      allow read, write: if isAdmin();
+    }
+
+    match /siteSettings/{document=**} {
+      allow read: if isPublished() || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /services/{serviceId} {
+      allow read: if isPublished() || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    match /projects/{projectId} {
+      allow read: if isPublished() || isAdmin();
+      allow write: if isAdmin();
+
+      match /pages/{pageId} {
+        allow read: if resource.data.status == 'published' || isAdmin();
+        allow write: if isAdmin();
+      }
+    }
+
+    match /leads/{leadId} {
+      allow create: if isValidLead();
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /users/{userId} {
+      allow read, update: if request.auth != null && (request.auth.uid == userId || isAdmin());
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow delete: if isAdmin();
+    }
+
+    match /auditLogs/{logId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
