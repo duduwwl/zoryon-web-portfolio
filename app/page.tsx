@@ -43,7 +43,6 @@ const projects: Project[] = [
     description: 'Loja streetwear completa com coleção, páginas de produto, sacola, checkout, conta de cliente e gestão do catálogo.',
     categories: ['E-commerce'], tags: ['Streetwear', 'Loja virtual', 'Checkout'], theme: 'streetwear', status: 'Projeto fictício',
     url: 'wl-streetwear', miniTitle: 'STREETWEAR\nCOM ASSINATURA.', miniSubtitle: 'DROP 01 · LAVRAS MG', button: 'Explorar coleção',
-    preview: '/originais/wl-streetwear/assets/images/hero-graphic-tee.png',
   },
   {
     number: '03', slug: 'casa-dos-fios', title: 'Mundix Aviamentos', eyebrow: 'Catálogo & e-commerce',
@@ -76,10 +75,10 @@ const projects: Project[] = [
     url: 'serraaltaimoveis.com.br', miniTitle: 'ENCONTRE O SEU\nNOVO LUGAR.', miniSubtitle: 'IMÓVEIS SELECIONADOS EM LAVRAS', button: 'Explorar imóveis',
   },
   {
-    number: '08', slug: 'orale-odontologia', title: 'Oralé Odontologia', eyebrow: 'Saúde & credibilidade',
-    description: 'Conceito para clínica odontológica contemporânea, equilibrando acolhimento, autoridade e agendamento sem atrito.',
+    number: '08', slug: 'orale-odontologia', title: 'Oracle Odontologia', eyebrow: 'Saúde & credibilidade',
+    description: 'Site profissional para uma clínica odontológica, com tratamentos bem apresentados, confiança e agendamento direto.',
     categories: ['Serviços'], tags: ['Odontologia', 'Institucional', 'Agenda'], theme: 'dental', status: 'Projeto fictício',
-    url: 'oraleodontologia.com.br', miniTitle: 'SORRIR MUDA\nTUDO.', miniSubtitle: 'CUIDADO HUMANO · TECNOLOGIA', button: 'Agendar avaliação',
+    url: 'oracleodontologia.com.br', miniTitle: 'SAÚDE BUCAL\nCOMPLETA.', miniSubtitle: 'ATENDIMENTO · PLANEJAMENTO · CUIDADO', button: 'Agendar avaliação',
   },
   {
     number: '09', slug: 'raiz-cafe', title: 'Raiz Café', eyebrow: 'Hospitalidade & produto',
@@ -95,15 +94,22 @@ function ProjectVisual({ project }: { project: Project }) {
   return (
     <a className="browser-mockup project-preview" href={`/projetos/${project.slug}`} aria-label={`Abrir site completo de ${project.title}`}>
       <div className="browser-bar" aria-hidden="true"><i /><i /><i /><span>{project.title} · prévia do site</span><ArrowUpRight size={13} /></div>
-      <img
-        className="project-preview-image"
-        src={project.preview ?? `/project-previews/${project.slug}.webp`}
-        alt={`Página inicial atual de ${project.title}`}
-        width={1279}
-        height={920}
-        loading="lazy"
-        decoding="async"
-      />
+      {project.slug === 'wl-streetwear' ? (
+        <div className="wl-site-cover" aria-label="Capa da loja WL Streetwear">
+          <div className="wl-site-cover-copy"><small>WL / EDIÇÃO DE ESTREIA</small><strong>STREETWEAR<br />COM <em>ASSINATURA.</em></strong><span>EXPLORAR CATÁLOGO <ArrowRight size={14} /></span></div>
+          <img src="/originais/wl-streetwear/assets/images/hero-graphic-tee.png" alt="Camiseta da coleção WL Streetwear" loading="lazy" decoding="async" />
+        </div>
+      ) : (
+        <img
+          className="project-preview-image"
+          src={project.preview ?? `/project-previews/${project.slug}.webp`}
+          alt={`Página inicial atual de ${project.title}`}
+          width={1279}
+          height={920}
+          loading="lazy"
+          decoding="async"
+        />
+      )}
       <span className="project-preview-caption">Explorar site completo <ArrowUpRight size={14} /></span>
     </a>
   );
