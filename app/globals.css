@@ -67,7 +67,7 @@ a { color: inherit; text-decoration: none; }
   .header-cta { font-size: 0; padding: 12px; }
   .hero { min-height: 620px; padding: 60px 20px 30px; }
   .hero-kicker { align-self: flex-start; }
-  .hero h1 { font-size: clamp(49px, 16vw, 76px); }
+  .hero h1 { font-size: clamp(32px, 9.7vw, 76px); line-height: .9; }
   .hero-footer { grid-template-columns: 1fr; gap: 28px; }
   .edition { display: none; }
   .featured-preview { padding: 80px 20px; }
@@ -823,6 +823,7 @@ body {
 .project-preview-image { display: block; width: 100%; aspect-ratio: 1279 / 920; height: auto; object-fit: contain; object-position: center; background: #050914; }
 .project-preview-live { position: relative; width: 100%; aspect-ratio: 1279 / 920; overflow: hidden; background: #050914; }
 .project-preview-live iframe { position: absolute; inset: 0; width: 200%; height: 200%; border: 0; pointer-events: none; transform: scale(.5); transform-origin: top left; }
+.project-card > .project-copy, .project-card > .browser-mockup { min-width: 0; }
 .wl-site-cover { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; width: 100%; aspect-ratio: 1279 / 920; overflow: hidden; color: #f7f9ff; background: radial-gradient(circle at 78% 30%, rgba(41, 91, 255, .28), transparent 32%), linear-gradient(135deg, #04070d 0%, #081126 58%, #04060c 100%); }
 .wl-site-cover::before { content: 'WL'; position: absolute; right: 4%; bottom: -18%; color: rgba(44, 92, 255, .09); font-size: clamp(100px, 18vw, 230px); font-weight: 950; letter-spacing: -.12em; }
 .wl-site-cover-copy { position: relative; z-index: 2; padding: 10% 0 8% 8%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
@@ -831,6 +832,9 @@ body {
 .wl-site-cover-copy em { color: #4777ff; font-style: normal; }
 .wl-site-cover-copy span { margin-top: 10%; padding: 10px 13px; display: inline-flex; align-items: center; gap: 10px; color: #fff; background: #2c5cff; font-size: clamp(6px, .7vw, 10px); font-weight: 900; letter-spacing: .09em; }
 .wl-site-cover > img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; object-position: 54% center; filter: contrast(1.04) saturate(.9); }
+@media (max-width: 760px) {
+  .wl-site-cover-copy strong { font-size: clamp(14px, 5vw, 38px); }
+}
 .project-preview-caption { display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; color: #a9dfff; font-size: 11px; border-top: 1px solid var(--line); }
 .project-preview:hover, .project-preview:focus-visible { border-color: var(--cyan); box-shadow: 0 0 32px rgba(20, 80, 255, .22); }
 .project-preview:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
