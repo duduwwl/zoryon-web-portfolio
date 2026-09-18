@@ -196,3 +196,66 @@ main>footer>p{font-family:var(--font-brand);font-size:1rem;font-weight:500;line-
   .header-instagram{width:40px;height:40px}
   .projects-section .section-heading h2{font-size:clamp(2.75rem,13vw,4.8rem);line-height:.95}
 }
+
+/* Focused refinements for the two embedded concept sites. */
+[data-demo='serra-alta-imoveis'] .showcase-hero-shade{background:linear-gradient(90deg,rgba(6,25,32,.3),transparent 65%)}
+[data-demo='serra-alta-imoveis'] .showcase-hero-copy{align-self:end;padding-bottom:3vw}
+[data-demo='serra-alta-imoveis'] .showcase-contact h1{font:600 clamp(2.5rem,4.2vw,4.6rem)/1.12 var(--font-brand);letter-spacing:-.05em;text-transform:none}
+[data-demo='serra-alta-imoveis'] .showcase-contact-form{padding:clamp(24px,3vw,46px);gap:24px;border-radius:12px;background:#12313a;box-shadow:0 24px 65px rgba(0,0,0,.13)}
+[data-demo='serra-alta-imoveis'] .showcase-contact-form label{gap:10px;font:600 .85rem/1.4 var(--font-brand);letter-spacing:0;text-transform:none}
+[data-demo='serra-alta-imoveis'] .showcase-contact-form input:not([type='checkbox']),[data-demo='serra-alta-imoveis'] .showcase-contact-form select,[data-demo='serra-alta-imoveis'] .showcase-contact-form textarea{padding:14px 15px;min-height:50px;border:1px solid #3c5961;border-radius:7px;background:#0d2730;color:#f2f8f6;font:400 1rem/1.5 var(--font-brand)}
+[data-demo='serra-alta-imoveis'] .showcase-contact-form textarea{min-height:126px}
+[data-demo='serra-alta-imoveis'] .showcase-contact-form :is(input,select,textarea):focus-visible{border-color:var(--demo-accent);outline:2px solid var(--demo-accent);outline-offset:2px}
+[data-demo='serra-alta-imoveis'] .showcase-contact-form label:has(input[type='checkbox']){display:flex;align-items:flex-start;gap:12px;font-weight:400;line-height:1.5}
+[data-demo='serra-alta-imoveis'] .showcase-contact-form input[type='checkbox']{width:18px;height:18px;flex:none;margin:1px 0 0;accent-color:var(--demo-accent)}
+[data-demo='serra-alta-imoveis'] .showcase-contact-form button{border-radius:7px;font:700 .85rem var(--font-brand);letter-spacing:.02em}
+[data-demo='serra-alta-imoveis'] .showcase-contact-form>small{font:400 .8rem/1.5 var(--font-brand)}
+
+[data-demo='orale-odontologia'] .showcase-hero{min-height:660px}
+[data-demo='orale-odontologia'] .showcase-hero>img{object-position:center}
+[data-demo='orale-odontologia'] .showcase-hero-copy{align-self:end;max-width:590px;padding:5vw 0 6vw 5vw}
+[data-demo='orale-odontologia'] .showcase-hero h1{max-width:540px;font:400 clamp(2.8rem,4.5vw,4.7rem)/1.04 Georgia,serif;letter-spacing:-.045em;text-transform:none}
+[data-demo='orale-odontologia'] .showcase-hero-copy>p{max-width:470px;font-size:1rem}
+[data-demo='orale-odontologia'] .showcase-hero-copy>div{margin-top:26px}
+[data-demo='orale-odontologia'] .showcase-primary{padding:17px 22px;font-size:.83rem;letter-spacing:.03em;border-radius:5px}
+[data-demo='orale-odontologia'] .showcase-section-title h2{font:400 clamp(2.45rem,4.1vw,4.2rem)/1.06 Georgia,serif;letter-spacing:-.04em}
+[data-demo='orale-odontologia'] .showcase-product-grid p{font-size:.9rem;line-height:1.6}
+
+.pizza-site-cover{width:100%;aspect-ratio:1279/920;container-type:inline-size;background:#fff;color:#301d1b;overflow:hidden}
+.pizza-site-header{height:6.4cqw;padding:0 4cqw;display:flex;align-items:center;justify-content:space-between;gap:2cqw;background:#801e23;color:#fff;font-size:1.2cqw}
+.pizza-site-header strong{font:bold 1.45cqw/1 sans-serif;color:#ffe4a4}
+.pizza-site-header>b{padding:1cqw 1.4cqw;border-radius:3cqw;background:#ffc852;color:#542121;font-size:1.05cqw}
+.pizza-site-hero{height:50.5cqw;position:relative;overflow:hidden;background:#32160f}
+.pizza-site-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.pizza-site-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,5,4,.65),transparent 80%)}
+.pizza-site-copy,.pizza-site-order{position:absolute;z-index:1;bottom:8%}
+.pizza-site-copy{left:4%;width:58%;color:#fff}
+.pizza-site-copy small,.pizza-site-order small{display:block;font:bold .85cqw sans-serif;letter-spacing:.14em;color:#ffd47c}
+.pizza-site-copy p{max-width:58cqw;font:1.4cqw/1.5 sans-serif;margin:2.2cqw 0}
+.pizza-site-copy strong{display:inline-block;padding:1.4cqw 2.2cqw;background:#ffc852;color:#442018;border-radius:.4cqw;font:bold 1.15cqw sans-serif}
+.pizza-site-order{right:4%;width:26%;padding:2.5cqw;background:#fff9f2;color:#301d1b;border-radius:.4cqw}
+.pizza-site-order small{color:#8b2929}
+.pizza-site-order h4{font:bold 2.6cqw/1.08 Georgia,serif;margin:1.1cqw 0}
+.pizza-site-order p{font:1.05cqw/1.5 sans-serif;color:#6e615a}
+.pizza-site-order b{display:block;margin-top:1.8cqw;padding:1.2cqw;background:#801e23;color:white;font:bold 1cqw sans-serif}
+.pizza-site-benefits{height:8cqw;display:grid;grid-template-columns:repeat(3,1fr);align-items:center;border-bottom:1px solid #e4d9d4}
+.pizza-site-benefits span{padding:0 2cqw;font:bold 1.05cqw sans-serif}
+.pizza-site-benefits span+span{border-left:1px solid #e4d9d4}
+@media(max-width:680px){
+  [data-demo='serra-alta-imoveis'] .showcase-contact h1{display:none}
+  [data-demo='serra-alta-imoveis'] .showcase-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  [data-demo='serra-alta-imoveis'] .showcase-catalog-grid article>div:last-child{padding:12px}
+  [data-demo='serra-alta-imoveis'] .showcase-catalog-grid h2{font-size:1rem;line-height:1.25;margin:9px 0}
+  [data-demo='serra-alta-imoveis'] .showcase-catalog-grid p{font-size:.77rem;line-height:1.45}
+  [data-demo='serra-alta-imoveis'] .showcase-catalog-grid strong{font-size:.8rem}
+  [data-demo='serra-alta-imoveis'] .property-photo-button>img{height:150px}
+  [data-demo='serra-alta-imoveis'] .property-photo-button>span{bottom:7px;left:7px;padding:5px;font-size:0}
+  [data-demo='serra-alta-imoveis'] .property-photo-button>span svg{width:18px;height:18px}
+  [data-demo='serra-alta-imoveis'] .showcase-contact-form{padding:20px}
+  [data-demo='orale-odontologia'] .showcase-hero{min-height:650px}
+  [data-demo='orale-odontologia'] .showcase-hero>img{object-position:66% center}
+  [data-demo='orale-odontologia'] .showcase-hero-shade{background:linear-gradient(0deg,#edf6f4 0%,rgba(237,246,244,.9) 30%,rgba(237,246,244,.05) 70%)}
+  [data-demo='orale-odontologia'] .showcase-hero-copy{padding:300px 20px 45px;align-self:end}
+  [data-demo='orale-odontologia'] .showcase-hero h1{font-size:clamp(2.4rem,9vw,3.4rem)}
+  [data-demo='orale-odontologia'] .showcase-page-hero h1{font-size:clamp(2.1rem,8vw,3rem);line-height:1.05}
+}

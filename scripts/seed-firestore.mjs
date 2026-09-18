@@ -1,11 +1,28 @@
 import { readFile } from 'node:fs/promises';
 
 const projectId = process.env.FIREBASE_PROJECT_ID || 'zoryon-web-portfolio';
-const accessToken = process.env.GOOGLE_OAUTH_ACCESS_TOKEN;
-if (!accessToken) throw new Error('Defina GOOGLE_OAUTH_ACCESS_TOKEN antes de executar a carga inicial.');
-
 const seed = JSON.parse(await readFile(new URL('../firebase/seed.json', import.meta.url), 'utf8'));
 const timestamp = new Date().toISOString();
+
+function assertUnique(items, key, label) {
+  const values = items.map((item) => item[key]);
+  if (values.some((value) => typeof value !== 'string' || !value.trim())) {
+    throw new Error(`${label}: ${key} deve ser um texto não vazio.`);
+  }
+  if (new Set(values).size !== values.length) {
+    throw new Error(`${label}: há valores duplicados em ${key}.`);
+  }
+}
+
+assertUnique(seed.siteSettings, 'id', 'siteSettings');
+assertUnique(seed.services, 'id', 'services');
+assertUnique(seed.projects, 'slug', 'projects');
+for (const project of seed.projects) {
+  assertUnique(project.pages, 'slug', `projects/${project.slug}/pages`);
+  if (!project.pages.some((page) => page.slug === 'inicio')) {
+    throw new Error(`projects/${project.slug}: falta a página inicial.`);
+  }
+}
 
 function value(input) {
   if (input === null) return { nullValue: null };
@@ -55,6 +72,15 @@ const writes = [
     })),
   ]),
 ];
+
+console.log(`Carga preparada: ${writes.length} documentos para ${projectId}.`);
+if (!process.argv.includes('--apply')) {
+  console.log('Simulação concluída. Nenhum dado foi alterado. Use --apply somente após revisar o destino e ter um backup.');
+  process.exit(0);
+}
+
+const accessToken = process.env.GOOGLE_OAUTH_ACCESS_TOKEN;
+if (!accessToken) throw new Error('Defina GOOGLE_OAUTH_ACCESS_TOKEN antes de aplicar a carga.');
 
 const response = await fetch(`https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents:batchWrite`, {
   method: 'POST',

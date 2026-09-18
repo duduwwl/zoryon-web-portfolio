@@ -21,7 +21,7 @@ let PRODUCTS = {
     detail: "Branca / 100% algodão",
     description: "A camiseta que resolve qualquer look. Branca, limpa e com caimento oversized para usar todos os dias.",
     price: 99,
-    image: "assets/images/tee-editorial.png",
+    image: "assets/images/tee-editorial.webp",
     badge: "BÁSICA",
     specs: [["Cor", "Branco óptico"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão penteado · 220g"], ["Gola", "Canelada com reforço interno"], ["Estampa", "Sem estampa"], ["Tamanhos", "P, M, G e GG"]]
   },
@@ -32,7 +32,7 @@ let PRODUCTS = {
     detail: "Preta / 100% algodão",
     description: "Preta essencial com estrutura encorpada e visual urbano. Uma base forte para qualquer combinação.",
     price: 99,
-    image: "assets/images/tee-black-white-stroke.png",
+    image: "assets/images/tee-black-white-stroke.webp",
     badge: "BÁSICA",
     specs: [["Cor", "Preto profundo"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão penteado · 220g"], ["Gola", "Canelada com reforço interno"], ["Estampa", "Sem estampa"], ["Tamanhos", "P, M, G e GG"]]
   },
@@ -43,7 +43,7 @@ let PRODUCTS = {
     detail: "Estampada / manga longa",
     description: "Blusa oversized com arte tipográfica original em alto contraste, pensada para uma leitura de streetwear de luxo e presença urbana.",
     price: 99,
-    image: "assets/images/hoodie-editorial.png",
+    image: "assets/images/hoodie-editorial.webp",
     badge: "BLUSA GRÁFICA",
     graphic: "WL / STACKED 01",
     specs: [["Cor", "Preto com arte azul"], ["Modelagem", "Oversized unissex"], ["Material", "Moletom leve · 3 cabos"], ["Gola", "Canelada com reforço interno"], ["Estampa", "Arte tipográfica original em silk"], ["Tamanhos", "P, M, G e GG"]]
@@ -55,24 +55,24 @@ let PRODUCTS = {
     detail: "Estampada / manga longa",
     description: "Uma peça escura de proporção ampla, com grid gráfico exclusivo e acabamento azul elétrico para marcar o look.",
     price: 99,
-    image: "assets/images/hoodie-sand.png",
+    image: "assets/images/hoodie-sand.webp",
     badge: "BLUSA GRÁFICA",
     graphic: "NOCTURNAL / GRID 02",
     specs: [["Cor", "Cinza concreto"], ["Modelagem", "Oversized unissex"], ["Material", "Moletom leve · 3 cabos"], ["Gola", "Canelada com reforço interno"], ["Estampa", "Grid original frontal + assinatura traseira"], ["Tamanhos", "P, M, G e GG"]]
   },
-  "baw-archive": { name: "Camiseta Blue Graffiti", category: "camisetas", brand: "WL", detail: "Off-white / estampa azul", description: "Camiseta off-white com estampa azul de traço livre, criada para composições de rua.", price: 159, image: "assets/images/tee-blue-graffiti.png", badge: "CURADORIA", specs: [["Cor", "Off-white"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão premium"], ["Tamanhos", "P, M, G e GG"]] },
-  "balenciaga-typography": { name: "Camiseta Lime Signal", category: "camisetas", brand: "WL", detail: "Chumbo / estampa azul e verde", description: "Camiseta chumbo com sinal gráfico em azul e verde-lima, original da curadoria WL.", price: 199, image: "assets/images/tee-signal-lime.png", badge: "CURADORIA", specs: [["Cor", "Chumbo"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão premium"], ["Tamanhos", "P, M, G e GG"]] },
-  "supreme-box": { name: "Camiseta Red Stencil", category: "camisetas", brand: "WL", detail: "Azul-marinho / estampa vermelha", description: "Camiseta azul-marinho com arte stencil vermelha e leitura streetwear.", price: 179, image: "assets/images/tee-red-stencil.png", badge: "CURADORIA", specs: [["Cor", "Azul-marinho"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão premium"], ["Tamanhos", "P, M, G e GG"]] },
-  "high-street": { name: "Camiseta Abstract Heart", category: "camisetas", brand: "WL", detail: "Off-white / estampa abstrata", description: "Camiseta off-white com arte abstrata de alto contraste e caimento oversized.", price: 149, image: "assets/images/hero-graphic-tee.png", badge: "CURADORIA", specs: [["Cor", "Off-white"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão premium"], ["Tamanhos", "P, M, G e GG"]] },
-  "north-face-ice": { name: "Ice Summit Hoodie", category: "blusas", brand: "WL", detail: "Azul-marinho / moletom", description: "Moletom de curadoria com leitura outdoor e presença urbana.", price: 229, image: "assets/images/hoodie-navy.png", badge: "MOLETOM", specs: [["Cor", "Azul-marinho"], ["Modelagem", "Oversized unissex"], ["Material", "Moletom 3 cabos"], ["Tamanhos", "P, M, G e GG"]] },
-  "wl-heavy-hoodie": { name: "Cloud Heavy Hoodie", category: "blusas", brand: "WL", detail: "Chumbo / moletom pesado", description: "Moletom pesado com ombro deslocado e volume alto.", price: 189, image: "assets/images/hoodie-charcoal.png", badge: "MOLETOM", specs: [["Cor", "Chumbo"], ["Modelagem", "Oversized unissex"], ["Material", "Moletom 3 cabos"], ["Tamanhos", "P, M, G e GG"]] },
-  "short-night-utility": { name: "Short Night Utility", category: "shorts", brand: "WL", detail: "Cinza / bolsos utilitários", description: "Short cinza de corte reto com bolsos utilitários e construção leve.", price: 139, image: "assets/images/short-grey-utility.png", badge: "SHORTS", specs: [["Cor", "Cinza"], ["Modelagem", "Reta relaxed"], ["Material", "Sarja leve"], ["Tamanhos", "P, M, G e GG"]] },
-  "short-white-utility": { name: "Short Black Utility", category: "shorts", brand: "WL", detail: "Preto / bolsos cargo", description: "Short preto cargo com cintura elástica e acabamento limpo para o dia a dia.", price: 129, image: "assets/images/short-black-utility.png", badge: "SHORTS", specs: [["Cor", "Preto"], ["Modelagem", "Cargo relaxed"], ["Material", "Sarja leve"], ["Tamanhos", "P, M, G e GG"]] },
-  "oculos-tech-shield": { name: "Óculos Tech Shield", category: "oculos", brand: "WL", detail: "Preto / lente azul", description: "Óculos de lente envolvente com leitura esportiva e acabamento técnico.", price: 149, image: "assets/images/glasses-tech-shield.png", badge: "ÓCULOS", specs: [["Lente", "Azul com proteção UV"], ["Armação", "Policarbonato preto"], ["Ajuste", "Unissex"], ["Tamanho", "Único"]] },
-  "oculos-sport-shield": { name: "Óculos Carbon Chrome", category: "oculos", brand: "WL", detail: "Carbono / lente cromada", description: "Óculos esportivo de lente cromada, estrutura leve e detalhes azuis para um visual técnico de rua.", price: 219, image: "assets/images/glasses-carbon-silver.png", badge: "ÓCULOS", specs: [["Lente", "Cromada com proteção UV"], ["Armação", "Polímero leve com acabamento carbono"], ["Ajuste", "Unissex"], ["Tamanho", "Único"]] },
-  "oculos-wl-frame": { name: "Óculos Cobalt Visor", category: "oculos", brand: "WL", detail: "Preto / lente azul-violeta", description: "Óculos visor de lente iridescente azul-violeta e armação preta translúcida para completar o look street.", price: 179, image: "assets/images/glasses-cobalt-visor.png", badge: "ÓCULOS", specs: [["Lente", "Iridescente azul-violeta com proteção UV"], ["Armação", "Polímero preto translúcido"], ["Ajuste", "Unissex"], ["Tamanho", "Único"]] },
-  "bone-black-panel": { name: "Boné Black Panel", category: "bones", brand: "WL", detail: "Preto / aba curva", description: "Boné preto 6-panel com detalhe azul discreto e ajuste traseiro.", price: 119, image: "assets/images/cap-black-panel.png", badge: "BONÉ", specs: [["Cor", "Preto"], ["Modelo", "6 panel"], ["Ajuste", "Fivela traseira"], ["Tamanho", "Único"]] },
-  "bone-high-curve": { name: "Boné High Curve", category: "bones", brand: "WL", detail: "Azul-marinho / aba curva", description: "Boné de aba curva com construção leve, ajuste traseiro e presença street.", price: 109, image: "assets/images/cap-high-curve.png", badge: "BONÉ", specs: [["Cor", "Azul-marinho"], ["Modelo", "Aba curva"], ["Ajuste", "Regulável"], ["Tamanho", "Único"]] }
+  "baw-archive": { name: "Camiseta Blue Graffiti", category: "camisetas", brand: "WL", detail: "Off-white / estampa azul", description: "Camiseta off-white com estampa azul de traço livre, criada para composições de rua.", price: 159, image: "assets/images/tee-blue-graffiti.webp", badge: "CURADORIA", specs: [["Cor", "Off-white"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão premium"], ["Tamanhos", "P, M, G e GG"]] },
+  "balenciaga-typography": { name: "Camiseta Lime Signal", category: "camisetas", brand: "WL", detail: "Chumbo / estampa azul e verde", description: "Camiseta chumbo com sinal gráfico em azul e verde-lima, original da curadoria WL.", price: 199, image: "assets/images/tee-signal-lime.webp", badge: "CURADORIA", specs: [["Cor", "Chumbo"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão premium"], ["Tamanhos", "P, M, G e GG"]] },
+  "supreme-box": { name: "Camiseta Red Stencil", category: "camisetas", brand: "WL", detail: "Azul-marinho / estampa vermelha", description: "Camiseta azul-marinho com arte stencil vermelha e leitura streetwear.", price: 179, image: "assets/images/tee-red-stencil.webp", badge: "CURADORIA", specs: [["Cor", "Azul-marinho"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão premium"], ["Tamanhos", "P, M, G e GG"]] },
+  "high-street": { name: "Camiseta Abstract Heart", category: "camisetas", brand: "WL", detail: "Off-white / estampa abstrata", description: "Camiseta off-white com arte abstrata de alto contraste e caimento oversized.", price: 149, image: "assets/images/hero-graphic-tee.webp", badge: "CURADORIA", specs: [["Cor", "Off-white"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão premium"], ["Tamanhos", "P, M, G e GG"]] },
+  "north-face-ice": { name: "Ice Summit Hoodie", category: "blusas", brand: "WL", detail: "Azul-marinho / moletom", description: "Moletom de curadoria com leitura outdoor e presença urbana.", price: 229, image: "assets/images/hoodie-navy.webp", badge: "MOLETOM", specs: [["Cor", "Azul-marinho"], ["Modelagem", "Oversized unissex"], ["Material", "Moletom 3 cabos"], ["Tamanhos", "P, M, G e GG"]] },
+  "wl-heavy-hoodie": { name: "Cloud Heavy Hoodie", category: "blusas", brand: "WL", detail: "Chumbo / moletom pesado", description: "Moletom pesado com ombro deslocado e volume alto.", price: 189, image: "assets/images/hoodie-charcoal.webp", badge: "MOLETOM", specs: [["Cor", "Chumbo"], ["Modelagem", "Oversized unissex"], ["Material", "Moletom 3 cabos"], ["Tamanhos", "P, M, G e GG"]] },
+  "short-night-utility": { name: "Short Night Utility", category: "shorts", brand: "WL", detail: "Cinza / bolsos utilitários", description: "Short cinza de corte reto com bolsos utilitários e construção leve.", price: 139, image: "assets/images/short-grey-utility.webp", badge: "SHORTS", specs: [["Cor", "Cinza"], ["Modelagem", "Reta relaxed"], ["Material", "Sarja leve"], ["Tamanhos", "P, M, G e GG"]] },
+  "short-white-utility": { name: "Short Black Utility", category: "shorts", brand: "WL", detail: "Preto / bolsos cargo", description: "Short preto cargo com cintura elástica e acabamento limpo para o dia a dia.", price: 129, image: "assets/images/short-black-utility.webp", badge: "SHORTS", specs: [["Cor", "Preto"], ["Modelagem", "Cargo relaxed"], ["Material", "Sarja leve"], ["Tamanhos", "P, M, G e GG"]] },
+  "oculos-tech-shield": { name: "Óculos Tech Shield", category: "oculos", brand: "WL", detail: "Preto / lente azul", description: "Óculos de lente envolvente com leitura esportiva e acabamento técnico.", price: 149, image: "assets/images/glasses-tech-shield.webp", badge: "ÓCULOS", specs: [["Lente", "Azul com proteção UV"], ["Armação", "Policarbonato preto"], ["Ajuste", "Unissex"], ["Tamanho", "Único"]] },
+  "oculos-sport-shield": { name: "Óculos Carbon Chrome", category: "oculos", brand: "WL", detail: "Carbono / lente cromada", description: "Óculos esportivo de lente cromada, estrutura leve e detalhes azuis para um visual técnico de rua.", price: 219, image: "assets/images/glasses-carbon-silver.webp", badge: "ÓCULOS", specs: [["Lente", "Cromada com proteção UV"], ["Armação", "Polímero leve com acabamento carbono"], ["Ajuste", "Unissex"], ["Tamanho", "Único"]] },
+  "oculos-wl-frame": { name: "Óculos Cobalt Visor", category: "oculos", brand: "WL", detail: "Preto / lente azul-violeta", description: "Óculos visor de lente iridescente azul-violeta e armação preta translúcida para completar o look street.", price: 179, image: "assets/images/glasses-cobalt-visor.webp", badge: "ÓCULOS", specs: [["Lente", "Iridescente azul-violeta com proteção UV"], ["Armação", "Polímero preto translúcido"], ["Ajuste", "Unissex"], ["Tamanho", "Único"]] },
+  "bone-black-panel": { name: "Boné Black Panel", category: "bones", brand: "WL", detail: "Preto / aba curva", description: "Boné preto 6-panel com detalhe azul discreto e ajuste traseiro.", price: 119, image: "assets/images/cap-black-panel.webp", badge: "BONÉ", specs: [["Cor", "Preto"], ["Modelo", "6 panel"], ["Ajuste", "Fivela traseira"], ["Tamanho", "Único"]] },
+  "bone-high-curve": { name: "Boné High Curve", category: "bones", brand: "WL", detail: "Azul-marinho / aba curva", description: "Boné de aba curva com construção leve, ajuste traseiro e presença street.", price: 109, image: "assets/images/cap-high-curve.webp", badge: "BONÉ", specs: [["Cor", "Azul-marinho"], ["Modelo", "Aba curva"], ["Ajuste", "Regulável"], ["Tamanho", "Único"]] }
 };
 
 Object.assign(PRODUCTS, {
@@ -273,10 +273,10 @@ function initializeHeroSlideshow() {
   const hero = document.querySelector(".hero-visual");
   if (!hero || hero.querySelector(".hero-slide")) return;
   const images = [
-    "assets/images/hero-graphic-tee.png",
-    "assets/images/tee-black-white-stroke.png",
-    "assets/images/tee-blue-graffiti.png",
-    "assets/images/tee-red-stencil.png"
+    "assets/images/hero-graphic-tee.webp",
+    "assets/images/tee-black-white-stroke.webp",
+    "assets/images/tee-blue-graffiti.webp",
+    "assets/images/tee-red-stencil.webp"
   ];
   hero.innerHTML = images.map((image, index) => `<span class="hero-slide hero-slide-${index + 1}" style="background-image:url('${siteAsset(image)}')"></span>`).join("");
 }

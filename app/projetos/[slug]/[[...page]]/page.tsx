@@ -30,7 +30,7 @@ const profiles: Record<string, Profile> = {
     faqs: [['Preciso chegar antes?', 'Cinco minutos são suficientes para preparar o atendimento.'], ['Posso remarcar?', 'Sim. Fale pelo WhatsApp com pelo menos duas horas de antecedência.'], ['Atendem crianças?', 'Sim, mediante escolha do serviço infantil no agendamento.']],
   },
   'wl-streetwear': {
-    hero: '/originais/wl-streetwear/assets/images/hero-graphic-tee.png', original: 'https://github.com/duduwwl/wl-streetwear', layout: 'bold',
+    hero: '/originais/wl-streetwear/assets/images/hero-graphic-tee.webp', original: 'https://github.com/duduwwl/wl-streetwear', layout: 'bold',
     promise: 'Coleção, produto, sacola, checkout, conta e gestão em uma experiência completa de e-commerce.', address: 'Lavras · MG · entrega nacional', hours: 'Loja online · atendimento digital',
     steps: ['Explore o drop', 'Escolha peça e tamanho', 'Finalize no checkout'],
     faqs: [['O projeto possui catálogo completo?', 'Sim, com categorias, páginas individuais e filtros.'], ['O checkout funciona?', 'O fluxo demonstrativo inclui sacola, entrega e pagamento.'], ['Existe área de gestão?', 'Sim, com acesso às rotinas de catálogo e pedidos da demonstração.']],
@@ -66,7 +66,7 @@ const profiles: Record<string, Profile> = {
     faqs: [['Os imóveis são verificados?', 'A documentação é conferida antes do início da negociação.'], ['Atendem financiamento?', 'Sim, com orientação sobre as etapas e instituições disponíveis.'], ['Posso anunciar meu imóvel?', 'Sim, após avaliação comercial e fotográfica.']],
   },
   'orale-odontologia': {
-    hero: '/photos/dental/prevencao.jpg', layout: 'clean',
+    hero: '/photos/dental/equipe-oracle.webp', layout: 'clean',
     promise: 'Avaliação completa, plano de tratamento transparente e acompanhamento próximo.', address: 'Centro · Lavras · MG', hours: 'Seg–sex · 08:00–19:00',
     steps: ['Conte o que precisa', 'Faça a avaliação', 'Receba seu plano de cuidado'],
     faqs: [['A avaliação é completa?', 'Sim, inclui conversa, exame clínico e indicação dos próximos passos.'], ['Atendem urgência?', 'Os encaixes são avaliados pelo WhatsApp durante o horário de atendimento.'], ['Há opções de pagamento?', 'O plano financeiro é apresentado junto ao plano de tratamento.']],
@@ -117,7 +117,33 @@ function ClosingCta({ project }: { project: DemoProject }) {
 
 function HomePage({ project, profile }: { project: DemoProject; profile: Profile }) {
   const isDental = project.slug === 'orale-odontologia';
-  return <><section className="showcase-hero"><img src={profile.hero} alt={`Imagem principal de ${project.title}`} /><div className="showcase-hero-shade" /><div className="showcase-hero-copy"><span>{project.heroKicker}</span><h1>{project.tagline}</h1><p>{project.description}</p><div><a className="showcase-primary" href={demoHref(project.slug, project.navigation[1].slug)}>{project.primaryAction} <ArrowRight /></a><a className="showcase-text-link" href={demoHref(project.slug, project.navigation[2].slug)}>{isDental ? 'Conhecer a clínica' : 'Conhecer a marca'}</a></div></div><div className="showcase-hero-note"><strong>01</strong><span>{profile.promise}</span></div></section><section className="showcase-trust"><div><Clock3 /><span>{profile.hours}</span></div><div><MapPin /><span>{profile.address}</span></div><div><ShieldCheck /><span>Atendimento direto e seguro</span></div></section><section className="showcase-selection"><div className="showcase-section-title"><span>{isDental ? 'Especialidades' : 'Seleção em destaque'}</span><h2>{isDental ? <>Tratamentos para<br />cada necessidade.</> : <>{project.navigation[1].label}<br />para escolher com calma.</>}</h2><a href={demoHref(project.slug, project.navigation[1].slug)}>Ver tudo <ArrowRight /></a></div><div className="showcase-product-grid">{project.offers.map((offer, index) => <article key={offer.title}>{offer.image ? <img src={offer.image} alt={offer.title} /> : <div className="showcase-card-image" style={{ backgroundImage: `url(${profile.hero})`, backgroundPosition: `${20 + index * 22}% center` }} />}<div><small>0{index + 1}</small><h3>{offer.title}</h3><p>{offer.description}</p><strong>{offer.price}</strong></div></article>)}</div></section><section className="showcase-story-block"><div className="showcase-story-image"><img src={profile.hero} alt={`Universo visual de ${project.title}`} /><span>{project.visualWord}</span></div><div><span>Nossa essência</span><h2>{project.storyTitle}</h2><p>{project.story}</p><ul>{project.highlights.map((item) => <li key={item}><Check /> {item}</li>)}</ul><a href={demoHref(project.slug, project.navigation[2].slug)}>Conhecer em detalhes <ArrowUpRight /></a></div></section>{project.slug !== 'serra-alta-imoveis' && <section className="showcase-numbers">{project.stats.map((stat) => <div key={stat.label}><strong>{stat.value}</strong><span>{stat.label}</span></div>)}</section>}<ClosingCta project={project} /></>;
+  const isEstate = project.slug === 'serra-alta-imoveis';
+  return <>
+    <section className="showcase-hero">
+      <img src={profile.hero} alt={`Imagem principal de ${project.title}`} fetchPriority="high" />
+      <div className="showcase-hero-shade" />
+      <div className="showcase-hero-copy">
+        <span>{project.heroKicker}</span>
+        {!isEstate && <>
+          <h1>{project.tagline}</h1>
+          <p>{project.description}</p>
+          <div>
+            <a className="showcase-primary" href={demoHref(project.slug, isDental ? 'contato' : project.navigation[1].slug)}>{project.primaryAction} <ArrowRight /></a>
+            {!isDental && <a className="showcase-text-link" href={demoHref(project.slug, project.navigation[2].slug)}>Conhecer a marca</a>}
+          </div>
+        </>}
+      </div>
+      {!isDental && !isEstate && <div className="showcase-hero-note"><strong>01</strong><span>{profile.promise}</span></div>}
+    </section>
+    <section className="showcase-trust"><div><Clock3 /><span>{profile.hours}</span></div><div><MapPin /><span>{profile.address}</span></div><div><ShieldCheck /><span>Atendimento direto e seguro</span></div></section>
+    <section className="showcase-selection">
+      <div className="showcase-section-title"><span>{isDental ? 'Especialidades' : 'Seleção em destaque'}</span><h2>{isDental ? <>Tratamentos para<br />cada necessidade.</> : <>{project.navigation[1].label}<br />para escolher com calma.</>}</h2>{!isDental && <a href={demoHref(project.slug, project.navigation[1].slug)}>Ver tudo <ArrowRight /></a>}</div>
+      <div className="showcase-product-grid">{project.offers.map((offer, index) => <article key={offer.title}>{offer.image ? <img src={offer.image} alt={offer.title} loading="lazy" decoding="async" /> : <div className="showcase-card-image" style={{ backgroundImage: `url(${profile.hero})`, backgroundPosition: `${20 + index * 22}% center` }} />}<div><small>0{index + 1}</small><h3>{offer.title}</h3><p>{offer.description}</p><strong>{offer.price}</strong></div></article>)}</div>
+    </section>
+    <section className="showcase-story-block"><div className="showcase-story-image"><img src={profile.hero} alt={`Universo visual de ${project.title}`} loading="lazy" decoding="async" />{!isDental && <span>{project.visualWord}</span>}</div><div><span>Nossa essência</span><h2>{project.storyTitle}</h2><p>{project.story}</p><ul>{project.highlights.map((item) => <li key={item}><Check /> {item}</li>)}</ul><a href={demoHref(project.slug, project.navigation[2].slug)}>Conhecer em detalhes <ArrowUpRight /></a></div></section>
+    {!isEstate && !isDental && <section className="showcase-numbers">{project.stats.map((stat) => <div key={stat.label}><strong>{stat.value}</strong><span>{stat.label}</span></div>)}</section>}
+    <ClosingCta project={project} />
+  </>;
 }
 
 function OffersPage({ project, profile }: { project: DemoProject; profile: Profile }) {
@@ -136,7 +162,7 @@ function Faq({ project, profile }: { project: DemoProject; profile: Profile }) {
 
 function ContactPage({ project, profile }: { project: DemoProject; profile: Profile }) {
   if (project.slug === 'casa-dos-fios') return <CartPage project={project} profile={profile} />;
-  return <><section className="showcase-contact"><div><span>Contato</span><h1>{project.contactPrompt}</h1><p>Preencha os dados para montar uma mensagem e falar diretamente com a Zoryon Web sobre este modelo de site.</p><div className="showcase-contact-info"><p><MapPin /> {profile.address}</p><p><Clock3 /> {profile.hours}</p><p><AtSign /> @{project.slug}</p></div></div><DemoContactForm projectTitle={project.title} /></section><Faq project={project} profile={profile} /></>;
+  return <><section className="showcase-contact"><div><span>Contato</span><h1>{project.contactPrompt}</h1>{project.slug !== 'serra-alta-imoveis' && <p>Preencha os dados para montar uma mensagem e falar diretamente com a Zoryon Web sobre este modelo de site.</p>}<div className="showcase-contact-info"><p><MapPin /> {profile.address}</p><p><Clock3 /> {profile.hours}</p><p><AtSign /> @{project.slug}</p></div></div><DemoContactForm projectTitle={project.title} /></section><Faq project={project} profile={profile} /></>;
 }
 
 function CartPage({ project, profile }: { project: DemoProject; profile: Profile }) {

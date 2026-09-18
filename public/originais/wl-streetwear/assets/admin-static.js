@@ -4,23 +4,23 @@
   const inventoryKey = "wl-streetwear-manager-inventory";
   const ordersKey = "wl-streetwear-manager-orders";
   const products = [
-    ["basic-white", "Camiseta Basic White", "camisetas", "assets/images/tee-editorial.png"],
-    ["basic-black", "Camiseta Basic Black", "camisetas", "assets/images/tee-black-white-stroke.png"],
-    ["baw-archive", "Camiseta Blue Graffiti", "camisetas", "assets/images/tee-blue-graffiti.png"],
-    ["balenciaga-typography", "Camiseta Lime Signal", "camisetas", "assets/images/tee-signal-lime.png"],
-    ["supreme-box", "Camiseta Red Stencil", "camisetas", "assets/images/tee-red-stencil.png"],
-    ["high-street", "Camiseta Abstract Heart", "camisetas", "assets/images/hero-graphic-tee.png"],
-    ["tag-graffiti", "Blusa Stacked Type", "moletons", "assets/images/hoodie-editorial.png"],
-    ["concrete-riot", "Blusa Nocturnal Grid", "moletons", "assets/images/hoodie-sand.png"],
-    ["north-face-ice", "Ice Summit Hoodie", "moletons", "assets/images/hoodie-navy.png"],
-    ["wl-heavy-hoodie", "Cloud Heavy Hoodie", "moletons", "assets/images/hoodie-charcoal.png"],
-    ["short-night-utility", "Short Night Utility", "shorts", "assets/images/short-grey-utility.png"],
-    ["short-white-utility", "Short Black Utility", "shorts", "assets/images/short-black-utility.png"],
-    ["oculos-tech-shield", "Óculos Tech Shield", "óculos", "assets/images/glasses-tech-shield.png"],
-    ["oculos-sport-shield", "Óculos Carbon Chrome", "óculos", "assets/images/glasses-carbon-silver.png"],
-    ["oculos-wl-frame", "Óculos Cobalt Visor", "óculos", "assets/images/glasses-cobalt-visor.png"],
-    ["bone-black-panel", "Boné Black Panel", "bonés", "assets/images/cap-black-panel.png"],
-    ["bone-high-curve", "Boné High Curve", "bonés", "assets/images/cap-high-curve.png"]
+    ["basic-white", "Camiseta Basic White", "camisetas", "assets/images/tee-editorial.webp"],
+    ["basic-black", "Camiseta Basic Black", "camisetas", "assets/images/tee-black-white-stroke.webp"],
+    ["baw-archive", "Camiseta Blue Graffiti", "camisetas", "assets/images/tee-blue-graffiti.webp"],
+    ["balenciaga-typography", "Camiseta Lime Signal", "camisetas", "assets/images/tee-signal-lime.webp"],
+    ["supreme-box", "Camiseta Red Stencil", "camisetas", "assets/images/tee-red-stencil.webp"],
+    ["high-street", "Camiseta Abstract Heart", "camisetas", "assets/images/hero-graphic-tee.webp"],
+    ["tag-graffiti", "Blusa Stacked Type", "moletons", "assets/images/hoodie-editorial.webp"],
+    ["concrete-riot", "Blusa Nocturnal Grid", "moletons", "assets/images/hoodie-sand.webp"],
+    ["north-face-ice", "Ice Summit Hoodie", "moletons", "assets/images/hoodie-navy.webp"],
+    ["wl-heavy-hoodie", "Cloud Heavy Hoodie", "moletons", "assets/images/hoodie-charcoal.webp"],
+    ["short-night-utility", "Short Night Utility", "shorts", "assets/images/short-grey-utility.webp"],
+    ["short-white-utility", "Short Black Utility", "shorts", "assets/images/short-black-utility.webp"],
+    ["oculos-tech-shield", "Óculos Tech Shield", "óculos", "assets/images/glasses-tech-shield.webp"],
+    ["oculos-sport-shield", "Óculos Carbon Chrome", "óculos", "assets/images/glasses-carbon-silver.webp"],
+    ["oculos-wl-frame", "Óculos Cobalt Visor", "óculos", "assets/images/glasses-cobalt-visor.webp"],
+    ["bone-black-panel", "Boné Black Panel", "bonés", "assets/images/cap-black-panel.webp"],
+    ["bone-high-curve", "Boné High Curve", "bonés", "assets/images/cap-high-curve.webp"]
   ].map(([slug, name, category, image]) => ({ slug, name, category, image }));
 
   const read = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback)); } catch { return fallback; } };

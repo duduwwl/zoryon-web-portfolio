@@ -7,7 +7,6 @@ import {
   ArrowUpRight,
   AtSign,
   Check,
-  Camera,
   Menu,
   MessageCircle,
   Phone,
@@ -52,7 +51,7 @@ const projects: Project[] = [
     url: 'mundix.com.br', miniTitle: 'CORES QUE\nINSPIRAM.', miniSubtitle: 'FIOS · LINHAS · CRIATIVIDADE', button: 'Ver coleção',
   },
   {
-    number: '04', slug: 'pizza-lavras', title: 'Pizza Lavras', eyebrow: 'Cardápio & pedidos',
+    number: '04', slug: 'pizza-lavras', title: 'Pizza Lavras', eyebrow: 'Pizzarias',
     description: 'Um site vibrante para transformar fome em pedido, separando sabores tradicionais, especiais e doces com navegação direta.',
     categories: ['Gastronomia'], tags: ['Pizzaria', 'Cardápio', 'Delivery'], theme: 'pizza', status: 'Projeto fictício',
     url: 'pizzalavras.com.br', miniTitle: 'A NOITE PEDE\nPIZZA.', miniSubtitle: 'FORNO QUENTE · ENTREGA RÁPIDA', button: 'Pedir agora',
@@ -92,7 +91,17 @@ function ProjectVisual({ project }: { project: Project }) {
       {project.slug === 'wl-streetwear' ? (
         <div className="wl-site-cover" aria-label="Capa da loja WL Streetwear">
           <div className="wl-site-cover-copy"><small>WL / EDIÇÃO DE ESTREIA</small><strong>STREETWEAR<br />COM <em>ASSINATURA.</em></strong><span>EXPLORAR CATÁLOGO <ArrowRight size={14} /></span></div>
-          <img src="/originais/wl-streetwear/assets/images/hero-graphic-tee.png" alt="Camiseta da coleção WL Streetwear" loading="lazy" decoding="async" />
+          <img src="/originais/wl-streetwear/assets/images/hero-graphic-tee.webp" alt="Camiseta da coleção WL Streetwear" loading="lazy" decoding="async" />
+        </div>
+      ) : project.slug === 'pizza-lavras' ? (
+        <div className="pizza-site-cover" aria-label="Página inicial atual da Pizza Lavras">
+          <div className="pizza-site-header"><strong>🍕 Pizza<br />Lavras</strong><span>Início　 Cardápio　 A casa　 Contato</span><b>Pedir agora →</b></div>
+          <div className="pizza-site-hero">
+            <img src="/originais/pizza-lavras/assets/hero-pizza-oven.webp" alt="Pizza artesanal assada no forno" loading="lazy" decoding="async" />
+            <div className="pizza-site-copy"><small>PIZZARIA ARTESANAL · LAVRAS, MG</small><p>Massa aberta diariamente, molho da casa e ingredientes bem escolhidos. Peça online para receber ou retirar.</p><strong>Ver cardápio e pedir →</strong></div>
+            <div className="pizza-site-order"><small>ABERTO HOJE</small><h4>Entrega e retirada até 00h</h4><p>Escolha o tamanho, combine até dois sabores e acompanhe o resumo antes de confirmar.</p><b>Começar pedido →</b></div>
+          </div>
+          <div className="pizza-site-benefits"><span>01　 Ingredientes selecionados</span><span>02　 Preparo no pedido</span><span>03　 Entrega acompanhada</span></div>
         </div>
       ) : (
         <img
@@ -130,7 +139,7 @@ export default function Home() {
           <a href="#contato" onClick={closeMenu}>Contato</a>
         </nav>
         <div className="header-actions">
-          <a className="header-instagram" href="https://instagram.com/zoryonweb" target="_blank" rel="noreferrer" aria-label="Acompanhar a Zoryon Web no Instagram"><Camera size={18} /></a>
+          <a className="header-instagram" href="https://instagram.com/zoryonweb" target="_blank" rel="noreferrer" aria-label="Acompanhar a Zoryon Web no Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none" /></svg></a>
           <a className="header-cta" href="https://wa.me/5535984259797?text=Olá%2C%20Zoryon%20Web!%20Quero%20conversar%20sobre%20um%20site%20profissional." target="_blank" rel="noreferrer">
             Iniciar projeto <ArrowRight size={16} />
           </a>
