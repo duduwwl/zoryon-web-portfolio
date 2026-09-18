@@ -13,8 +13,14 @@ const { d1, r2 } = hostingConfig;
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
 
 const localBindingConfig = {
-  main: 'vinext/server/fetch-handler',
+  main: './worker.ts',
   compatibility_flags: ['nodejs_compat'],
+  // Route standalone demo documents through the Worker so proxy.ts can attach
+  // security headers; leave regular hashed assets on the fast asset path.
+  assets: {
+    binding: 'ASSETS',
+    run_worker_first: ['/originais/*', '/photo-credits*'],
+  },
   d1_databases: d1
     ? [
         {
