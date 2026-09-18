@@ -150,7 +150,23 @@ export default function Home() {
           <a href="#contato" onClick={closeMenu}>Contato</a>
         </nav>
         <div className="header-actions">
-          <a className="header-instagram" href="https://instagram.com/zoryonweb" target="_blank" rel="noreferrer" aria-label="Acompanhar a Zoryon Web no Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none" /></svg></a>
+          <a className="header-instagram" href="https://instagram.com/zoryonweb" target="_blank" rel="noopener noreferrer" aria-label="Acompanhar a Zoryon Web no Instagram">
+            <svg width="23" height="23" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="instagram-gradient" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#FEDA75" />
+                  <stop offset="0.3" stopColor="#FA7E1E" />
+                  <stop offset="0.55" stopColor="#D62976" />
+                  <stop offset="0.78" stopColor="#962FBF" />
+                  <stop offset="1" stopColor="#4F5BD5" />
+                </linearGradient>
+              </defs>
+              <rect width="24" height="24" rx="6" fill="url(#instagram-gradient)" />
+              <rect x="5" y="5" width="14" height="14" rx="4.2" fill="none" stroke="#fff" strokeWidth="1.8" />
+              <circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" strokeWidth="1.8" />
+              <circle cx="16.9" cy="7.2" r="1.1" fill="#fff" />
+            </svg>
+          </a>
           <a className="header-cta" href="https://wa.me/5535984259797?text=Olá%2C%20Zoryon%20Web!%20Quero%20conversar%20sobre%20um%20site%20profissional." target="_blank" rel="noreferrer">
             Iniciar projeto <ArrowRight size={16} />
           </a>
