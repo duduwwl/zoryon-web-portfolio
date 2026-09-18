@@ -12,7 +12,6 @@ const originals: Record<string, Page[]> = {
     {label:'Página de produto',path:'produtos/basic-black.html',slug:'produtos'},
     {label:'Checkout',path:'pagamento.html',slug:'checkout'},
     {label:'Gerência (demo)',path:'gerencia.html',slug:'gerencia'},
-    {label:'Administração (demo)',path:'admin.html',slug:'admin'},
   ],
   'casa-dos-fios': [{label:'Início',path:'index.html'},{label:'Catálogo completo',path:'produtos.html'},{label:'Carrinho e checkout',path:'checkout.html'}],
   'pizza-lavras': [{label:'Início',path:'index.html'},{label:'Cardápio completo',path:'pizzas.html'},{label:'Gerência (demo)',path:'admin.html?demo=1'}],

@@ -32,7 +32,7 @@ let PRODUCTS = {
     detail: "Preta / 100% algodão",
     description: "Preta essencial com estrutura encorpada e visual urbano. Uma base forte para qualquer combinação.",
     price: 99,
-    image: "assets/images/tee-black-white-stroke.webp",
+    image: "assets/images/tee-black-white-stroke-blue.png",
     badge: "BÁSICA",
     specs: [["Cor", "Preto profundo"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão penteado · 220g"], ["Gola", "Canelada com reforço interno"], ["Estampa", "Sem estampa"], ["Tamanhos", "P, M, G e GG"]]
   },
@@ -273,10 +273,10 @@ function initializeHeroSlideshow() {
   const hero = document.querySelector(".hero-visual");
   if (!hero || hero.querySelector(".hero-slide")) return;
   const images = [
-    "assets/images/hero-graphic-tee.webp",
-    "assets/images/tee-black-white-stroke.webp",
-    "assets/images/tee-blue-graffiti.webp",
-    "assets/images/tee-red-stencil.webp"
+    "assets/images/hero-graphic-tee-blue.png",
+    "assets/images/tee-black-white-stroke-blue.png",
+    "assets/images/tee-blue-graffiti-blue.png",
+    "assets/images/tee-red-stencil-blue.png"
   ];
   hero.innerHTML = images.map((image, index) => `<span class="hero-slide hero-slide-${index + 1}" style="background-image:url('${siteAsset(image)}')"></span>`).join("");
 }

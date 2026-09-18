@@ -103,6 +103,17 @@ function ProjectVisual({ project }: { project: Project }) {
           </div>
           <div className="pizza-site-benefits"><span>01　 Ingredientes selecionados</span><span>02　 Preparo no pedido</span><span>03　 Entrega acompanhada</span></div>
         </div>
+      ) : ['serra-alta-imoveis', 'orale-odontologia'].includes(project.slug) ? (
+        <div className="project-preview-live">
+          <iframe
+            src={`/projetos/${project.slug}/_embed/inicio`}
+            title={`Prévia atual de ${project.title}`}
+            loading="lazy"
+            tabIndex={-1}
+            aria-hidden="true"
+            sandbox="allow-same-origin"
+          />
+        </div>
       ) : (
         <img
           className="project-preview-image"
