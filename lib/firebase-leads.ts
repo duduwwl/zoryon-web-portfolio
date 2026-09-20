@@ -80,13 +80,3 @@ export async function savePortfolioLead(lead: PortfolioLead) {
 
   if (!response.ok) throw new Error(`Firestore respondeu com HTTP ${response.status}.`);
 }
-
-export async function verifyPortfolioAppCheck() {
-  const appCheckToken = await getAppCheckToken();
-  const response = await fetch(
-    `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/projects/wl-streetwear?key=${apiKey}`,
-    { headers: { 'X-Firebase-AppCheck': appCheckToken } },
-  );
-
-  if (!response.ok) throw new Error(`Firestore respondeu com HTTP ${response.status}.`);
-}
