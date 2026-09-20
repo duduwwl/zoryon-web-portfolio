@@ -32,7 +32,7 @@ let PRODUCTS = {
     detail: "Preta / 100% algodão",
     description: "Preta essencial com estrutura encorpada e visual urbano. Uma base forte para qualquer combinação.",
     price: 99,
-    image: "assets/images/tee-black-white-stroke-blue.png",
+    image: "assets/images/tee-black-white-stroke.webp",
     badge: "BÁSICA",
     specs: [["Cor", "Preto profundo"], ["Modelagem", "Oversized unissex"], ["Material", "100% algodão penteado · 220g"], ["Gola", "Canelada com reforço interno"], ["Estampa", "Sem estampa"], ["Tamanhos", "P, M, G e GG"]]
   },

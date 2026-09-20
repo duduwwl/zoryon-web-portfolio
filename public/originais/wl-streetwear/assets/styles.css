@@ -86,12 +86,12 @@ h2 { margin: 10px 0 0; font-size: clamp(26px, 3vw, 42px); line-height: 1.1; lett
 .section-copy { max-width: 310px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
 .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
 .product { min-width: 0; }
-.product-image { position: relative; display: block; aspect-ratio: .75; overflow: hidden; background: #668abc; }
+.product-image { position: relative; display: block; aspect-ratio: .75; overflow: hidden; background: #fff; }
 .product-image::after { content: "WL"; position: absolute; left: 13px; bottom: 10px; color: rgba(255,255,255,.65); font: 24px var(--font-display); letter-spacing: -.1em; mix-blend-mode: screen; }
-.product-image img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.75) contrast(1.12); transition: transform .4s ease, filter .3s ease; }
-.product-short-high-tech .product-image img { object-fit: contain; padding: 20px; background: #668abc; }
-.product-oculos-tech-shield .product-image img, .product-oculos-sport-shield .product-image img, .product-oculos-wl-frame .product-image img { object-fit: contain; padding: 7px; background: #668abc; }
-.product:hover img { transform: scale(1.045); filter: saturate(1) contrast(1.1); }
+.product-image img { width: 100%; height: 100%; object-fit: cover; display: block; filter: none; mix-blend-mode: normal; transition: transform .4s ease; }
+.product-short-high-tech .product-image img { object-fit: contain; padding: 20px; background: #fff; }
+.product-oculos-tech-shield .product-image img, .product-oculos-sport-shield .product-image img, .product-oculos-wl-frame .product-image img { object-fit: contain; padding: 7px; background: #fff; }
+.product:hover img { transform: scale(1.045); filter: none; }
 .badge { position: absolute; z-index: 1; top: 10px; left: 10px; padding: 7px 8px; color: var(--black); background: var(--electric); font: 9px var(--font-mono); letter-spacing: .06em; }
 .shirt-graphic, .garment-print { position: absolute; z-index: 2; display: grid; place-items: center; padding: 7px 9px; color: white; background: var(--black); border: 1px solid var(--electric); box-shadow: 4px 4px 0 var(--blue); font: 9px/.95 var(--font-display); text-align: center; text-transform: uppercase; letter-spacing: -.03em; transform: rotate(-8deg); }
 .shirt-graphic { right: 12px; bottom: 24%; width: 70%; min-height: 44px; }
@@ -142,9 +142,9 @@ h2 { margin: 10px 0 0; font-size: clamp(26px, 3vw, 42px); line-height: 1.1; lett
 
 .product-page { padding: clamp(35px, 6vw, 80px) clamp(20px, 5vw, 78px) 100px; display: grid; grid-template-columns: minmax(280px, 1.06fr) minmax(290px, .94fr); gap: clamp(30px, 7vw, 110px); }
 .product-gallery { position: sticky; top: 104px; align-self: start; }
-.product-main-image { position: relative; aspect-ratio: .82; overflow: hidden; background: #668abc; }
-.product-main-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.78) contrast(1.1); }
-.product-image img,.product-main-image img{mix-blend-mode:multiply}
+.product-main-image { position: relative; aspect-ratio: .82; overflow: hidden; background: #fff; }
+.product-main-image img { width: 100%; height: 100%; object-fit: cover; filter: none; }
+.product-image img,.product-main-image img{mix-blend-mode:normal}
 .product-page[data-product-page="basic-black"] .product-main-image img { mix-blend-mode: normal; filter: none; }
 .product-main-image::after { content: "WL STREETWEAR"; position: absolute; left: 14px; bottom: 13px; padding: 8px 9px; color: var(--paper); background: rgba(5,7,14,.75); font: 9px var(--font-mono); letter-spacing: .08em; }
 .product-details { padding-top: 5px; }

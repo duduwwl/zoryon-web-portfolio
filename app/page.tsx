@@ -33,49 +33,43 @@ type Project = {
 
 const projects: Project[] = [
   {
-    number: '01', slug: 'daniels-barber', title: 'Daniel’s Barber', eyebrow: 'Identidade & presença local',
-    description: 'Uma experiência digital precisa e elegante para uma barbearia de Lavras, com serviços, personalidade e agendamento em primeiro plano.',
-    categories: ['Serviços'], tags: ['Barbearia', 'Agendamento', 'Lavras'], theme: 'barber', status: 'Projeto real',
-    url: 'danielsbarber.com.br', miniTitle: 'SEU ESTILO.\nNOSSA ASSINATURA.', miniSubtitle: 'BARBEARIA · LAVRAS MG', button: 'Agendar horário',
-  },
-  {
-    number: '02', slug: 'wl-streetwear', title: 'WL Streetwear', eyebrow: 'Moda urbana & e-commerce',
+    number: '01', slug: 'wl-streetwear', title: 'WL Streetwear', eyebrow: 'Moda urbana & e-commerce',
     description: 'Loja streetwear completa com coleção, páginas de produto, sacola, checkout, conta de cliente e gestão do catálogo.',
     categories: ['E-commerce'], tags: ['Streetwear', 'Loja virtual', 'Checkout'], theme: 'streetwear', status: 'Projeto fictício',
     url: 'wl-streetwear', miniTitle: 'STREETWEAR\nCOM ASSINATURA.', miniSubtitle: 'DROP 01 · LAVRAS MG', button: 'Explorar coleção',
   },
   {
-    number: '03', slug: 'casa-dos-fios', title: 'Mundix Aviamentos', eyebrow: 'Catálogo & e-commerce',
+    number: '02', slug: 'casa-dos-fios', title: 'Mundix Aviamentos', eyebrow: 'Catálogo & e-commerce',
     description: 'Loja digital completa para linhas e fios, com catálogo organizado por cores, variações visuais e uma jornada de compra simples.',
     categories: ['E-commerce'], tags: ['Catálogo', 'Variações', 'Loja online'], theme: 'yarn', status: 'Projeto real',
     url: 'mundix.com.br', miniTitle: 'CORES QUE\nINSPIRAM.', miniSubtitle: 'FIOS · LINHAS · CRIATIVIDADE', button: 'Ver coleção',
   },
   {
-    number: '04', slug: 'pizza-lavras', title: 'Pizza Lavras', eyebrow: 'Pizzarias',
+    number: '03', slug: 'pizza-lavras', title: 'Pizza Lavras', eyebrow: 'Pizzarias',
     description: 'Um site vibrante para transformar fome em pedido, separando sabores tradicionais, especiais e doces com navegação direta.',
     categories: ['Gastronomia'], tags: ['Pizzaria', 'Cardápio', 'Delivery'], theme: 'pizza', status: 'Projeto fictício',
     url: 'pizzalavras.com.br', miniTitle: 'A NOITE PEDE\nPIZZA.', miniSubtitle: 'FORNO QUENTE · ENTREGA RÁPIDA', button: 'Pedir agora',
   },
   {
-    number: '05', slug: 'aurele', title: 'Auréle', eyebrow: 'Moda & experiência premium',
+    number: '04', slug: 'aurele', title: 'Auréle', eyebrow: 'Moda & experiência premium',
     description: 'Uma loja feminina editorial, inspirada no universo das grandes maisons, com foco em produto, desejo e movimento.',
     categories: ['E-commerce'], tags: ['Moda feminina', 'Editorial', 'E-commerce'], theme: 'fashion', status: 'Projeto fictício',
     url: 'aurele.com.br', miniTitle: 'NOVA\nCOLEÇÃO.', miniSubtitle: 'AUTUMN / WINTER 2026', button: 'Descobrir',
   },
   {
-    number: '06', slug: 'hamburgueria-do-gordao', title: 'Hamburgueria Na Brasa', eyebrow: 'Marca & cardápio digital',
+    number: '05', slug: 'hamburgueria-do-gordao', title: 'Hamburgueria Na Brasa', eyebrow: 'Marca & cardápio digital',
     description: 'Personalidade forte, categorias bem definidas e uma vitrine irresistível para hambúrgueres tradicionais, artesanais e especiais.',
     categories: ['Gastronomia'], tags: ['Hamburgueria', 'Delivery', 'Cardápio'], theme: 'burger', status: 'Projeto fictício',
     url: 'hamburgueria-ee939.web.app', miniTitle: 'FOME DE\nVERDADE.', miniSubtitle: 'SMASH · ARTESANAL · MONSTRO', button: 'Ver cardápio',
   },
   {
-    number: '07', slug: 'serra-alta-imoveis', title: 'Serra Alta Imóveis', eyebrow: 'Imóveis & geração de leads',
+    number: '06', slug: 'serra-alta-imoveis', title: 'Serra Alta Imóveis', eyebrow: 'Imóveis & geração de leads',
     description: 'Conceito de portal imobiliário sofisticado, com busca rápida, destaques e conversão direta para o atendimento comercial.',
     categories: ['Serviços'], tags: ['Imobiliária', 'Busca', 'Leads'], theme: 'estate', status: 'Projeto fictício',
     url: 'serraaltaimoveis.com.br', miniTitle: 'ENCONTRE O SEU\nNOVO LUGAR.', miniSubtitle: 'IMÓVEIS SELECIONADOS EM LAVRAS', button: 'Explorar imóveis',
   },
   {
-    number: '08', slug: 'orale-odontologia', title: 'Oracle Odontologia', eyebrow: 'Saúde & credibilidade',
+    number: '07', slug: 'orale-odontologia', title: 'Oracle Odontologia', eyebrow: 'Saúde & credibilidade',
     description: 'Site profissional para uma clínica odontológica, com tratamentos bem apresentados, confiança e agendamento direto.',
     categories: ['Serviços'], tags: ['Odontologia', 'Institucional', 'Agenda'], theme: 'dental', status: 'Projeto fictício',
     url: 'oracleodontologia.com.br', miniTitle: 'SAÚDE BUCAL\nCOMPLETA.', miniSubtitle: 'ATENDIMENTO · PLANEJAMENTO · CUIDADO', button: 'Agendar avaliação',

@@ -1,0 +1,61 @@
+@media (max-width: 760px) {
+  .nav-links {
+    gap: 8px;
+    padding: 92px 28px 32px;
+    height: calc(100dvh - 30px);
+    bottom: auto;
+    align-self: start;
+    overflow-y: auto;
+  }
+
+  .scrolled .nav-links {
+    top: 0;
+    height: 100dvh;
+  }
+
+  .nav-links > button,
+  .nav-dropdown > button {
+    font-size: 23px;
+    line-height: 1.15;
+  }
+
+  .nav-dropdown,
+  .nav-dropdown > button {
+    width: 100%;
+  }
+
+  .nav-dropdown > button {
+    text-align: left;
+  }
+
+  .nav-dropdown > button i {
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: block;
+    position: static;
+    width: 100%;
+    padding: 8px 0 2px 12px;
+    color: inherit;
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .dropdown-menu button {
+    padding: 10px 4px;
+    border-bottom-color: rgb(255 255 255 / 14%);
+    font-family: Manrope, "Avenir Next", sans-serif;
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .dropdown-menu button span {
+    font-size: 14px;
+  }
+}
