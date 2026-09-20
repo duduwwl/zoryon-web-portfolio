@@ -632,7 +632,7 @@ button { font: inherit; }
 .contact-section h2 em { font-family: Georgia, serif; font-weight: 400; text-transform: none; }
 .contact-actions { display: grid; grid-template-columns: 1.7fr .7fr .7fr; gap: 12px; }
 .contact-actions a { min-height: 70px; padding: 0 22px; display: flex; align-items: center; gap: 12px; border: 1px solid rgba(12,15,14,.45); font-size: 13px; font-weight: 700; }
-.contact-actions a svg:last-child { margin-left: auto; }
+.contact-actions .contact-primary svg:last-child { margin-left: auto; }
 .contact-actions .contact-primary { background: var(--ink); color: white; }
 
 footer { padding: 50px 4vw; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: end; gap: 30px; background: var(--paper); border-top: 1px solid var(--line); }

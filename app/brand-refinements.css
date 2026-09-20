@@ -93,6 +93,14 @@ body{font-family:var(--font-brand)}
 .local-section{display:block;padding:0;background:#02040a}
 .studio-card{width:100%;max-width:none;height:auto;border:0!important;box-shadow:none!important;object-fit:cover}
 .contact-actions a:not(.contact-primary) svg{box-sizing:content-box;flex:none;padding:8px;border:1px solid rgba(103,145,255,.48);border-radius:10px;background:rgba(46,83,183,.17);color:#e9f2ff}
+@media(max-width:760px){
+  .contact-section{padding-top:76px;padding-bottom:76px}
+  .contact-section h2{margin:38px 0 42px;font-size:clamp(30px,9vw,40px);line-height:.94;letter-spacing:-.05em;text-wrap:balance}
+  .contact-actions{width:100%;gap:10px}
+  .contact-actions a{box-sizing:border-box;width:100%;min-width:0;max-width:100%;padding:0 14px;gap:10px;justify-content:flex-start}
+  .contact-actions a svg{flex:0 0 auto}
+  .contact-actions a:not(.contact-primary) svg{margin-left:0;padding:6px}
+}
 main>footer>p{font-family:var(--font-brand);font-size:1rem;font-weight:500;line-height:1.65;letter-spacing:-.012em;color:#aeb8cc}
 
 .original-viewer-devices{display:flex;gap:4px;padding:4px;border:1px solid #344260;border-radius:10px;background:#0d1527}
