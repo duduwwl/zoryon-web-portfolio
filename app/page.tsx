@@ -134,6 +134,7 @@ export default function Home() {
 
   return (
     <main>
+      <link rel="canonical" href="https://zoryonweb.com.br/" />
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Zoryon Web — início" onClick={closeMenu}>
           <img className="brand-logo" src="/brand/zoryon.webp" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span>

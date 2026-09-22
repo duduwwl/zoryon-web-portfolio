@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
   applicationName: 'Zoryon Web',
-  alternates: { canonical: '/' },
   icons: { icon: '/favicon.svg' },
   robots: { index: true, follow: true },
   openGraph: {
