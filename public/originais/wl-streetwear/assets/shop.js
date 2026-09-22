@@ -273,10 +273,10 @@ function initializeHeroSlideshow() {
   const hero = document.querySelector(".hero-visual");
   if (!hero || hero.querySelector(".hero-slide")) return;
   const images = [
-    "assets/images/hero-graphic-tee-blue.png",
-    "assets/images/tee-black-white-stroke-blue.png",
-    "assets/images/tee-blue-graffiti-blue.png",
-    "assets/images/tee-red-stencil-blue.png"
+    "assets/images/hero-graphic-tee-blue.webp",
+    "assets/images/tee-black-white-stroke-blue.webp",
+    "assets/images/tee-blue-graffiti-blue.webp",
+    "assets/images/tee-red-stencil-blue.webp"
   ];
   hero.innerHTML = images.map((image, index) => `<span class="hero-slide hero-slide-${index + 1}" style="background-image:url('${siteAsset(image)}')"></span>`).join("");
 }

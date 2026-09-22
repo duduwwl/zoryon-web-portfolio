@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import {
-  ArrowDownRight,
   ArrowRight,
   ArrowUpRight,
   AtSign,
@@ -137,7 +136,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="Zoryon Web — início" onClick={closeMenu}>
-          <img className="brand-logo" src="/brand/zoryon.png" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span>
+          <img className="brand-logo" src="/brand/zoryon.webp" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span>
         </a>
         <nav className={menuOpen ? 'nav-open' : ''} aria-label="Navegação principal">
           <a href="#projetos" onClick={closeMenu}>Projetos</a>
@@ -171,7 +170,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="inicio">
-        <span className="hero-z-emblem" aria-hidden="true"><img src="/brand/zoryon.png" alt="" /></span>
+        <span className="hero-z-emblem" aria-hidden="true"><img src="/brand/zoryon.webp" alt="" /></span>
         <h1>Sites profissionais.<br /><em>Feitos para vender.</em></h1>
         <div className="hero-footer">
           <p>Transforme visitas em contatos, pedidos e vendas com um site rápido, estratégico e feito sob medida para o seu negócio.</p>
@@ -289,7 +288,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="brand footer-brand" href="#inicio"><img className="brand-logo" src="/brand/zoryon.png" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span></a>
+        <a className="brand footer-brand" href="#inicio"><img className="brand-logo" src="/brand/zoryon.webp" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span></a>
         <p>Sites profissionais desenvolvidos para gerar resultado.</p>
         <div><span>Lavras · MG</span><span>© 2026 Zoryon Web</span></div>
       </footer>

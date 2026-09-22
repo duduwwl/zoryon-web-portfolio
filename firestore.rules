@@ -10,6 +10,10 @@ service cloud.firestore {
       return resource.data.status == 'published';
     }
 
+    function isProjectPublished(projectId) {
+      return get(/databases/$(database)/documents/projects/$(projectId)).data.status == 'published';
+    }
+
     function isRecentTimestamp(value) {
       return value is timestamp
         && value <= request.time
@@ -59,7 +63,7 @@ service cloud.firestore {
       allow write: if isAdmin();
 
       match /pages/{pageId} {
-        allow read: if resource.data.status == 'published' || isAdmin();
+        allow read: if (isPublished() && isProjectPublished(projectId)) || isAdmin();
         allow write: if isAdmin();
       }
     }

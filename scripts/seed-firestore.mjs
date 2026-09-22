@@ -16,11 +16,24 @@ function assertUnique(items, key, label) {
 
 assertUnique(seed.siteSettings, 'id', 'siteSettings');
 assertUnique(seed.services, 'id', 'services');
-assertUnique(seed.projects, 'slug', 'projects');
-for (const project of seed.projects) {
+const allProjects = [...seed.projects, ...(seed.archivedProjects || [])];
+assertUnique(allProjects, 'slug', 'projects');
+for (const project of allProjects) {
   assertUnique(project.pages, 'slug', `projects/${project.slug}/pages`);
   if (!project.pages.some((page) => page.slug === 'inicio')) {
     throw new Error(`projects/${project.slug}: falta a página inicial.`);
+  }
+  if (!['published', 'archived'].includes(project.status)) {
+    throw new Error(`projects/${project.slug}: status inválido.`);
+  }
+}
+if (seed.projects.some((project) => project.status !== 'published') ||
+    (seed.archivedProjects || []).some((project) => project.status !== 'archived')) {
+  throw new Error('Separe projetos publicados e arquivados nas respectivas listas.');
+}
+for (const [index, project] of seed.projects.entries()) {
+  if (project.order !== index + 1 || project.number !== String(index + 1).padStart(2, '0')) {
+    throw new Error(`projects/${project.slug}: ordem e número devem seguir a ordem do portfólio.`);
   }
 }
 
@@ -39,14 +52,16 @@ function fields(input) {
 }
 
 function document(path, data) {
+  const documentFields = {
+    ...fields(data),
+    updatedAt: { timestampValue: timestamp },
+  };
   return {
     update: {
       name: `projects/${projectId}/databases/(default)/documents/${path}`,
-      fields: {
-        ...fields(data),
-        updatedAt: { timestampValue: timestamp },
-      },
+      fields: documentFields,
     },
+    updateMask: { fieldPaths: Object.keys(documentFields) },
   };
 }
 
@@ -58,7 +73,7 @@ const writes = [
   }),
   ...seed.siteSettings.map(({ id, ...data }) => document(`siteSettings/${id}`, data)),
   ...seed.services.map(({ id, ...data }) => document(`services/${id}`, data)),
-  ...seed.projects.flatMap(({ pages, ...project }) => [
+  ...allProjects.flatMap(({ pages, ...project }) => [
     document(`projects/${project.slug}`, {
       ...project,
       availableDevices: ['desktop', 'tablet', 'mobile'],
@@ -67,7 +82,7 @@ const writes = [
     ...pages.map((page, order) => document(`projects/${project.slug}/pages/${page.slug}`, {
       ...page,
       order: order + 1,
-      status: 'published',
+      status: project.status,
       route: page.slug === 'inicio' ? `/projetos/${project.slug}` : `/projetos/${project.slug}/${page.slug}`,
     })),
   ]),

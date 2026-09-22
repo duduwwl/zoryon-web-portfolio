@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "siteSettings": [
     {
       "id": "general",
@@ -24,13 +24,15 @@
     { "id": "cardapio-catalogo", "status": "published", "order": 3, "title": "Cardápio e catálogo", "description": "Opções organizadas e pedidos direcionados." }
   ],
   "projects": [
-    { "slug": "daniels-barber", "number": "01", "title": "Daniel’s Barber", "category": "Serviços", "projectType": "real", "status": "published", "order": 1, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "agendamento", "label": "Agendamento" }, { "slug": "barbearia", "label": "A barbearia" }, { "slug": "contato", "label": "Contato" }] },
-    { "slug": "wl-streetwear", "number": "02", "title": "WL Streetwear", "category": "E-commerce", "projectType": "concept", "status": "published", "order": 2, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "colecao", "label": "Coleção" }, { "slug": "produtos", "label": "Produtos" }, { "slug": "gerencia", "label": "Gerência" }] },
-    { "slug": "casa-dos-fios", "number": "03", "title": "Mundix Aviamentos", "category": "E-commerce", "projectType": "real", "status": "published", "order": 3, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "produtos", "label": "Produtos" }, { "slug": "categorias", "label": "Categorias" }, { "slug": "carrinho", "label": "Carrinho" }] },
-    { "slug": "pizza-lavras", "number": "04", "title": "Pizza Lavras", "category": "Gastronomia", "projectType": "concept", "status": "published", "order": 4, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "cardapio", "label": "Cardápio" }, { "slug": "combos", "label": "Combos" }, { "slug": "contato", "label": "Contato" }] },
-    { "slug": "aurele", "number": "05", "title": "Auréle", "category": "E-commerce", "projectType": "concept", "status": "published", "order": 5, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "colecao", "label": "Coleção" }, { "slug": "editorial", "label": "Editorial" }, { "slug": "contato", "label": "Contato" }] },
-    { "slug": "hamburgueria-do-gordao", "number": "06", "title": "Hamburgueria Na Brasa", "category": "Gastronomia", "projectType": "concept", "status": "published", "order": 6, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "cardapio", "label": "Cardápio" }, { "slug": "combos", "label": "Combos" }, { "slug": "contato", "label": "Contato" }] },
-    { "slug": "serra-alta-imoveis", "number": "07", "title": "Serra Alta Imóveis", "category": "Serviços", "projectType": "concept", "status": "published", "order": 7, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "imoveis", "label": "Imóveis" }, { "slug": "sobre", "label": "Sobre" }, { "slug": "contato", "label": "Contato" }] },
-    { "slug": "orale-odontologia", "number": "08", "title": "Oracle Odontologia", "category": "Serviços", "projectType": "concept", "status": "published", "order": 8, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "tratamentos", "label": "Tratamentos" }, { "slug": "equipe", "label": "Equipe" }, { "slug": "contato", "label": "Contato" }] }
+    { "slug": "wl-streetwear", "number": "01", "title": "WL Streetwear", "category": "E-commerce", "projectType": "concept", "status": "published", "order": 1, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "colecao", "label": "Coleção" }, { "slug": "produtos", "label": "Produtos" }, { "slug": "gerencia", "label": "Gerência" }] },
+    { "slug": "casa-dos-fios", "number": "02", "title": "Mundix Aviamentos", "category": "E-commerce", "projectType": "real", "status": "published", "order": 2, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "produtos", "label": "Produtos" }, { "slug": "categorias", "label": "Categorias" }, { "slug": "carrinho", "label": "Carrinho" }] },
+    { "slug": "pizza-lavras", "number": "03", "title": "Pizza Lavras", "category": "Gastronomia", "projectType": "concept", "status": "published", "order": 3, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "cardapio", "label": "Cardápio" }, { "slug": "combos", "label": "Combos" }, { "slug": "contato", "label": "Contato" }] },
+    { "slug": "aurele", "number": "04", "title": "Auréle", "category": "E-commerce", "projectType": "concept", "status": "published", "order": 4, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "colecao", "label": "Coleção" }, { "slug": "editorial", "label": "Editorial" }, { "slug": "contato", "label": "Contato" }] },
+    { "slug": "hamburgueria-do-gordao", "number": "05", "title": "Hamburgueria Na Brasa", "category": "Gastronomia", "projectType": "concept", "status": "published", "order": 5, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "cardapio", "label": "Cardápio" }, { "slug": "combos", "label": "Combos" }, { "slug": "contato", "label": "Contato" }] },
+    { "slug": "serra-alta-imoveis", "number": "06", "title": "Serra Alta Imóveis", "category": "Serviços", "projectType": "concept", "status": "published", "order": 6, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "imoveis", "label": "Imóveis" }, { "slug": "sobre", "label": "Sobre" }, { "slug": "contato", "label": "Contato" }] },
+    { "slug": "orale-odontologia", "number": "07", "title": "Oracle Odontologia", "category": "Serviços", "projectType": "concept", "status": "published", "order": 7, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "tratamentos", "label": "Tratamentos" }, { "slug": "equipe", "label": "Equipe" }, { "slug": "contato", "label": "Contato" }] }
+  ],
+  "archivedProjects": [
+    { "slug": "daniels-barber", "number": "00", "title": "Daniel’s Barber", "category": "Serviços", "projectType": "real", "status": "archived", "order": 0, "pages": [{ "slug": "inicio", "label": "Início" }, { "slug": "agendamento", "label": "Agendamento" }, { "slug": "barbearia", "label": "A barbearia" }, { "slug": "contato", "label": "Contato" }] }
   ]
 }
