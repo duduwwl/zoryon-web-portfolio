@@ -80,12 +80,30 @@ function demoHref(projectSlug: string, pageSlug: string) {
 export async function generateMetadata({ params }: DemoPageProps): Promise<Metadata> {
   const { slug, page } = await params;
   const project = getDemoProject(slug);
-  if (!project) return { title: 'Projeto não encontrado' };
+  if (!project) return { title: 'Projeto não encontrado', robots: { index: false, follow: false }, alternates: {} };
   const requestedPage = page?.[0] === '_embed' ? page?.[1] : page?.[0];
   const current = project.navigation.find((item) => item.slug === (requestedPage ?? 'inicio'));
   const title = `${current?.label ?? 'Início'} — ${project.title}`;
   const description = `${project.description} Projeto apresentado pela Zoryon Web.`;
-  return { title, description, openGraph: { title, description, images: [] }, twitter: { title, description, images: [] } };
+  const isIndexable = !page?.length && slug !== 'daniels-barber';
+  const projectUrl = `https://zoryonweb.com.br/projetos/${slug}`;
+  const projectImage = profiles[slug]?.hero;
+  return {
+    title,
+    description,
+    alternates: isIndexable ? { canonical: projectUrl } : {},
+    robots: { index: isIndexable, follow: true },
+    openGraph: {
+      title,
+      description,
+      url: projectUrl,
+      siteName: 'Zoryon Web',
+      locale: 'pt_BR',
+      type: 'website',
+      images: projectImage ? [{ url: projectImage, alt: `Prévia do projeto ${project.title}` }] : [],
+    },
+    twitter: { card: 'summary_large_image', title, description, images: projectImage ? [projectImage] : [] },
+  };
 }
 
 export function generateStaticParams() {

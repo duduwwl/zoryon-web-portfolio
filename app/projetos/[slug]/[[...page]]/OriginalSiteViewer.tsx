@@ -37,6 +37,7 @@ export default function OriginalSiteViewer({slug,title,initialPage,pageOptions,n
   const src=native ? `/projetos/${slug}/_embed/${page}` : `/originais/${slug}/${page}`;
   const [currentUrl,setCurrentUrl]=useState(src);
   return <main className="original-viewer">
+    <h1 className="sr-only">{title}</h1>
     <header className="original-viewer-toolbar">
       <a className="original-viewer-back" href="/#projetos"><ArrowLeft size={16}/><span>Portfólio</span></a>
       <div className="original-viewer-title"><strong>{title}</strong><small>{native ? 'Projeto completo · demonstração' : 'Versão original · demonstração'}</small></div>
