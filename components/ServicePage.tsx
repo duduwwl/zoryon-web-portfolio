@@ -97,12 +97,17 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           <img className="brand-logo" src="/brand/zoryon.webp" alt="" width={52} height={52} />
           <span>ZORYON <b>WEB</b></span>
         </a>
-        <nav aria-label="Navegação principal">
-          <a href="/criacao-de-sites">Criação de sites</a>
-          <a href="/lojas-virtuais">Lojas virtuais</a>
-          <a href="/landing-pages">Landing pages</a>
-          <a href="/#projetos">Projetos</a>
-        </nav>
+        <details className="service-nav-menu">
+          <summary aria-label="Menu de navegação" title="Menu">
+            <span className="service-nav-dots" aria-hidden="true"><i /><i /><i /></span>
+          </summary>
+          <nav aria-label="Navegação principal">
+            <a href="/#projetos">Projetos</a>
+            <a href="/criacao-de-sites">Criação de sites</a>
+            <a href="/lojas-virtuais">Lojas virtuais</a>
+            <a href="/landing-pages">Landing pages</a>
+          </nav>
+        </details>
         <a className="service-header-cta" href={whatsapp} target="_blank" rel="noopener noreferrer">Pedir orçamento <ArrowUpRight size={16} /></a>
       </header>
 
