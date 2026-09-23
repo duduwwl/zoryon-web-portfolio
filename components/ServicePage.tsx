@@ -108,7 +108,20 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             <a href="/landing-pages">Landing pages</a>
           </nav>
         </details>
-        <a className="service-header-cta" href={whatsapp} target="_blank" rel="noopener noreferrer">Pedir orçamento <ArrowUpRight size={16} /></a>
+        <div className="service-header-actions">
+          <a className="header-instagram" href="https://instagram.com/zoryonweb" target="_blank" rel="noopener noreferrer" aria-label="Acompanhar a Zoryon Web no Instagram">
+            <svg width="23" height="23" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <defs><linearGradient id="instagram-gradient-service" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#FEDA75" /><stop offset="0.3" stopColor="#FA7E1E" /><stop offset="0.55" stopColor="#D62976" /><stop offset="0.78" stopColor="#962FBF" /><stop offset="1" stopColor="#4F5BD5" />
+              </linearGradient></defs>
+              <rect width="24" height="24" rx="6" fill="url(#instagram-gradient-service)" />
+              <rect x="5" y="5" width="14" height="14" rx="4.2" fill="none" stroke="#fff" strokeWidth="1.8" />
+              <circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" strokeWidth="1.8" />
+              <circle cx="16.9" cy="7.2" r="1.1" fill="#fff" />
+            </svg>
+          </a>
+          <a className="service-header-cta" href={whatsapp} target="_blank" rel="noopener noreferrer">Pedir orçamento <ArrowUpRight size={16} /></a>
+        </div>
       </header>
 
       <div className="service-hero">
@@ -198,6 +211,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         <nav aria-label="Navegação do rodapé"><a href="/">Início</a><a href="/#projetos">Projetos</a><a href="/criacao-de-sites-lavras">Lavras/MG</a></nav>
         <span>© 2026 Zoryon Web</span>
       </footer>
+      <a className="floating-whatsapp" href={whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Falar com a Zoryon Web pelo WhatsApp"><MessageCircle size={22} /></a>
     </main>
   );
 }

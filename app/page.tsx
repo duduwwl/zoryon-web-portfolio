@@ -6,11 +6,9 @@ import {
   ArrowUpRight,
   AtSign,
   Check,
-  Menu,
   MessageCircle,
   Phone,
   Sparkles,
-  X,
 } from 'lucide-react';
 
 type Project = {
@@ -139,7 +137,10 @@ export default function Home() {
         <a className="brand" href="#inicio" aria-label="Zoryon Web — início" onClick={closeMenu}>
           <img className="brand-logo" src="/brand/zoryon.webp" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span>
         </a>
-        <nav className={menuOpen ? 'nav-open' : ''} aria-label="Navegação principal">
+        <button type="button" className="home-nav-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="home-navigation" aria-label="Menu de navegação">
+          <span className="service-nav-dots" aria-hidden="true"><i /><i /><i /></span>
+        </button>
+        <nav id="home-navigation" className={`home-nav${menuOpen ? ' nav-open' : ''}`} aria-label="Navegação principal">
           <a href="#projetos" onClick={closeMenu}>Projetos</a>
           <a href="#contato" onClick={closeMenu}>Contato</a>
         </nav>
@@ -165,9 +166,6 @@ export default function Home() {
             Iniciar projeto <ArrowRight size={16} />
           </a>
         </div>
-        <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}>
-          {menuOpen ? <X /> : <Menu />}
-        </button>
       </header>
 
       <section className="hero" id="inicio">
