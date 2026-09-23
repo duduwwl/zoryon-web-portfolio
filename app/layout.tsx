@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './brand-refinements.css';
+import './services.css';
 
 const siteUrl = 'https://zoryonweb.com.br/';
 const siteTitle = 'Zoryon Web | Criação de Sites Profissionais';

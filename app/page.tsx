@@ -243,6 +243,7 @@ export default function Home() {
           <span>02 / O que criamos</span>
           <h2>Seu negócio, traduzido em uma experiência digital.</h2>
         </div>
+        <p className="service-home-intro">A Zoryon Web cria sites profissionais e institucionais, lojas virtuais e landing pages. Atendemos empresas em Lavras/MG e desenvolvemos projetos remotamente para outras regiões do Brasil.</p>
         <div className="solution-grid">
           <article>
             <span>01</span><h3>Site institucional</h3>
@@ -260,6 +261,12 @@ export default function Home() {
             <ul><li><Check size={14} /> Navegação rápida</li><li><Check size={14} /> Categorias inteligentes</li><li><Check size={14} /> Pedido direcionado</li></ul>
           </article>
         </div>
+        <nav className="service-home-links" aria-label="Conhecer serviços">
+          <a href="/criacao-de-sites">Criação de sites <ArrowUpRight size={15} /></a>
+          <a href="/criacao-de-sites-lavras">Sites em Lavras <ArrowUpRight size={15} /></a>
+          <a href="/lojas-virtuais">Lojas virtuais <ArrowUpRight size={15} /></a>
+          <a href="/landing-pages">Landing pages <ArrowUpRight size={15} /></a>
+        </nav>
       </section>
 
       <section className="process-section" id="processo">

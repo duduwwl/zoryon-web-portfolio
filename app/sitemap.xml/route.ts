@@ -2,6 +2,10 @@ const origin = 'https://zoryonweb.com.br';
 
 const paths = [
   '/',
+  '/criacao-de-sites',
+  '/criacao-de-sites-lavras',
+  '/lojas-virtuais',
+  '/landing-pages',
   '/projetos/wl-streetwear',
   '/projetos/casa-dos-fios',
   '/projetos/pizza-lavras',
