@@ -103,9 +103,12 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           </summary>
           <nav aria-label="Navegação principal">
             <a href="/#projetos">Projetos</a>
+            <a href="/">Início</a>
             <a href="/criacao-de-sites">Criação de sites</a>
+            <a href="/criacao-de-sites-lavras">Sites em Lavras</a>
             <a href="/lojas-virtuais">Lojas virtuais</a>
             <a href="/landing-pages">Landing pages</a>
+            <a href="/#contato">Contato</a>
           </nav>
         </details>
         <div className="service-header-actions">

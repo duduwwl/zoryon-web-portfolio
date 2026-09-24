@@ -134,7 +134,7 @@ export default function Home() {
     <main>
       <link rel="canonical" href="https://zoryonweb.com.br/" />
       <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Zoryon Web — início" onClick={closeMenu}>
+        <a className="brand" href="/" aria-label="Zoryon Web — início" onClick={closeMenu}>
           <img className="brand-logo" src="/brand/zoryon.webp" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span>
         </a>
         <button type="button" className="home-nav-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="home-navigation" aria-label="Menu de navegação">
@@ -142,6 +142,11 @@ export default function Home() {
         </button>
         <nav id="home-navigation" className={`home-nav${menuOpen ? ' nav-open' : ''}`} aria-label="Navegação principal">
           <a href="#projetos" onClick={closeMenu}>Projetos</a>
+          <a href="/" onClick={closeMenu}>Início</a>
+          <a href="/criacao-de-sites" onClick={closeMenu}>Criação de sites</a>
+          <a href="/criacao-de-sites-lavras" onClick={closeMenu}>Sites em Lavras</a>
+          <a href="/lojas-virtuais" onClick={closeMenu}>Lojas virtuais</a>
+          <a href="/landing-pages" onClick={closeMenu}>Landing pages</a>
           <a href="#contato" onClick={closeMenu}>Contato</a>
         </nav>
         <div className="header-actions">
@@ -294,7 +299,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <a className="brand footer-brand" href="#inicio"><img className="brand-logo" src="/brand/zoryon.webp" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span></a>
+        <a className="brand footer-brand" href="/"><img className="brand-logo" src="/brand/zoryon.webp" alt="Logo Zoryon Web" width={48} height={48} /><span>ZORYON <b>WEB</b></span></a>
         <p>Sites profissionais desenvolvidos para gerar resultado.</p>
         <div><span>Lavras · MG</span><span>© 2026 Zoryon Web</span></div>
       </footer>
