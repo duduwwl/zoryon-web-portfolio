@@ -39,7 +39,7 @@ export default function OriginalSiteViewer({slug,title,initialPage,pageOptions,n
   return <main className="original-viewer">
     <h1 className="sr-only">{title}</h1>
     <header className="original-viewer-toolbar">
-      <a className="original-viewer-back" href="/#projetos"><ArrowLeft size={16}/><span>Portfólio</span></a>
+      <a className="original-viewer-back" href="/projetos"><ArrowLeft size={16}/><span>Portfólio</span></a>
       <div className="original-viewer-title"><strong>{title}</strong><small>{native ? 'Projeto completo · demonstração' : 'Versão original · demonstração'}</small></div>
       <label className="original-viewer-pages"><span className="sr-only">Página do projeto</span><select value={page} onChange={event=>setPage(event.target.value)}>{pages.map(item=><option value={item.path} key={item.path}>{item.label}</option>)}</select></label>
       <div className="original-viewer-devices" role="group" aria-label="Visualizar em outro dispositivo">
