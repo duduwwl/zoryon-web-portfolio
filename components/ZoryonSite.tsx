@@ -55,17 +55,57 @@ export function PortfolioImage({
   project: PortfolioProject;
   priority?: boolean;
 }) {
+  const isStreetwear = project.slug === 'wl-streetwear';
   return (
-    <img
-      src={project.image}
-      alt={project.alt}
-      width="1279"
-      height="920"
-      loading={priority ? 'eager' : 'lazy'}
-      decoding="async"
-      fetchPriority={priority ? 'high' : 'auto'}
-      style={{ objectPosition: project.imagePosition || 'top center' }}
-    />
+    <span className={`zw-cover ${isStreetwear ? 'zw-cover-wl' : ''}`}>
+      <span className="zw-cover-bar" aria-hidden="true">
+        <span className="zw-cover-dots">
+          <i />
+          <i />
+          <i />
+        </span>
+        <span>{project.title}</span>
+        <span className="zw-cover-open">↗</span>
+      </span>
+      {isStreetwear ? (
+        <span className="zw-wl-screen" role="img" aria-label={project.alt}>
+          <span className="zw-wl-navigation">
+            WL <small>STREETWEAR / EST. 2026</small>
+            <b>COLEÇÃO&nbsp; +</b>
+          </span>
+          <span className="zw-wl-layout">
+            <span className="zw-wl-copy">
+              <small>WL / EDIÇÃO DE ESTREIA</small>
+              <strong>
+                STREETWEAR
+                <br />
+                COM <em>ASSINATURA.</em>
+              </strong>
+              <span>Peças de impacto. Gráficos autorais.</span>
+            </span>
+            <img
+              src={project.image}
+              alt=""
+              width="960"
+              height="960"
+              loading={priority ? 'eager' : 'lazy'}
+              decoding="async"
+              fetchPriority={priority ? 'high' : 'auto'}
+            />
+          </span>
+        </span>
+      ) : (
+        <img
+          src={project.image}
+          alt={project.alt}
+          width="1279"
+          height="920"
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchPriority={priority ? 'high' : 'auto'}
+        />
+      )}
+    </span>
   );
 }
 
