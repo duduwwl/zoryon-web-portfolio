@@ -1,49 +1,64 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { MessageCircle } from 'lucide-react';
 import type { PortfolioProject } from '../lib/portfolio';
 
 export const whatsappUrl = `https://wa.me/5535984259797?text=${encodeURIComponent('Olá! Vim pelo site da Zoryon Web e quero conversar sobre um projeto.')}`;
 
-export function SiteHeader({ active }: { active: 'home' | 'projects' }) {
+export function SiteHeader({ active }: { active: 'home' | 'projects' | 'service' }) {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   return (
-    <header className="zw-header">
+    <header className={`zw-header ${scrolled ? 'is-scrolled' : ''}`}>
       <a className="zw-brand" href="/" aria-label="Zoryon Web, página inicial">
         <img src="/brand/zoryon.webp" alt="" width="38" height="38" />
         <span>
           Zoryon <b>Web</b>
         </span>
       </a>
-      <nav className="zw-nav" aria-label="Navegação principal">
-        <a href="/" aria-current={active === 'home' ? 'page' : undefined}>
-          Início
+      <div className="zw-header-actions">
+        <a className="zw-header-social" href="https://instagram.com/zoryonweb" target="_blank" rel="noopener noreferrer" aria-label="Zoryon Web no Instagram">
+          <svg className="zw-instagram-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="18" cy="6" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a className="zw-header-social" href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Conversar com a Zoryon Web no WhatsApp">
+          <MessageCircle size={18} aria-hidden="true" />
         </a>
         <a
-          href="/projetos"
-          aria-current={active === 'projects' ? 'page' : undefined}
+          className="zw-header-cta"
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Projetos
+          Solicitar orçamento
         </a>
-      </nav>
-      <a
-        className="zw-header-cta"
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Solicitar orçamento
-      </a>
-      <details className="zw-mobile-menu">
-        <summary aria-label="Abrir menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </summary>
-        <nav aria-label="Navegação para celular">
-          <a href="/">Início</a>
-          <a href="/projetos">Projetos</a>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-            Solicitar orçamento
-          </a>
-        </nav>
-      </details>
+        <details className="zw-mobile-menu">
+          <summary aria-label="Abrir menu de navegação">
+            <span></span>
+            <span></span>
+            <span></span>
+          </summary>
+          <nav aria-label="Navegação principal">
+            <a href="/projetos" aria-current={active === 'projects' ? 'page' : undefined}>Projetos</a>
+            <a href="/" aria-current={active === 'home' ? 'page' : undefined}>Início</a>
+            <a href="/criacao-de-sites">Criação de sites</a>
+            <a href="/criacao-de-sites-lavras">Sites em Lavras/MG</a>
+            <a href="/lojas-virtuais">Lojas virtuais</a>
+            <a href="/landing-pages">Landing pages</a>
+            <a href="/#contato">Contato</a>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">Solicitar orçamento</a>
+          </nav>
+        </details>
+      </div>
     </header>
   );
 }
@@ -118,6 +133,9 @@ export function SiteFooter() {
       <nav aria-label="Navegação do rodapé">
         <a href="/">Início</a>
         <a href="/projetos">Projetos</a>
+        <a href="/criacao-de-sites">Criação de sites</a>
+        <a href="/lojas-virtuais">Lojas virtuais</a>
+        <a href="/landing-pages">Landing pages</a>
         <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
           Solicitar orçamento
         </a>
