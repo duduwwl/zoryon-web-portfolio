@@ -35,7 +35,7 @@ const heroProjects = [
   projects[1],
   projects[0],
 ];
-const selectedProjects = [projects[0], projects[1], projects[3], projects[5]];
+const selectedProjects = [projects[7], projects[8], projects[0], projects[1], projects[3], projects[5]];
 const services = [
   {
     icon: LayoutTemplate,
@@ -266,9 +266,12 @@ function FactsStrip() {
 }
 
 function ProjectCard({ project, index }: { project: PortfolioProject; index: number }) {
+  const href = project.externalUrl ?? `/projetos/${project.slug}`;
+  const target = project.externalUrl ? '_blank' : undefined;
+  const rel = project.externalUrl ? 'noopener noreferrer' : undefined;
   return (
     <motion.article className="wm-project-card" variants={revealItem}>
-      <a className="wm-project-visual" href={`/projetos/${project.slug}`} aria-label={`Visualizar ${project.title}`}>
+      <a className="wm-project-visual" href={href} target={target} rel={rel} aria-label={`Visualizar ${project.title}${target ? ' em nova aba' : ''}`}>
         <Frame project={project} priority={index === 0} />
       </a>
       <div className="wm-project-meta">
@@ -280,7 +283,7 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
           <h3>{project.title}</h3>
           <p>{project.context}</p>
         </div>
-        <a href={`/projetos/${project.slug}`} aria-label={`Abrir ${project.title}`}>
+        <a href={href} target={target} rel={rel} aria-label={`Abrir ${project.title}${target ? ' em nova aba' : ''}`}>
           <ArrowUpRight size={24} aria-hidden="true" />
         </a>
       </div>
@@ -296,8 +299,8 @@ function WorkSection({ all = false }: { all?: boolean }) {
         <span className="wm-eyebrow">01 / PORTFÓLIO</span>
         <h2 id="wm-work-title">{all ? 'Cada projeto, uma direção.' : 'Projetos para olhar de perto.'}</h2>
         <p>
-          Design pensado para cada marca. Abra as capas para navegar pelas
-          demonstrações e entender as escolhas por trás de cada projeto.
+          Design pensado para cada marca. Abra as capas para conhecer os sites
+          e entender as escolhas por trás de cada projeto.
         </p>
       </div>
       <motion.div className="wm-project-grid" variants={revealGroup} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }}>
@@ -397,7 +400,7 @@ export function PortfolioExperience() {
         <motion.div variants={heroContainer} initial="hidden" animate="visible">
           <motion.span variants={heroItem} className="wm-badge">PORTFÓLIO / ZORYON WEB</motion.span>
           <motion.h1 variants={heroItem} id="wm-page-title">Projetos com <em>identidade.</em></motion.h1>
-          <motion.p variants={heroItem}>Projetos reais e conceituais, cada um com seu próprio universo visual e uma demonstração para explorar.</motion.p>
+          <motion.p variants={heroItem}>Projetos reais e conceituais, cada um com seu próprio universo visual e um site para conhecer.</motion.p>
         </motion.div>
       </section>
       <WorkSection all />

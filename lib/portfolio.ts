@@ -7,6 +7,7 @@ export type PortfolioProject = {
   image: string;
   alt: string;
   imagePosition?: string;
+  externalUrl?: string;
 };
 
 export const projects: PortfolioProject[] = [
@@ -80,5 +81,27 @@ export const projects: PortfolioProject[] = [
     status: 'Projeto conceitual',
     image: '/project-previews/orale-odontologia.webp',
     alt: 'Página inicial da Oracle Odontologia',
+  },
+  {
+    slug: 'love-pets',
+    title: 'Love Pets',
+    type: 'Site institucional · pet shop',
+    context:
+      'Banho, tosa, produtos e agendamento reunidos em uma experiência acolhedora para a Love Pets, em Lavras.',
+    status: 'Projeto real',
+    image: '/project-previews/love-pets.png',
+    alt: 'Página inicial do site Love Pets',
+    externalUrl: 'https://lovepets.app.br/',
+  },
+  {
+    slug: 'marcio-felipe-arquitetura',
+    title: 'Márcio Felipe Arquitetura',
+    type: 'Site institucional · arquitetura',
+    context:
+      'Projetos de arquitetura e interiores, serviços e contato apresentados em uma experiência editorial.',
+    status: 'Projeto real',
+    image: '/project-previews/marcio-felipe-arquitetura.jpg',
+    alt: 'Página inicial do site Márcio Felipe Arquitetura',
+    externalUrl: 'https://marciofelipearquitetura.com.br/',
   },
 ];
