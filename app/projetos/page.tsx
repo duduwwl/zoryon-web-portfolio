@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { PortfolioExperience } from '../../components/WatermelonZoryon';
+import { getPortfolioProjects } from '../../lib/database';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Projetos | Zoryon Web',
@@ -14,6 +17,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProjectsPage() {
-  return <PortfolioExperience />;
+export default async function ProjectsPage() {
+  return <PortfolioExperience projects={await getPortfolioProjects()} />;
 }

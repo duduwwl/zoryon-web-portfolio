@@ -54,8 +54,7 @@ type PortfolioLead = {
   projectTitle: string;
 };
 
-export async function savePortfolioLead(lead: PortfolioLead) {
-  const appCheckToken = await getAppCheckToken();
+async function saveLeadToFirestore(lead: PortfolioLead, appCheckToken: string) {
   const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
@@ -79,4 +78,20 @@ export async function savePortfolioLead(lead: PortfolioLead) {
   });
 
   if (!response.ok) throw new Error(`Firestore respondeu com HTTP ${response.status}.`);
+}
+
+export async function savePortfolioLead(lead: PortfolioLead) {
+  const appCheckToken = await getAppCheckToken();
+  if (!window.location.hostname.includes('github.io')) {
+    const response = await fetch('/api/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Firebase-AppCheck': appCheckToken },
+      body: JSON.stringify({ ...lead, consent: true, source: 'portfolio' }),
+    });
+    if (response.status === 204) return;
+    if (response.status !== 404 && response.status !== 503) {
+      throw new Error(`O registro respondeu com HTTP ${response.status}.`);
+    }
+  }
+  await saveLeadToFirestore(lead, appCheckToken);
 }

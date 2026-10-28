@@ -23,19 +23,11 @@ import {
   SiteHeader,
   whatsappUrl,
 } from './ZoryonSite';
-import { projects, type PortfolioProject } from '../lib/portfolio';
+import type { PortfolioProject } from '../lib/portfolio';
 
 const rotatingWords = ['marcas', 'negócios', 'ideias', 'pessoas'] as const;
-const heroProjects = [
-  projects[5],
-  projects[6],
-  projects[2],
-  projects[4],
-  projects[3],
-  projects[1],
-  projects[0],
-];
-const selectedProjects = [projects[7], projects[8], projects[0], projects[1], projects[3], projects[5]];
+const heroProjectSlugs = ['serra-alta-imoveis', 'orale-odontologia', 'pizza-lavras', 'hamburgueria-do-gordao', 'aurele', 'casa-dos-fios', 'wl-streetwear'];
+const selectedProjectSlugs = ['love-pets', 'marcio-felipe-arquitetura', 'wl-streetwear', 'casa-dos-fios', 'aurele', 'serra-alta-imoveis'];
 const services = [
   {
     icon: LayoutTemplate,
@@ -180,7 +172,8 @@ function Frame({ project, priority = false }: { project: PortfolioProject; prior
   return <PortfolioImage project={project} priority={priority} />;
 }
 
-function Hero() {
+function Hero({ projects }: { projects: PortfolioProject[] }) {
+  const heroProjects = heroProjectSlugs.flatMap((slug) => projects.filter((project) => project.slug === slug));
   return (
     <section className="wm-hero" id="inicio" aria-labelledby="wm-hero-title">
       <div className="wm-dot-grid" aria-hidden="true" />
@@ -245,9 +238,9 @@ function Hero() {
   );
 }
 
-function FactsStrip() {
+function FactsStrip({ projectCount }: { projectCount: number }) {
   const facts = [
-    { value: projects.length, label: 'Projetos para explorar' },
+    { value: projectCount, label: 'Projetos para explorar' },
     { value: services.length, label: 'Formatos de projeto' },
     { value: 2, label: 'Atendimento local e remoto' },
   ];
@@ -291,8 +284,8 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
   );
 }
 
-function WorkSection({ all = false }: { all?: boolean }) {
-  const list = all ? projects : selectedProjects;
+function WorkSection({ projects, all = false }: { projects: PortfolioProject[]; all?: boolean }) {
+  const list = all ? projects : selectedProjectSlugs.flatMap((slug) => projects.filter((project) => project.slug === slug));
   return (
     <section className="wm-section wm-work" id="projetos" aria-labelledby="wm-work-title">
       <div className="wm-section-heading">
@@ -376,13 +369,13 @@ function ContactSection() {
   );
 }
 
-export function HomeExperience() {
+export function HomeExperience({ projects }: { projects: PortfolioProject[] }) {
   return (
     <main className="zw-site wm-site">
       <SiteHeader active="home" />
-      <Hero />
-      <FactsStrip />
-      <WorkSection />
+      <Hero projects={projects} />
+      <FactsStrip projectCount={projects.length} />
+      <WorkSection projects={projects} />
       <ServicesSection />
       <ProcessSection />
       <ContactSection />
@@ -391,7 +384,7 @@ export function HomeExperience() {
   );
 }
 
-export function PortfolioExperience() {
+export function PortfolioExperience({ projects }: { projects: PortfolioProject[] }) {
   return (
     <main className="zw-site wm-site wm-portfolio-page">
       <SiteHeader active="projects" />
@@ -403,7 +396,7 @@ export function PortfolioExperience() {
           <motion.p variants={heroItem}>Projetos reais e conceituais, cada um com seu próprio universo visual e um site para conhecer.</motion.p>
         </motion.div>
       </section>
-      <WorkSection all />
+      <WorkSection projects={projects} all />
       <ContactSection />
       <SiteFooter />
     </main>
