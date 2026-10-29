@@ -17,7 +17,7 @@ export function SiteHeader({ active }: { active: 'home' | 'projects' | 'service'
   return (
     <header className={`zw-header ${scrolled ? 'is-scrolled' : ''}`}>
       <a className="zw-brand" href="/" aria-label="Zoryon Web, página inicial">
-        <img src="/brand/zoryon.webp" alt="" width="38" height="38" />
+        <img src="/brand/zoryon.webp" alt="" width="40" height="40" />
         <span>
           Zoryon <b>Web</b>
         </span>

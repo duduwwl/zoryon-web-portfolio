@@ -26,8 +26,8 @@ import {
 import type { PortfolioProject } from '../lib/portfolio';
 
 const rotatingWords = ['marcas', 'negócios', 'ideias', 'pessoas'] as const;
-const heroProjectSlugs = ['serra-alta-imoveis', 'orale-odontologia', 'pizza-lavras', 'hamburgueria-do-gordao', 'aurele', 'casa-dos-fios', 'wl-streetwear'];
-const selectedProjectSlugs = ['love-pets', 'marcio-felipe-arquitetura', 'wl-streetwear', 'casa-dos-fios', 'aurele', 'serra-alta-imoveis'];
+const heroProjectSlugs = ['wl-streetwear', 'orale-odontologia', 'pizza-lavras', 'hamburgueria-do-gordao', 'love-pets', 'casa-dos-fios', 'marcio-felipe-arquitetura'];
+const selectedProjectSlugs = ['love-pets', 'marcio-felipe-arquitetura', 'wl-streetwear', 'casa-dos-fios', 'aurele'];
 const services = [
   {
     icon: LayoutTemplate,
