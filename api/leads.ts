@@ -1,7 +1,7 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import { neon } from '@neondatabase/serverless';
 import { createRemoteJWKSet, jwtVerify } from 'jose';
-import { validateLead } from '../lib/validate-lead';
+import { validateLead } from '../lib/validate-lead.js';
 
 const jwks = createRemoteJWKSet(new URL('https://firebaseappcheck.googleapis.com/v1/jwks'));
 const projectNumber = '477059621908';
