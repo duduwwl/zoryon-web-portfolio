@@ -1,4 +1,4 @@
-export const basePath = '/zoryon-web-portfolio';
+export const basePath = process.env.SITE_BASE_PATH ?? '/zoryon-web-portfolio';
 
 export const projects = [
   { slug: 'daniels-barber', pages: ['agendamento', 'barbearia', 'contato'] },
@@ -13,6 +13,11 @@ export const projects = [
 
 export const routes = [
   '/',
+  '/criacao-de-sites',
+  '/criacao-de-sites-lavras',
+  '/lojas-virtuais',
+  '/landing-pages',
+  '/projetos',
   ...projects.flatMap((project) => {
     const publicRoutes = [`/projetos/${project.slug}`, ...project.pages.map((page) => `/projetos/${project.slug}/${page}`)];
     const embeddedRoutes = project.embedded
@@ -21,3 +26,5 @@ export const routes = [
     return [...publicRoutes, ...embeddedRoutes];
   }),
 ];
+
+export const fileRoutes = ['/sitemap.xml'];

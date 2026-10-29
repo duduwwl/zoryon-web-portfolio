@@ -1,8 +1,8 @@
 import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { dirname, extname, join } from 'node:path';
-import { basePath, routes } from './pages-manifest.mjs';
+import { basePath, fileRoutes, routes } from './pages-manifest.mjs';
 
-const outputDirectory = 'pages-dist';
+const outputDirectory = process.env.SITE_OUTPUT_DIRECTORY ?? 'pages-dist';
 const clientDirectory = 'dist/client';
 const workerModule = await import('../dist/server/index.js');
 const worker = workerModule.default;
@@ -19,6 +19,12 @@ for (const route of routes) {
   const destination = route === '/' ? join(outputDirectory, 'index.html') : join(outputDirectory, route.slice(1), 'index.html');
   await mkdir(dirname(destination), { recursive: true });
   await writeFile(destination, html, 'utf8');
+}
+
+for (const route of fileRoutes) {
+  const response = await worker.fetch(new Request(`https://zoryon-export.local${route}`));
+  if (!response.ok) throw new Error(`Falha ao renderizar ${route}: HTTP ${response.status}`);
+  await writeFile(join(outputDirectory, route.slice(1)), await response.text(), 'utf8');
 }
 
 const textExtensions = new Set(['.css', '.html', '.js', '.json', '.mjs', '.svg', '.txt', '.xml']);
@@ -53,10 +59,10 @@ async function rewriteDirectory(directory) {
   }
 }
 
-await rewriteDirectory(outputDirectory);
+if (basePath) await rewriteDirectory(outputDirectory);
 await writeFile(join(outputDirectory, '.nojekyll'), '', 'utf8');
 
 const notFound = await readFile(join(outputDirectory, 'index.html'), 'utf8');
 await writeFile(join(outputDirectory, '404.html'), notFound, 'utf8');
 
-console.log(`GitHub Pages: ${routes.length} rotas renderizadas em ${outputDirectory}.`);
+console.log(`${routes.length + fileRoutes.length} rotas renderizadas em ${outputDirectory}.`);
